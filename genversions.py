@@ -62,8 +62,6 @@ def list_files(basepath):
 
 
 versions = collect_versions()
-print(versions)
-
 for version in versions:
     print(f"Process {version}...")
     newvers = tpl.render(curversion=version, versions=versions)
