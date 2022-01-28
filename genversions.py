@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import copy
 import glob
 import jinja2
+import os
 
 tpl_str = """
 <div id="cvc5-versions" class="rst-versions shift-up" data-toggle="rst-versions" role="note" aria-label="versions">
@@ -79,6 +80,7 @@ for version in versions:
     for file in list_files(f'docs-{version}'):
         put_versions_in_file(file, copy.copy(newvers))
 
-latest_version = sorted(versions)[-1]
+stat_versions = map(lambda v: (os.stat(v).st_mtime, v), versions)
+latest_version = sorted(stat_versions)[-1][1]
 newindex = tpl_redirect.render(release=latest_version)
 open("index.html", 'w').write(newindex)
