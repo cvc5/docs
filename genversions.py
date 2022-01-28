@@ -25,6 +25,15 @@ tpl_str = """
 """
 tpl = jinja2.Template(tpl_str)
 
+tpl_redirect_str = """
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>Redirect to latest release</title>
+<meta http-equiv="refresh" content="0; URL={{ release }}/">
+<link rel="canonical" href="{{ release }}/">
+"""
+tpl_redirect = jinja2.Template(tpl_redirect_str)
+
 
 def put_versions_in_file(filename, newblock):
     """Insert or replace the `cvc5-versions` block with the new block."""
@@ -53,7 +62,7 @@ def put_versions_in_file(filename, newblock):
 
 def collect_versions():
     """Collect all paths / versions."""
-    return ['master', *glob.iglob('cvc5-*')]
+    return glob.glob('cvc5-*')
 
 
 def list_files(basepath):
@@ -69,3 +78,7 @@ for version in versions:
 
     for file in list_files(f'docs-{version}'):
         put_versions_in_file(file, copy.copy(newvers))
+
+latest_version = sorted(versions)[-1]
+newindex = tpl_redirect.render(release=latest_version)
+open("index.html", 'w').write(newindex)
