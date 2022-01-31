@@ -1,169 +1,496 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Datatypes &mdash; cvc5  documentation</title>
-      <link rel="stylesheet" href="../../../static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../../static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../../static/tabs.css" type="text/css" />
-      <link rel="stylesheet" href="../../../static/custom.css" type="text/css" />
+<html class="writer-html5" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Datatypes — cvc5  documentation
+  </title>
+  <link href="../../../static/pygments.css" rel="stylesheet" type="text/css"/>
+  <link href="../../../static/css/theme.css" rel="stylesheet" type="text/css"/>
+  <link href="../../../static/tabs.css" rel="stylesheet" type="text/css"/>
+  <link href="../../../static/custom.css" rel="stylesheet" type="text/css"/>
   <!--[if lt IE 9]>
     <script src="../../../static/js/html5shiv.min.js"></script>
   <![endif]-->
-  
-        <script data-url_root="../../../" id="documentation_options" src="../../../static/documentation_options.js"></script>
-        <script src="../../../static/jquery.js"></script>
-        <script src="../../../static/underscore.js"></script>
-        <script src="../../../static/doctools.js"></script>
-    <script src="../../../static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Floating Point" href="fp.html" />
-    <link rel="prev" title="Bit-Vectors" href="bitvec.html" /> 
-</head>
-
-<body class="wy-body-for-nav"> 
+  <script data-url_root="../../../" id="documentation_options" src="../../../static/documentation_options.js">
+  </script>
+  <script src="../../../static/jquery.js">
+  </script>
+  <script src="../../../static/underscore.js">
+  </script>
+  <script src="../../../static/doctools.js">
+  </script>
+  <script src="../../../static/js/theme.js">
+  </script>
+  <link href="../../../genindex.html" rel="index" title="Index"/>
+  <link href="../../../search.html" rel="search" title="Search"/>
+  <link href="fp.html" rel="next" title="Floating Point"/>
+  <link href="bitvec.html" rel="prev" title="Bit-Vectors"/>
+ </head>
+ <body class="wy-body-for-nav">
   <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="../../../index.html" class="icon icon-home"> cvc5
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../../../installation/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../binary/binary.html">Binary Documentation</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../api.html">API Documentation</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../cpp/cpp.html">C++ API</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../java/java.html">Java API</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../python.html">Python API</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="pythonic.html">Pythonic API</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
-<li class="toctree-l4"><a class="reference internal" href="boolean.html">Core &amp; Booleans</a></li>
-<li class="toctree-l4"><a class="reference internal" href="arith.html">Arithmetic</a></li>
-<li class="toctree-l4"><a class="reference internal" href="array.html">Arrays</a></li>
-<li class="toctree-l4"><a class="reference internal" href="bitvec.html">Bit-Vectors</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Datatypes</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#declaration-utilities">Declaration Utilities</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#classes">Classes</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="fp.html">Floating Point</a></li>
-<li class="toctree-l4"><a class="reference internal" href="set.html">Sets</a></li>
-<li class="toctree-l4"><a class="reference internal" href="quant.html">Quantifiers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="solver.html">Solvers &amp; Results</a></li>
-<li class="toctree-l4"><a class="reference internal" href="internals.html">Internals</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../base/python.html">Base Python API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../python.html#which-python-api-should-i-use">Which Python API should I use?</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../examples/examples.html">Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../theories/theories.html">Theory References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../references.html">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../genindex.html">Index</a></li>
-</ul>
-
-        </div>
+   <nav class="wy-nav-side" data-toggle="wy-nav-shift">
+    <div class="wy-side-scroll">
+     <div class="wy-side-nav-search">
+      <a class="icon icon-home" href="../../../index.html">
+       cvc5
+      </a>
+      <div role="search">
+       <form action="../../../search.html" class="wy-form" id="rtd-search-form" method="get">
+        <input name="q" placeholder="Search docs" type="text"/>
+        <input name="check_keywords" type="hidden" value="yes"/>
+        <input name="area" type="hidden" value="default"/>
+       </form>
       </div>
+     </div>
+     <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+      <ul class="current">
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../installation/installation.html">
+         Installation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../binary/binary.html">
+         Binary Documentation
+        </a>
+       </li>
+       <li class="toctree-l1 current">
+        <a class="reference internal" href="../../api.html">
+         API Documentation
+        </a>
+        <ul class="current">
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../cpp/cpp.html">
+           C++ API
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../java/java.html">
+           Java API
+          </a>
+         </li>
+         <li class="toctree-l2 current">
+          <a class="reference internal" href="../python.html">
+           Python API
+          </a>
+          <ul class="current">
+           <li class="toctree-l3 current">
+            <a class="reference internal" href="pythonic.html">
+             Pythonic API
+            </a>
+            <ul class="current">
+             <li class="toctree-l4">
+              <a class="reference internal" href="quickstart.html">
+               Quickstart
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="boolean.html">
+               Core &amp; Booleans
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="arith.html">
+               Arithmetic
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="array.html">
+               Arrays
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="bitvec.html">
+               Bit-Vectors
+              </a>
+             </li>
+             <li class="toctree-l4 current">
+              <a class="current reference internal" href="#">
+               Datatypes
+              </a>
+              <ul>
+               <li class="toctree-l5">
+                <a class="reference internal" href="#overview">
+                 Overview
+                </a>
+               </li>
+               <li class="toctree-l5">
+                <a class="reference internal" href="#declaration-utilities">
+                 Declaration Utilities
+                </a>
+               </li>
+               <li class="toctree-l5">
+                <a class="reference internal" href="#classes">
+                 Classes
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="fp.html">
+               Floating Point
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="set.html">
+               Sets
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="quant.html">
+               Quantifiers
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="solver.html">
+               Solvers &amp; Results
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="internals.html">
+               Internals
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../base/python.html">
+             Base Python API
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../python.html#which-python-api-should-i-use">
+             Which Python API should I use?
+            </a>
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../examples/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../theories/theories.html">
+         Theory References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../references.html">
+         References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../genindex.html">
+         Index
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div aria-label="versions" class="rst-versions shift-up" data-toggle="rst-versions" id="cvc5-versions" role="note">
+     <span class="rst-current-version" data-toggle="rst-current-version">
+      <i class="fas fa-tags">
+      </i>
+      Other versions
+     </span>
+     <div class="rst-other-versions">
+      <dl>
+       <dd>
+        <strong>
+         <a href="../../../../docs-cvc5-0.0.7/">
+          cvc5-0.0.7
+         </a>
+        </strong>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </nav>
+   <section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+    <nav aria-label="Mobile navigation menu" class="wy-nav-top">
+     <i class="fa fa-bars" data-toggle="wy-nav-top">
+     </i>
+     <a href="../../../index.html">
+      cvc5
+     </a>
     </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../index.html">cvc5</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../api.html">API Documentation</a> &raquo;</li>
-          <li><a href="../python.html">Python API</a> &raquo;</li>
-          <li><a href="pythonic.html">Pythonic API</a> &raquo;</li>
-      <li>Datatypes</li>
-      <li class="wy-breadcrumbs-aside">
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <div class="section" id="datatypes">
-<h1>Datatypes<a class="headerlink" href="#datatypes" title="Permalink to this headline"></a></h1>
-<div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
-<p>To manipulate instances of a datatype, one must first <em>declare</em> the datatype itself.
+    <div class="wy-nav-content">
+     <div class="rst-content">
+      <div aria-label="Page navigation" role="navigation">
+       <ul class="wy-breadcrumbs">
+        <li>
+         <a class="icon icon-home" href="../../../index.html">
+         </a>
+         »
+        </li>
+        <li>
+         <a href="../../api.html">
+          API Documentation
+         </a>
+         »
+        </li>
+        <li>
+         <a href="../python.html">
+          Python API
+         </a>
+         »
+        </li>
+        <li>
+         <a href="pythonic.html">
+          Pythonic API
+         </a>
+         »
+        </li>
+        <li>
+         Datatypes
+        </li>
+        <li class="wy-breadcrumbs-aside">
+        </li>
+       </ul>
+       <hr/>
+      </div>
+      <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+       <div itemprop="articleBody">
+        <div class="section" id="datatypes">
+         <h1>
+          Datatypes
+          <a class="headerlink" href="#datatypes" title="Permalink to this headline">
+           
+          </a>
+         </h1>
+         <div class="section" id="overview">
+          <h2>
+           Overview
+           <a class="headerlink" href="#overview" title="Permalink to this headline">
+            
+           </a>
+          </h2>
+          <p>
+           To manipulate instances of a datatype, one must first
+           <em>
+            declare
+           </em>
+           the datatype itself.
 Declaration happens in three phases. Let’s consider declaring a cons-list of
-integers.</p>
-<p>First, we initialize the datatype with its <em>name</em></p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntList</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;IntList&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Second, we declare constructors for the datatype, giving the <em>constructor name</em>
-and <em>field names and sorts</em>. Here is the empty list constructor:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntList</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;nil&#39;</span><span class="p">,</span> <span class="p">())</span>
-</pre></div>
-</div>
-<p>Here is the cons constructor:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntList</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;cons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;val&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;tail&#39;</span><span class="p">,</span> <span class="n">IntList</span><span class="p">))</span>
-</pre></div>
-</div>
-<p>Third, after all constructors are declared, we can <em>create</em> the datatype,
-finishing its declaration.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntList</span> <span class="o">=</span> <span class="n">IntList</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>Now, one has access to a number of tools for interacting with integer lists.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">IntList.nil</span></code> refers to the SMT term that is an empty list,
-and <code class="docutils literal notranslate"><span class="pre">IntList.cons</span></code> refers to the cons constructor.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">IntList.is_nil</span></code> and <code class="docutils literal notranslate"><span class="pre">IntList.is_cons</span></code> are testors (a.k.a.,
-recognizers) for those constructors.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">IntList.val</span></code> and <code class="docutils literal notranslate"><span class="pre">IntList.tail</span></code> are selectors (a.k.a. accessors)
-for the cons constructor.</p></li>
-</ul>
-<p>If constructor, accessor, or selector names are ambiguous (e.g., if different
+integers.
+          </p>
+          <p>
+           First, we initialize the datatype with its
+           <em>
+            name
+           </em>
+          </p>
+          <div class="doctest highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntList</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'IntList'</span><span class="p">)</span>
+</pre>
+           </div>
+          </div>
+          <p>
+           Second, we declare constructors for the datatype, giving the
+           <em>
+            constructor name
+           </em>
+           and
+           <em>
+            field names and sorts
+           </em>
+           . Here is the empty list constructor:
+          </p>
+          <div class="doctest highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntList</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">,</span> <span class="p">())</span>
+</pre>
+           </div>
+          </div>
+          <p>
+           Here is the cons constructor:
+          </p>
+          <div class="doctest highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntList</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'val'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">'tail'</span><span class="p">,</span> <span class="n">IntList</span><span class="p">))</span>
+</pre>
+           </div>
+          </div>
+          <p>
+           Third, after all constructors are declared, we can
+           <em>
+            create
+           </em>
+           the datatype,
+finishing its declaration.
+          </p>
+          <div class="doctest highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntList</span> <span class="o">=</span> <span class="n">IntList</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+</pre>
+           </div>
+          </div>
+          <p>
+           Now, one has access to a number of tools for interacting with integer lists.
+          </p>
+          <ul class="simple">
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               IntList.nil
+              </span>
+             </code>
+             refers to the SMT term that is an empty list,
+and
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               IntList.cons
+              </span>
+             </code>
+             refers to the cons constructor.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               IntList.is_nil
+              </span>
+             </code>
+             and
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               IntList.is_cons
+              </span>
+             </code>
+             are testors (a.k.a.,
+recognizers) for those constructors.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               IntList.val
+              </span>
+             </code>
+             and
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               IntList.tail
+              </span>
+             </code>
+             are selectors (a.k.a. accessors)
+for the cons constructor.
+            </p>
+           </li>
+          </ul>
+          <p>
+           If constructor, accessor, or selector names are ambiguous (e.g., if different
 constructors have selectors of the same name), then see the methods on
-<a class="reference internal" href="#cvc5_z3py_compat.DatatypeSortRef" title="cvc5_z3py_compat.DatatypeSortRef"><code class="xref py py-class docutils literal notranslate"><span class="pre">cvc5_z3py_compat.DatatypeSortRef</span></code></a> to unambiguously access a specific
-function.</p>
-<p>To create mutually recursive datatypes, see
-<a class="reference internal" href="#cvc5_z3py_compat.CreateDatatypes" title="cvc5_z3py_compat.CreateDatatypes"><code class="xref py py-func docutils literal notranslate"><span class="pre">cvc5_z3py_compat.CreateDatatypes()</span></code></a>.</p>
-<p>To create a codataype (e.g., a possibly infinite stream of integers), pass the
-<code class="docutils literal notranslate"><span class="pre">isCoDatatype=True</span></code> argument to the <a class="reference internal" href="#cvc5_z3py_compat.Datatype" title="cvc5_z3py_compat.Datatype"><code class="xref py py-class docutils literal notranslate"><span class="pre">cvc5_z3py_compat.Datatype</span></code></a>
-constructor.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntStream</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;IntStream&#39;</span><span class="p">,</span> <span class="n">isCoDatatype</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="declaration-utilities">
-<h2>Declaration Utilities<a class="headerlink" href="#declaration-utilities" title="Permalink to this headline"></a></h2>
-<dl class="py function">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.CreateDatatypes">
-<span class="sig-prename descclassname"><span class="pre">cvc5_z3py_compat.</span></span><span class="sig-name descname"><span class="pre">CreateDatatypes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">ds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.CreateDatatypes" title="Permalink to this definition"></a></dt>
-<dd><p>Create mutually recursive SMT datatypes using 1 or more Datatype helper objects.
-In the following example we define a Tree-List using two mutually recursive datatypes.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">TreeList</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;TreeList&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Tree</span>     <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;Tree&#39;</span><span class="p">)</span>
+           <a class="reference internal" href="#cvc5_z3py_compat.DatatypeSortRef" title="cvc5_z3py_compat.DatatypeSortRef">
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              cvc5_z3py_compat.DatatypeSortRef
+             </span>
+            </code>
+           </a>
+           to unambiguously access a specific
+function.
+          </p>
+          <p>
+           To create mutually recursive datatypes, see
+           <a class="reference internal" href="#cvc5_z3py_compat.CreateDatatypes" title="cvc5_z3py_compat.CreateDatatypes">
+            <code class="xref py py-func docutils literal notranslate">
+             <span class="pre">
+              cvc5_z3py_compat.CreateDatatypes()
+             </span>
+            </code>
+           </a>
+           .
+          </p>
+          <p>
+           To create a codataype (e.g., a possibly infinite stream of integers), pass the
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             isCoDatatype=True
+            </span>
+           </code>
+           argument to the
+           <a class="reference internal" href="#cvc5_z3py_compat.Datatype" title="cvc5_z3py_compat.Datatype">
+            <code class="xref py py-class docutils literal notranslate">
+             <span class="pre">
+              cvc5_z3py_compat.Datatype
+             </span>
+            </code>
+           </a>
+           constructor.
+          </p>
+          <div class="doctest highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntStream</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'IntStream'</span><span class="p">,</span> <span class="n">isCoDatatype</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre>
+           </div>
+          </div>
+         </div>
+         <div class="section" id="declaration-utilities">
+          <h2>
+           Declaration Utilities
+           <a class="headerlink" href="#declaration-utilities" title="Permalink to this headline">
+            
+           </a>
+          </h2>
+          <dl class="py function">
+           <dt class="sig sig-object py" id="cvc5_z3py_compat.CreateDatatypes">
+            <span class="sig-prename descclassname">
+             <span class="pre">
+              cvc5_z3py_compat.
+             </span>
+            </span>
+            <span class="sig-name descname">
+             <span class="pre">
+              CreateDatatypes
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="o">
+              <span class="pre">
+               *
+              </span>
+             </span>
+             <span class="n">
+              <span class="pre">
+               ds
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#cvc5_z3py_compat.CreateDatatypes" title="Permalink to this definition">
+             
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Create mutually recursive SMT datatypes using 1 or more Datatype helper objects.
+In the following example we define a Tree-List using two mutually recursive datatypes.
+            </p>
+            <div class="doctest highlight-default notranslate">
+             <div class="highlight">
+              <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">TreeList</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'TreeList'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Tree</span>     <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'Tree'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Tree has two constructors: leaf and node</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Tree</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;leaf&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;val&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Tree</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'leaf'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'val'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># a node contains a list of trees</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Tree</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;node&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;children&#39;</span><span class="p">,</span> <span class="n">TreeList</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">TreeList</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;nil&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">TreeList</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;cons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">Tree</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="n">TreeList</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Tree</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'node'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'children'</span><span class="p">,</span> <span class="n">TreeList</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">TreeList</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">TreeList</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'car'</span><span class="p">,</span> <span class="n">Tree</span><span class="p">),</span> <span class="p">(</span><span class="s1">'cdr'</span><span class="p">,</span> <span class="n">TreeList</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Tree</span><span class="p">,</span> <span class="n">TreeList</span> <span class="o">=</span> <span class="n">CreateDatatypes</span><span class="p">(</span><span class="n">Tree</span><span class="p">,</span> <span class="n">TreeList</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Tree</span><span class="o">.</span><span class="n">val</span><span class="p">(</span><span class="n">Tree</span><span class="o">.</span><span class="n">leaf</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 <span class="go">val(leaf(10))</span>
@@ -178,56 +505,262 @@ In the following example we define a Tree-List using two mutually recursive data
 <span class="go">False</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">TreeList</span><span class="o">.</span><span class="n">car</span><span class="p">(</span><span class="n">Tree</span><span class="o">.</span><span class="n">children</span><span class="p">(</span><span class="n">n2</span><span class="p">))</span> <span class="o">==</span> <span class="n">n1</span><span class="p">)</span>
 <span class="go">True</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.TupleSort">
-<span class="sig-prename descclassname"><span class="pre">cvc5_z3py_compat.</span></span><span class="sig-name descname"><span class="pre">TupleSort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sorts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.TupleSort" title="Permalink to this definition"></a></dt>
-<dd><p>Create a named tuple sort base on a set of underlying sorts</p>
-<p>Returns the tuple datatype, its constructor, and a list of accessors, in order.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pair</span><span class="p">,</span> <span class="n">mk_pair</span><span class="p">,</span> <span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">)</span> <span class="o">=</span> <span class="n">TupleSort</span><span class="p">(</span><span class="s2">&quot;pair&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">IntSort</span><span class="p">(),</span> <span class="n">BoolSort</span><span class="p">()])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Bool</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">)</span>
+</pre>
+             </div>
+            </div>
+           </dd>
+          </dl>
+          <dl class="py function">
+           <dt class="sig sig-object py" id="cvc5_z3py_compat.TupleSort">
+            <span class="sig-prename descclassname">
+             <span class="pre">
+              cvc5_z3py_compat.
+             </span>
+            </span>
+            <span class="sig-name descname">
+             <span class="pre">
+              TupleSort
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               name
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               sorts
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               ctx
+              </span>
+             </span>
+             <span class="o">
+              <span class="pre">
+               =
+              </span>
+             </span>
+             <span class="default_value">
+              <span class="pre">
+               None
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#cvc5_z3py_compat.TupleSort" title="Permalink to this definition">
+             
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Create a named tuple sort base on a set of underlying sorts
+            </p>
+            <p>
+             Returns the tuple datatype, its constructor, and a list of accessors, in order.
+            </p>
+            <div class="doctest highlight-default notranslate">
+             <div class="highlight">
+              <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pair</span><span class="p">,</span> <span class="n">mk_pair</span><span class="p">,</span> <span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="n">second</span><span class="p">)</span> <span class="o">=</span> <span class="n">TupleSort</span><span class="p">(</span><span class="s2">"pair"</span><span class="p">,</span> <span class="p">[</span><span class="n">IntSort</span><span class="p">(),</span> <span class="n">BoolSort</span><span class="p">()])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Bool</span><span class="p">(</span><span class="s1">'b'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="n">Int</span><span class="p">(</span><span class="s1">'i'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">mk_pair</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">p</span>
 <span class="go">pair(i, b)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">([</span><span class="n">b</span> <span class="o">!=</span> <span class="n">second</span><span class="p">(</span><span class="n">p</span><span class="p">)])</span>
 <span class="go">no solution</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DisjointSum">
-<span class="sig-prename descclassname"><span class="pre">cvc5_z3py_compat.</span></span><span class="sig-name descname"><span class="pre">DisjointSum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sorts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DisjointSum" title="Permalink to this definition"></a></dt>
-<dd><p>Create a named tagged union sort base on a set of underlying sorts.</p>
-<p>See <cite>this page &lt;https://en.wikipedia.org/wiki/Tagged_union&gt;</cite> for
-information about tagged unions.</p>
-<p>Returns the created datatype and a tuple of (injector, extractor) pairs for
-the different variants.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">,</span> <span class="p">((</span><span class="n">inject0</span><span class="p">,</span> <span class="n">extract0</span><span class="p">),</span> <span class="p">(</span><span class="n">inject1</span><span class="p">,</span> <span class="n">extract1</span><span class="p">))</span> <span class="o">=</span> <span class="n">DisjointSum</span><span class="p">(</span><span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="p">[</span><span class="n">IntSort</span><span class="p">(),</span> <span class="n">BoolSort</span><span class="p">()])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Bool</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">Ints</span><span class="p">(</span><span class="s1">&#39;i j&#39;</span><span class="p">)</span>
+</pre>
+             </div>
+            </div>
+           </dd>
+          </dl>
+          <dl class="py function">
+           <dt class="sig sig-object py" id="cvc5_z3py_compat.DisjointSum">
+            <span class="sig-prename descclassname">
+             <span class="pre">
+              cvc5_z3py_compat.
+             </span>
+            </span>
+            <span class="sig-name descname">
+             <span class="pre">
+              DisjointSum
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               name
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               sorts
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               ctx
+              </span>
+             </span>
+             <span class="o">
+              <span class="pre">
+               =
+              </span>
+             </span>
+             <span class="default_value">
+              <span class="pre">
+               None
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#cvc5_z3py_compat.DisjointSum" title="Permalink to this definition">
+             
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Create a named tagged union sort base on a set of underlying sorts.
+            </p>
+            <p>
+             See
+             <cite>
+              this page &lt;https://en.wikipedia.org/wiki/Tagged_union&gt;
+             </cite>
+             for
+information about tagged unions.
+            </p>
+            <p>
+             Returns the created datatype and a tuple of (injector, extractor) pairs for
+the different variants.
+            </p>
+            <div class="doctest highlight-default notranslate">
+             <div class="highlight">
+              <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sum</span><span class="p">,</span> <span class="p">((</span><span class="n">inject0</span><span class="p">,</span> <span class="n">extract0</span><span class="p">),</span> <span class="p">(</span><span class="n">inject1</span><span class="p">,</span> <span class="n">extract1</span><span class="p">))</span> <span class="o">=</span> <span class="n">DisjointSum</span><span class="p">(</span><span class="s2">"+"</span><span class="p">,</span> <span class="p">[</span><span class="n">IntSort</span><span class="p">(),</span> <span class="n">BoolSort</span><span class="p">()])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Bool</span><span class="p">(</span><span class="s1">'b'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">Ints</span><span class="p">(</span><span class="s1">'i j'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">([</span><span class="n">inject0</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="n">inject1</span><span class="p">(</span><span class="n">b</span><span class="p">)])</span>
 <span class="go">no solution</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">([</span><span class="n">inject0</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="n">inject0</span><span class="p">(</span><span class="n">j</span><span class="p">),</span> <span class="n">extract0</span><span class="p">(</span><span class="n">inject0</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="o">==</span> <span class="mi">5</span><span class="p">])</span>
 <span class="go">[i = 5, j = 5]</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</div>
-<div class="section" id="classes">
-<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.Datatype">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5_z3py_compat.</span></span><span class="sig-name descname"><span class="pre">Datatype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isCoDatatype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.Datatype" title="Permalink to this definition"></a></dt>
-<dd><p>Helper class for declaring Z3 datatypes.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;List&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;cons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;nil&#39;</span><span class="p">)</span>
+</pre>
+             </div>
+            </div>
+           </dd>
+          </dl>
+         </div>
+         <div class="section" id="classes">
+          <h2>
+           Classes
+           <a class="headerlink" href="#classes" title="Permalink to this headline">
+            
+           </a>
+          </h2>
+          <dl class="py class">
+           <dt class="sig sig-object py" id="cvc5_z3py_compat.Datatype">
+            <em class="property">
+             <span class="pre">
+              class
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-prename descclassname">
+             <span class="pre">
+              cvc5_z3py_compat.
+             </span>
+            </span>
+            <span class="sig-name descname">
+             <span class="pre">
+              Datatype
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               name
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               ctx
+              </span>
+             </span>
+             <span class="o">
+              <span class="pre">
+               =
+              </span>
+             </span>
+             <span class="default_value">
+              <span class="pre">
+               None
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               isCoDatatype
+              </span>
+             </span>
+             <span class="o">
+              <span class="pre">
+               =
+              </span>
+             </span>
+             <span class="default_value">
+              <span class="pre">
+               False
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#cvc5_z3py_compat.Datatype" title="Permalink to this definition">
+             
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Helper class for declaring Z3 datatypes.
+            </p>
+            <div class="doctest highlight-default notranslate">
+             <div class="highlight">
+              <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'List'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'car'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">'cdr'</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># List is now a Z3 declaration</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">nil</span>
@@ -247,44 +780,158 @@ the different variants.</p>
 <span class="go">cons(0, nil)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">car</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
 <span class="go">1</span>
-</pre></div>
-</div>
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.Datatype.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isCoDatatype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.Datatype.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.Datatype.__repr__">
-<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.Datatype.__repr__" title="Permalink to this definition"></a></dt>
-<dd><p>Return repr(self).</p>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.Datatype.__weakref__">
-<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#cvc5_z3py_compat.Datatype.__weakref__" title="Permalink to this definition"></a></dt>
-<dd><p>list of weak references to the object (if defined)</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.Datatype.create">
-<span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.Datatype.create" title="Permalink to this definition"></a></dt>
-<dd><p>Create an SMT datatype based on the constructors declared using the method <cite>declare()</cite>.
-The function <cite>CreateDatatypes()</cite> must be used to define mutually recursive datatypes.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;List&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;cons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;nil&#39;</span><span class="p">)</span>
+</pre>
+             </div>
+            </div>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.Datatype.__init__">
+              <span class="sig-name descname">
+               <span class="pre">
+                __init__
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 name
+                </span>
+               </span>
+              </em>
+              ,
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 ctx
+                </span>
+               </span>
+               <span class="o">
+                <span class="pre">
+                 =
+                </span>
+               </span>
+               <span class="default_value">
+                <span class="pre">
+                 None
+                </span>
+               </span>
+              </em>
+              ,
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 isCoDatatype
+                </span>
+               </span>
+               <span class="o">
+                <span class="pre">
+                 =
+                </span>
+               </span>
+               <span class="default_value">
+                <span class="pre">
+                 False
+                </span>
+               </span>
+              </em>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.Datatype.__init__" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.Datatype.__repr__">
+              <span class="sig-name descname">
+               <span class="pre">
+                __repr__
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.Datatype.__repr__" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Return repr(self).
+              </p>
+             </dd>
+            </dl>
+            <dl class="py attribute">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.Datatype.__weakref__">
+              <span class="sig-name descname">
+               <span class="pre">
+                __weakref__
+               </span>
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.Datatype.__weakref__" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               list of weak references to the object (if defined)
+              </p>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.Datatype.create">
+              <span class="sig-name descname">
+               <span class="pre">
+                create
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.Datatype.create" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Create an SMT datatype based on the constructors declared using the method
+               <cite>
+                declare()
+               </cite>
+               .
+The function
+               <cite>
+                CreateDatatypes()
+               </cite>
+               must be used to define mutually recursive datatypes.
+              </p>
+              <div class="doctest highlight-default notranslate">
+               <div class="highlight">
+                <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'List'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'car'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">'cdr'</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">nil</span>
 <span class="go">nil</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">cons</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">List</span><span class="o">.</span><span class="n">nil</span><span class="p">)</span>
 <span class="go">cons(10, nil)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Stream</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;Stream&#39;</span><span class="p">,</span> <span class="n">isCoDatatype</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Stream</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;cons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="n">Stream</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">Stream</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;nil&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Stream</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'Stream'</span><span class="p">,</span> <span class="n">isCoDatatype</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Stream</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'car'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">'cdr'</span><span class="p">,</span> <span class="n">Stream</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Stream</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">Stream</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Const</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">Stream</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Const</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">Stream</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">Const</span><span class="p">(</span><span class="s1">'a'</span><span class="p">,</span> <span class="n">Stream</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Const</span><span class="p">(</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">Stream</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">Solver</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">+=</span> <span class="n">a</span> <span class="o">==</span> <span class="n">Stream</span><span class="o">.</span><span class="n">cons</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
@@ -295,48 +942,268 @@ The function <cite>CreateDatatypes()</cite> must be used to define mutually recu
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">+=</span> <span class="n">a</span> <span class="o">!=</span> <span class="n">b</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">check</span><span class="p">()</span>
 <span class="go">unsat</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.Datatype.declare">
-<span class="sig-name descname"><span class="pre">declare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.Datatype.declare" title="Permalink to this definition"></a></dt>
-<dd><p>Declare constructor named <cite>name</cite> with the given accessors <cite>args</cite>.
-Each accessor is a pair <cite>(name, sort)</cite>, where <cite>name</cite> is a string and <cite>sort</cite> an SMT sort
+</pre>
+               </div>
+              </div>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.Datatype.declare">
+              <span class="sig-name descname">
+               <span class="pre">
+                declare
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 name
+                </span>
+               </span>
+              </em>
+              ,
+              <em class="sig-param">
+               <span class="o">
+                <span class="pre">
+                 *
+                </span>
+               </span>
+               <span class="n">
+                <span class="pre">
+                 args
+                </span>
+               </span>
+              </em>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.Datatype.declare" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Declare constructor named
+               <cite>
+                name
+               </cite>
+               with the given accessors
+               <cite>
+                args
+               </cite>
+               .
+Each accessor is a pair
+               <cite>
+                (name, sort)
+               </cite>
+               , where
+               <cite>
+                name
+               </cite>
+               is a string and
+               <cite>
+                sort
+               </cite>
+               an SMT sort
 or a reference to the datatypes being declared.
-In the following example <cite>List.declare(‘cons’, (‘car’, IntSort()), (‘cdr’, List))</cite>
-declares the constructor named <cite>cons</cite> that builds a new List using an integer and a List.
-It also declares the accessors <cite>car</cite> and <cite>cdr</cite>. The accessor <cite>car</cite> extracts the integer
-of a <cite>cons</cite> cell, and <cite>cdr</cite> the list of a <cite>cons</cite> cell. After all constructors were declared,
-we use the method create() to create the actual datatype in SMT.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;List&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;cons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;nil&#39;</span><span class="p">)</span>
+In the following example
+               <cite>
+                List.declare(‘cons’, (‘car’, IntSort()), (‘cdr’, List))
+               </cite>
+               declares the constructor named
+               <cite>
+                cons
+               </cite>
+               that builds a new List using an integer and a List.
+It also declares the accessors
+               <cite>
+                car
+               </cite>
+               and
+               <cite>
+                cdr
+               </cite>
+               . The accessor
+               <cite>
+                car
+               </cite>
+               extracts the integer
+of a
+               <cite>
+                cons
+               </cite>
+               cell, and
+               <cite>
+                cdr
+               </cite>
+               the list of a
+               <cite>
+                cons
+               </cite>
+               cell. After all constructors were declared,
+we use the method create() to create the actual datatype in SMT.
+              </p>
+              <div class="doctest highlight-default notranslate">
+               <div class="highlight">
+                <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'List'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'car'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">'cdr'</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSortRef">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5_z3py_compat.</span></span><span class="sig-name descname"><span class="pre">DatatypeSortRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeSortRef" title="Permalink to this definition"></a></dt>
-<dd><p>Datatype sorts.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSortRef.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeSortRef.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSortRef.accessor">
-<span class="sig-name descname"><span class="pre">accessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeSortRef.accessor" title="Permalink to this definition"></a></dt>
-<dd><p>In SMT, each constructor has 0 or more accessor.
-The number of accessors is equal to the arity of the constructor.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;List&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;cons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;nil&#39;</span><span class="p">)</span>
+</pre>
+               </div>
+              </div>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py class">
+           <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSortRef">
+            <em class="property">
+             <span class="pre">
+              class
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-prename descclassname">
+             <span class="pre">
+              cvc5_z3py_compat.
+             </span>
+            </span>
+            <span class="sig-name descname">
+             <span class="pre">
+              DatatypeSortRef
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               ast
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               ctx
+              </span>
+             </span>
+             <span class="o">
+              <span class="pre">
+               =
+              </span>
+             </span>
+             <span class="default_value">
+              <span class="pre">
+               None
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#cvc5_z3py_compat.DatatypeSortRef" title="Permalink to this definition">
+             
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Datatype sorts.
+            </p>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSortRef.__init__">
+              <span class="sig-name descname">
+               <span class="pre">
+                __init__
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 ast
+                </span>
+               </span>
+              </em>
+              ,
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 ctx
+                </span>
+               </span>
+               <span class="o">
+                <span class="pre">
+                 =
+                </span>
+               </span>
+               <span class="default_value">
+                <span class="pre">
+                 None
+                </span>
+               </span>
+              </em>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeSortRef.__init__" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSortRef.accessor">
+              <span class="sig-name descname">
+               <span class="pre">
+                accessor
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 i
+                </span>
+               </span>
+              </em>
+              ,
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 j
+                </span>
+               </span>
+              </em>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeSortRef.accessor" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               In SMT, each constructor has 0 or more accessor.
+The number of accessors is equal to the arity of the constructor.
+              </p>
+              <div class="doctest highlight-default notranslate">
+               <div class="highlight">
+                <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'List'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'car'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">'cdr'</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">num_constructors</span><span class="p">()</span>
 <span class="go">2</span>
@@ -354,17 +1221,48 @@ The number of accessors is equal to the arity of the constructor.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">num_accs</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="n">constructor</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">arity</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">num_accs</span>
 <span class="go">0</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSortRef.constructor">
-<span class="sig-name descname"><span class="pre">constructor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeSortRef.constructor" title="Permalink to this definition"></a></dt>
-<dd><p>Return a constructor of the datatype <cite>self</cite>.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;List&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;cons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;nil&#39;</span><span class="p">)</span>
+</pre>
+               </div>
+              </div>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSortRef.constructor">
+              <span class="sig-name descname">
+               <span class="pre">
+                constructor
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 idx
+                </span>
+               </span>
+              </em>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeSortRef.constructor" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Return a constructor of the datatype
+               <cite>
+                self
+               </cite>
+               .
+              </p>
+              <div class="doctest highlight-default notranslate">
+               <div class="highlight">
+                <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'List'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'car'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">'cdr'</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># List is now a Z3 declaration</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">num_constructors</span><span class="p">()</span>
@@ -373,33 +1271,88 @@ The number of accessors is equal to the arity of the constructor.</p>
 <span class="go">cons</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">constructor</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="go">nil</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSortRef.num_constructors">
-<span class="sig-name descname"><span class="pre">num_constructors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeSortRef.num_constructors" title="Permalink to this definition"></a></dt>
-<dd><p>Return the number of constructors in the given Z3 datatype.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;List&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;cons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;nil&#39;</span><span class="p">)</span>
+</pre>
+               </div>
+              </div>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSortRef.num_constructors">
+              <span class="sig-name descname">
+               <span class="pre">
+                num_constructors
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeSortRef.num_constructors" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Return the number of constructors in the given Z3 datatype.
+              </p>
+              <div class="doctest highlight-default notranslate">
+               <div class="highlight">
+                <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'List'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'car'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">'cdr'</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># List is now a Z3 declaration</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">num_constructors</span><span class="p">()</span>
 <span class="go">2</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSortRef.recognizer">
-<span class="sig-name descname"><span class="pre">recognizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeSortRef.recognizer" title="Permalink to this definition"></a></dt>
-<dd><p>In SMT, each constructor has an associated recognizer predicate.
-If the constructor is named <cite>name</cite>, then the recognizer <cite>is_name</cite>.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;List&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;cons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;nil&#39;</span><span class="p">)</span>
+</pre>
+               </div>
+              </div>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSortRef.recognizer">
+              <span class="sig-name descname">
+               <span class="pre">
+                recognizer
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 idx
+                </span>
+               </span>
+              </em>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeSortRef.recognizer" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               In SMT, each constructor has an associated recognizer predicate.
+If the constructor is named
+               <cite>
+                name
+               </cite>
+               , then the recognizer
+               <cite>
+                is_name
+               </cite>
+               .
+              </p>
+              <div class="doctest highlight-default notranslate">
+               <div class="highlight">
+                <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'List'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'car'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">'cdr'</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># List is now a SMT declaration</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">num_constructors</span><span class="p">()</span>
@@ -412,244 +1365,1058 @@ If the constructor is named <cite>name</cite>, then the recognizer <cite>is_name
 <span class="go">False</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">List</span><span class="o">.</span><span class="n">is_cons</span><span class="p">(</span><span class="n">List</span><span class="o">.</span><span class="n">cons</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">List</span><span class="o">.</span><span class="n">nil</span><span class="p">)))</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="n">Const</span><span class="p">(</span><span class="s1">&#39;l&#39;</span><span class="p">,</span> <span class="n">List</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="n">Const</span><span class="p">(</span><span class="s1">'l'</span><span class="p">,</span> <span class="n">List</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">simplify</span><span class="p">(</span><span class="n">List</span><span class="o">.</span><span class="n">is_cons</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
 <span class="go">is_cons(l)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeConstructorRef">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5_z3py_compat.</span></span><span class="sig-name descname"><span class="pre">DatatypeConstructorRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datatype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeConstructorRef" title="Permalink to this definition"></a></dt>
-<dd><dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeConstructorRef.__call__">
-<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeConstructorRef.__call__" title="Permalink to this definition"></a></dt>
-<dd><p>Apply this constructor.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;List&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;cons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;nil&#39;</span><span class="p">)</span>
+</pre>
+               </div>
+              </div>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py class">
+           <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeConstructorRef">
+            <em class="property">
+             <span class="pre">
+              class
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-prename descclassname">
+             <span class="pre">
+              cvc5_z3py_compat.
+             </span>
+            </span>
+            <span class="sig-name descname">
+             <span class="pre">
+              DatatypeConstructorRef
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               datatype
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               ctx
+              </span>
+             </span>
+             <span class="o">
+              <span class="pre">
+               =
+              </span>
+             </span>
+             <span class="default_value">
+              <span class="pre">
+               None
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               r
+              </span>
+             </span>
+             <span class="o">
+              <span class="pre">
+               =
+              </span>
+             </span>
+             <span class="default_value">
+              <span class="pre">
+               False
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#cvc5_z3py_compat.DatatypeConstructorRef" title="Permalink to this definition">
+             
+            </a>
+           </dt>
+           <dd>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeConstructorRef.__call__">
+              <span class="sig-name descname">
+               <span class="pre">
+                __call__
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <em class="sig-param">
+               <span class="o">
+                <span class="pre">
+                 *
+                </span>
+               </span>
+               <span class="n">
+                <span class="pre">
+                 args
+                </span>
+               </span>
+              </em>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeConstructorRef.__call__" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Apply this constructor.
+              </p>
+              <div class="doctest highlight-default notranslate">
+               <div class="highlight">
+                <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'List'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'car'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">'cdr'</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">num_constructors</span><span class="p">()</span>
 <span class="go">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">constructor</span><span class="p">(</span><span class="mi">0</span><span class="p">)(</span><span class="mi">1</span><span class="p">,</span> <span class="n">List</span><span class="o">.</span><span class="n">nil</span><span class="p">)</span>
 <span class="go">cons(1, nil)</span>
-</pre></div>
-</div>
-<p>The arguments must be SMT expressions. This method assumes that
-the sorts of the elements in <cite>args</cite> match the sorts of the
+</pre>
+               </div>
+              </div>
+              <p>
+               The arguments must be SMT expressions. This method assumes that
+the sorts of the elements in
+               <cite>
+                args
+               </cite>
+               match the sorts of the
 domain. Limited coercion is supported.  For example, if
 args[0] is a Python integer, and the function expects a SMT
 integer, then the argument is automatically converted into a
-SMT integer.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeConstructorRef.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datatype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeConstructorRef.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeConstructorRef.arity">
-<span class="sig-name descname"><span class="pre">arity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeConstructorRef.arity" title="Permalink to this definition"></a></dt>
-<dd><p>Return the number of arguments of a constructor.</p>
-<p>The number of accessors is equal to the arity of the constructor.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;List&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;cons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;nil&#39;</span><span class="p">)</span>
+SMT integer.
+              </p>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeConstructorRef.__init__">
+              <span class="sig-name descname">
+               <span class="pre">
+                __init__
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 datatype
+                </span>
+               </span>
+              </em>
+              ,
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 ctx
+                </span>
+               </span>
+               <span class="o">
+                <span class="pre">
+                 =
+                </span>
+               </span>
+               <span class="default_value">
+                <span class="pre">
+                 None
+                </span>
+               </span>
+              </em>
+              ,
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 r
+                </span>
+               </span>
+               <span class="o">
+                <span class="pre">
+                 =
+                </span>
+               </span>
+               <span class="default_value">
+                <span class="pre">
+                 False
+                </span>
+               </span>
+              </em>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeConstructorRef.__init__" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeConstructorRef.arity">
+              <span class="sig-name descname">
+               <span class="pre">
+                arity
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeConstructorRef.arity" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Return the number of arguments of a constructor.
+              </p>
+              <p>
+               The number of accessors is equal to the arity of the constructor.
+              </p>
+              <div class="doctest highlight-default notranslate">
+               <div class="highlight">
+                <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'List'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'car'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">'cdr'</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">num_constructors</span><span class="p">()</span>
 <span class="go">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">constructor</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">arity</span><span class="p">()</span>
 <span class="go">2</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeConstructorRef.domain">
-<span class="sig-name descname"><span class="pre">domain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeConstructorRef.domain" title="Permalink to this definition"></a></dt>
-<dd><p>Return the sort of the argument <cite>i</cite> of a constructor.
-This method assumes that <cite>0 &lt;= i &lt; self.arity()</cite>.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;List&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;cons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;nil&#39;</span><span class="p">)</span>
+</pre>
+               </div>
+              </div>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeConstructorRef.domain">
+              <span class="sig-name descname">
+               <span class="pre">
+                domain
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 i
+                </span>
+               </span>
+              </em>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeConstructorRef.domain" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Return the sort of the argument
+               <cite>
+                i
+               </cite>
+               of a constructor.
+This method assumes that
+               <cite>
+                0 &lt;= i &lt; self.arity()
+               </cite>
+               .
+              </p>
+              <div class="doctest highlight-default notranslate">
+               <div class="highlight">
+                <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'List'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'car'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">'cdr'</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">num_constructors</span><span class="p">()</span>
 <span class="go">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">constructor</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">domain</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="go">Int</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeConstructorRef.range">
-<span class="sig-name descname"><span class="pre">range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeConstructorRef.range" title="Permalink to this definition"></a></dt>
-<dd><p>Return the sort of the range of a function declaration.
-For constants, this is the sort of the constant.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;List&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;cons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;nil&#39;</span><span class="p">)</span>
+</pre>
+               </div>
+              </div>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeConstructorRef.range">
+              <span class="sig-name descname">
+               <span class="pre">
+                range
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeConstructorRef.range" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Return the sort of the range of a function declaration.
+For constants, this is the sort of the constant.
+              </p>
+              <div class="doctest highlight-default notranslate">
+               <div class="highlight">
+                <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'List'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'car'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">'cdr'</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">num_constructors</span><span class="p">()</span>
 <span class="go">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">constructor</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">range</span><span class="p">()</span>
 <span class="go">List</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSelectorRef">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5_z3py_compat.</span></span><span class="sig-name descname"><span class="pre">DatatypeSelectorRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datatype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeSelectorRef" title="Permalink to this definition"></a></dt>
-<dd><dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSelectorRef.__call__">
-<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeSelectorRef.__call__" title="Permalink to this definition"></a></dt>
-<dd><p>Apply this selector.</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;List&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;cons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;nil&#39;</span><span class="p">)</span>
+</pre>
+               </div>
+              </div>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py class">
+           <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSelectorRef">
+            <em class="property">
+             <span class="pre">
+              class
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-prename descclassname">
+             <span class="pre">
+              cvc5_z3py_compat.
+             </span>
+            </span>
+            <span class="sig-name descname">
+             <span class="pre">
+              DatatypeSelectorRef
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               datatype
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               ctx
+              </span>
+             </span>
+             <span class="o">
+              <span class="pre">
+               =
+              </span>
+             </span>
+             <span class="default_value">
+              <span class="pre">
+               None
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               r
+              </span>
+             </span>
+             <span class="o">
+              <span class="pre">
+               =
+              </span>
+             </span>
+             <span class="default_value">
+              <span class="pre">
+               False
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#cvc5_z3py_compat.DatatypeSelectorRef" title="Permalink to this definition">
+             
+            </a>
+           </dt>
+           <dd>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSelectorRef.__call__">
+              <span class="sig-name descname">
+               <span class="pre">
+                __call__
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <em class="sig-param">
+               <span class="o">
+                <span class="pre">
+                 *
+                </span>
+               </span>
+               <span class="n">
+                <span class="pre">
+                 args
+                </span>
+               </span>
+              </em>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeSelectorRef.__call__" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Apply this selector.
+              </p>
+              <div class="doctest highlight-default notranslate">
+               <div class="highlight">
+                <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'List'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'car'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">'cdr'</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="n">cons</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">List</span><span class="o">.</span><span class="n">nil</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">([</span><span class="mi">1</span> <span class="o">!=</span> <span class="n">List</span><span class="o">.</span><span class="n">car</span><span class="p">(</span><span class="n">l</span><span class="p">)])</span>
 <span class="go">no solution</span>
-</pre></div>
-</div>
-<p>The arguments must be SMT expressions. This method assumes that
-the sorts of the elements in <cite>args</cite> match the sorts of the
+</pre>
+               </div>
+              </div>
+              <p>
+               The arguments must be SMT expressions. This method assumes that
+the sorts of the elements in
+               <cite>
+                args
+               </cite>
+               match the sorts of the
 domain. Limited coercion is supported.  For example, if
 args[0] is a Python integer, and the function expects a SMT
 integer, then the argument is automatically converted into a
-SMT integer.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSelectorRef.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datatype</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeSelectorRef.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSelectorRef.arity">
-<span class="sig-name descname"><span class="pre">arity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeSelectorRef.arity" title="Permalink to this definition"></a></dt>
-<dd><p>Return the number of arguments of a selector (always 1).</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSelectorRef.domain">
-<span class="sig-name descname"><span class="pre">domain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeSelectorRef.domain" title="Permalink to this definition"></a></dt>
-<dd><p>Return the sort of the argument <cite>i</cite> of a selector.
-This method assumes that <cite>0 &lt;= i &lt; self.arity()</cite>.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSelectorRef.range">
-<span class="sig-name descname"><span class="pre">range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeSelectorRef.range" title="Permalink to this definition"></a></dt>
-<dd><p>Return the sort of the range of a function declaration.
-For constants, this is the sort of the constant.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeRecognizerRef">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5_z3py_compat.</span></span><span class="sig-name descname"><span class="pre">DatatypeRecognizerRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">constructor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeRecognizerRef" title="Permalink to this definition"></a></dt>
-<dd><dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeRecognizerRef.__call__">
-<span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeRecognizerRef.__call__" title="Permalink to this definition"></a></dt>
-<dd><p>Apply this tester (a.k.a., recognizer).</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">&#39;List&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;cons&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;car&#39;</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;cdr&#39;</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">&#39;nil&#39;</span><span class="p">)</span>
+SMT integer.
+              </p>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSelectorRef.__init__">
+              <span class="sig-name descname">
+               <span class="pre">
+                __init__
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 datatype
+                </span>
+               </span>
+              </em>
+              ,
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 ctx
+                </span>
+               </span>
+               <span class="o">
+                <span class="pre">
+                 =
+                </span>
+               </span>
+               <span class="default_value">
+                <span class="pre">
+                 None
+                </span>
+               </span>
+              </em>
+              ,
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 r
+                </span>
+               </span>
+               <span class="o">
+                <span class="pre">
+                 =
+                </span>
+               </span>
+               <span class="default_value">
+                <span class="pre">
+                 False
+                </span>
+               </span>
+              </em>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeSelectorRef.__init__" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSelectorRef.arity">
+              <span class="sig-name descname">
+               <span class="pre">
+                arity
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeSelectorRef.arity" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Return the number of arguments of a selector (always 1).
+              </p>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSelectorRef.domain">
+              <span class="sig-name descname">
+               <span class="pre">
+                domain
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 i
+                </span>
+               </span>
+              </em>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeSelectorRef.domain" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Return the sort of the argument
+               <cite>
+                i
+               </cite>
+               of a selector.
+This method assumes that
+               <cite>
+                0 &lt;= i &lt; self.arity()
+               </cite>
+               .
+              </p>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeSelectorRef.range">
+              <span class="sig-name descname">
+               <span class="pre">
+                range
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeSelectorRef.range" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Return the sort of the range of a function declaration.
+For constants, this is the sort of the constant.
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py class">
+           <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeRecognizerRef">
+            <em class="property">
+             <span class="pre">
+              class
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-prename descclassname">
+             <span class="pre">
+              cvc5_z3py_compat.
+             </span>
+            </span>
+            <span class="sig-name descname">
+             <span class="pre">
+              DatatypeRecognizerRef
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               constructor
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               ctx
+              </span>
+             </span>
+             <span class="o">
+              <span class="pre">
+               =
+              </span>
+             </span>
+             <span class="default_value">
+              <span class="pre">
+               None
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               r
+              </span>
+             </span>
+             <span class="o">
+              <span class="pre">
+               =
+              </span>
+             </span>
+             <span class="default_value">
+              <span class="pre">
+               False
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#cvc5_z3py_compat.DatatypeRecognizerRef" title="Permalink to this definition">
+             
+            </a>
+           </dt>
+           <dd>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeRecognizerRef.__call__">
+              <span class="sig-name descname">
+               <span class="pre">
+                __call__
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <em class="sig-param">
+               <span class="o">
+                <span class="pre">
+                 *
+                </span>
+               </span>
+               <span class="n">
+                <span class="pre">
+                 args
+                </span>
+               </span>
+              </em>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeRecognizerRef.__call__" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Apply this tester (a.k.a., recognizer).
+              </p>
+              <div class="doctest highlight-default notranslate">
+               <div class="highlight">
+                <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'List'</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'car'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">'cdr'</span><span class="p">,</span> <span class="n">List</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">List</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">List</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="n">List</span><span class="o">.</span><span class="n">cons</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">List</span><span class="o">.</span><span class="n">nil</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">solve</span><span class="p">([</span><span class="n">List</span><span class="o">.</span><span class="n">is_nil</span><span class="p">(</span><span class="n">l</span><span class="p">)])</span>
 <span class="go">no solution</span>
-</pre></div>
-</div>
-<p>The arguments must be SMT expressions. This method assumes that
-the sorts of the elements in <cite>args</cite> match the sorts of the
+</pre>
+               </div>
+              </div>
+              <p>
+               The arguments must be SMT expressions. This method assumes that
+the sorts of the elements in
+               <cite>
+                args
+               </cite>
+               match the sorts of the
 domain. Limited coercion is supported.  For example, if
 args[0] is a Python integer, and the function expects a SMT
 integer, then the argument is automatically converted into a
-SMT integer.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeRecognizerRef.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">constructor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeRecognizerRef.__init__" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeRecognizerRef.arity">
-<span class="sig-name descname"><span class="pre">arity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeRecognizerRef.arity" title="Permalink to this definition"></a></dt>
-<dd><p>Return the number of arguments of a selector (always 1).</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeRecognizerRef.domain">
-<span class="sig-name descname"><span class="pre">domain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeRecognizerRef.domain" title="Permalink to this definition"></a></dt>
-<dd><p>Return the sort of the argument <cite>i</cite> of a selector.
-This method assumes that <cite>0 &lt;= i &lt; self.arity()</cite>.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeRecognizerRef.range">
-<span class="sig-name descname"><span class="pre">range</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeRecognizerRef.range" title="Permalink to this definition"></a></dt>
-<dd><p>Return the sort of the range of a function declaration.
-For constants, this is the sort of the constant.</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeRef">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cvc5_z3py_compat.</span></span><span class="sig-name descname"><span class="pre">DatatypeRef</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ast</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reverse_children</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeRef" title="Permalink to this definition"></a></dt>
-<dd><p>Datatype expressions.</p>
-<dl class="py method">
-<dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeRef.sort">
-<span class="sig-name descname"><span class="pre">sort</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cvc5_z3py_compat.DatatypeRef.sort" title="Permalink to this definition"></a></dt>
-<dd><p>Return the datatype sort of the datatype expression <cite>self</cite>.</p>
-</dd></dl>
-
-</dd></dl>
-
-</div>
-</div>
-
-
-           </div>
-          </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="bitvec.html" class="btn btn-neutral float-left" title="Bit-Vectors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="fp.html" class="btn btn-neutral float-right" title="Floating Point" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2022, the authors of cvc5.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
+SMT integer.
+              </p>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeRecognizerRef.__init__">
+              <span class="sig-name descname">
+               <span class="pre">
+                __init__
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 constructor
+                </span>
+               </span>
+              </em>
+              ,
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 ctx
+                </span>
+               </span>
+               <span class="o">
+                <span class="pre">
+                 =
+                </span>
+               </span>
+               <span class="default_value">
+                <span class="pre">
+                 None
+                </span>
+               </span>
+              </em>
+              ,
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 r
+                </span>
+               </span>
+               <span class="o">
+                <span class="pre">
+                 =
+                </span>
+               </span>
+               <span class="default_value">
+                <span class="pre">
+                 False
+                </span>
+               </span>
+              </em>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeRecognizerRef.__init__" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeRecognizerRef.arity">
+              <span class="sig-name descname">
+               <span class="pre">
+                arity
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeRecognizerRef.arity" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Return the number of arguments of a selector (always 1).
+              </p>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeRecognizerRef.domain">
+              <span class="sig-name descname">
+               <span class="pre">
+                domain
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <em class="sig-param">
+               <span class="n">
+                <span class="pre">
+                 i
+                </span>
+               </span>
+              </em>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeRecognizerRef.domain" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Return the sort of the argument
+               <cite>
+                i
+               </cite>
+               of a selector.
+This method assumes that
+               <cite>
+                0 &lt;= i &lt; self.arity()
+               </cite>
+               .
+              </p>
+             </dd>
+            </dl>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeRecognizerRef.range">
+              <span class="sig-name descname">
+               <span class="pre">
+                range
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeRecognizerRef.range" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Return the sort of the range of a function declaration.
+For constants, this is the sort of the constant.
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+          <dl class="py class">
+           <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeRef">
+            <em class="property">
+             <span class="pre">
+              class
+             </span>
+             <span class="w">
+             </span>
+            </em>
+            <span class="sig-prename descclassname">
+             <span class="pre">
+              cvc5_z3py_compat.
+             </span>
+            </span>
+            <span class="sig-name descname">
+             <span class="pre">
+              DatatypeRef
+             </span>
+            </span>
+            <span class="sig-paren">
+             (
+            </span>
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               ast
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               ctx
+              </span>
+             </span>
+             <span class="o">
+              <span class="pre">
+               =
+              </span>
+             </span>
+             <span class="default_value">
+              <span class="pre">
+               None
+              </span>
+             </span>
+            </em>
+            ,
+            <em class="sig-param">
+             <span class="n">
+              <span class="pre">
+               reverse_children
+              </span>
+             </span>
+             <span class="o">
+              <span class="pre">
+               =
+              </span>
+             </span>
+             <span class="default_value">
+              <span class="pre">
+               False
+              </span>
+             </span>
+            </em>
+            <span class="sig-paren">
+             )
+            </span>
+            <a class="headerlink" href="#cvc5_z3py_compat.DatatypeRef" title="Permalink to this definition">
+             
+            </a>
+           </dt>
+           <dd>
+            <p>
+             Datatype expressions.
+            </p>
+            <dl class="py method">
+             <dt class="sig sig-object py" id="cvc5_z3py_compat.DatatypeRef.sort">
+              <span class="sig-name descname">
+               <span class="pre">
+                sort
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#cvc5_z3py_compat.DatatypeRef.sort" title="Permalink to this definition">
+               
+              </a>
+             </dt>
+             <dd>
+              <p>
+               Return the datatype sort of the datatype expression
+               <cite>
+                self
+               </cite>
+               .
+              </p>
+             </dd>
+            </dl>
+           </dd>
+          </dl>
+         </div>
         </div>
+       </div>
       </div>
-    </section>
+      <footer>
+       <div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+        <a accesskey="p" class="btn btn-neutral float-left" href="bitvec.html" rel="prev" title="Bit-Vectors">
+         <span aria-hidden="true" class="fa fa-arrow-circle-left">
+         </span>
+         Previous
+        </a>
+        <a accesskey="n" class="btn btn-neutral float-right" href="fp.html" rel="next" title="Floating Point">
+         Next
+         <span aria-hidden="true" class="fa fa-arrow-circle-right">
+         </span>
+        </a>
+       </div>
+       <hr/>
+       <div role="contentinfo">
+        <p>
+         © Copyright 2022, the authors of cvc5.
+        </p>
+       </div>
+       Built with
+       <a href="https://www.sphinx-doc.org/">
+        Sphinx
+       </a>
+       using a
+       <a href="https://github.com/readthedocs/sphinx_rtd_theme">
+        theme
+       </a>
+       provided by
+       <a href="https://readthedocs.org">
+        Read the Docs
+       </a>
+       .
+      </footer>
+     </div>
+    </div>
+   </section>
   </div>
   <script>
-      jQuery(function () {
+   jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
-
-</body>
+  </script>
+ </body>
 </html>
