@@ -77,7 +77,7 @@ for version in versions:
     newvers = tpl.render(curversion=version, versions=versions)
     newvers = BeautifulSoup(newvers, 'html.parser')
 
-    for file in list_files(f'docs-{version}'):
+    for file in list_files(version):
         put_versions_in_file(file, copy.copy(newvers))
 
 # map "cvc5-x.y.z" to (x, y, z, "cvc5-x.y.z")
