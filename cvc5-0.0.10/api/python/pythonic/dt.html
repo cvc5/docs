@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Datatypes — cvc5  documentation
+  </title>
+  <link href="../../../static/pygments.css" rel="stylesheet" type="text/css"/>
+  <link href="../../../static/css/theme.css" rel="stylesheet" type="text/css"/>
+  <link href="../../../static/tabs.css" rel="stylesheet" type="text/css"/>
+  <link href="../../../static/custom.css" rel="stylesheet" type="text/css"/>
+  <!--[if lt IE 9]>
+    <script src="../../../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script data-url_root="../../../" id="documentation_options" src="../../../static/documentation_options.js">
+  </script>
+  <script src="../../../static/jquery.js">
+  </script>
+  <script src="../../../static/underscore.js">
+  </script>
+  <script src="../../../static/doctools.js">
+  </script>
+  <script src="../../../static/js/theme.js">
+  </script>
+  <link href="../../../genindex.html" rel="index" title="Index"/>
+  <link href="../../../search.html" rel="search" title="Search"/>
+  <link href="fp.html" rel="next" title="Floating Point"/>
+  <link href="bitvec.html" rel="prev" title="Bit-Vectors"/>
+ </head>
+ <body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+   <nav class="wy-nav-side" data-toggle="wy-nav-shift">
+    <div class="wy-side-scroll">
+     <div class="wy-side-nav-search">
+      <a class="icon icon-home" href="../../../index.html">
+       cvc5
+      </a>
+      <div role="search">
+       <form action="../../../search.html" class="wy-form" id="rtd-search-form" method="get">
+        <input name="q" placeholder="Search docs" type="text"/>
+        <input name="check_keywords" type="hidden" value="yes"/>
+        <input name="area" type="hidden" value="default"/>
+       </form>
+      </div>
+     </div>
+     <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+      <ul class="current">
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../installation/installation.html">
+         Installation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../binary/binary.html">
+         Binary Documentation
+        </a>
+       </li>
+       <li class="toctree-l1 current">
+        <a class="reference internal" href="../../api.html">
+         API Documentation
+        </a>
+        <ul class="current">
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../cpp/cpp.html">
+           C++ API
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../../java/java.html">
+           Java API
+          </a>
+         </li>
+         <li class="toctree-l2 current">
+          <a class="reference internal" href="../python.html">
+           Python API
+          </a>
+          <ul class="current">
+           <li class="toctree-l3 current">
+            <a class="reference internal" href="pythonic.html">
+             Pythonic API
+            </a>
+            <ul class="current">
+             <li class="toctree-l4">
+              <a class="reference internal" href="quickstart.html">
+               Quickstart
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="boolean.html">
+               Core &amp; Booleans
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="arith.html">
+               Arithmetic
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="array.html">
+               Arrays
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="bitvec.html">
+               Bit-Vectors
+              </a>
+             </li>
+             <li class="toctree-l4 current">
+              <a class="current reference internal" href="#">
+               Datatypes
+              </a>
+              <ul>
+               <li class="toctree-l5">
+                <a class="reference internal" href="#overview">
+                 Overview
+                </a>
+               </li>
+               <li class="toctree-l5">
+                <a class="reference internal" href="#declaration-utilities">
+                 Declaration Utilities
+                </a>
+               </li>
+               <li class="toctree-l5">
+                <a class="reference internal" href="#classes">
+                 Classes
+                </a>
+               </li>
+              </ul>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="fp.html">
+               Floating Point
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="set.html">
+               Sets
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="quant.html">
+               Quantifiers
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="solver.html">
+               Solvers &amp; Results
+              </a>
+             </li>
+             <li class="toctree-l4">
+              <a class="reference internal" href="internals.html">
+               Internals
+              </a>
+             </li>
+            </ul>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../base/python.html">
+             Base Python API
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="../python.html#which-python-api-should-i-use">
+             Which Python API should I use?
+            </a>
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../options.html">
+         Options
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../output-tags.html">
+         Output tags
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../proofs/proofs.html">
+         Proof production
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../resource-limits.html">
+         Resource limits
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../statistics.html">
+         Statistics
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../examples/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../theories/theories.html">
+         Theory References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../references.html">
+         References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../../genindex.html">
+         Index
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div aria-label="versions" class="rst-versions shift-up" data-toggle="rst-versions" id="cvc5-versions" role="note">
+     <span class="rst-current-version" data-toggle="rst-current-version">
+      <i class="fas fa-tags">
+      </i>
+      Other versions
+     </span>
+     <div class="rst-other-versions">
+      <dl>
+       <dd>
+        <strong>
+         <a href="../../../../cvc5-0.0.10/">
+          cvc5-0.0.10
+         </a>
+        </strong>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-0.0.9/">
+         cvc5-0.0.9
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../../cvc5-0.0.7/">
+         cvc5-0.0.7
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </nav>
+   <section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+    <nav aria-label="Mobile navigation menu" class="wy-nav-top">
+     <i class="fa fa-bars" data-toggle="wy-nav-top">
+     </i>
+     <a href="../../../index.html">
+      cvc5
+     </a>
+    </nav>
+    <div class="wy-nav-content">
+     <div class="rst-content">
+      <div aria-label="Page navigation" role="navigation">
+       <ul class="wy-breadcrumbs">
+        <li>
+         <a class="icon icon-home" href="../../../index.html">
+         </a>
+         »
+        </li>
+        <li>
+         <a href="../../api.html">
+          API Documentation
+         </a>
+         »
+        </li>
+        <li>
+         <a href="../python.html">
+          Python API
+         </a>
+         »
+        </li>
+        <li>
+         <a href="pythonic.html">
+          Pythonic API
+         </a>
+         »
+        </li>
+        <li>
+         Datatypes
+        </li>
+        <li class="wy-breadcrumbs-aside">
+        </li>
+       </ul>
+       <hr/>
+      </div>
+      <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+       <div itemprop="articleBody">
+        <section id="datatypes">
+         <h1>
+          Datatypes
+          <a class="headerlink" href="#datatypes" title="Permalink to this headline">
+           
+          </a>
+         </h1>
+         <section id="overview">
+          <h2>
+           Overview
+           <a class="headerlink" href="#overview" title="Permalink to this headline">
+            
+           </a>
+          </h2>
+          <p>
+           To manipulate instances of a datatype, one must first
+           <em>
+            declare
+           </em>
+           the datatype itself.
+Declaration happens in three phases. Let’s consider declaring a cons-list of
+integers.
+          </p>
+          <p>
+           First, we initialize the datatype with its
+           <em>
+            name
+           </em>
+          </p>
+          <div class="doctest highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntList</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'IntList'</span><span class="p">)</span>
+</pre>
+           </div>
+          </div>
+          <p>
+           Second, we declare constructors for the datatype, giving the
+           <em>
+            constructor name
+           </em>
+           and
+           <em>
+            field names and sorts
+           </em>
+           . Here is the empty list constructor:
+          </p>
+          <div class="doctest highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntList</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'nil'</span><span class="p">,</span> <span class="p">())</span>
+</pre>
+           </div>
+          </div>
+          <p>
+           Here is the cons constructor:
+          </p>
+          <div class="doctest highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntList</span><span class="o">.</span><span class="n">declare</span><span class="p">(</span><span class="s1">'cons'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'val'</span><span class="p">,</span> <span class="n">IntSort</span><span class="p">()),</span> <span class="p">(</span><span class="s1">'tail'</span><span class="p">,</span> <span class="n">IntList</span><span class="p">))</span>
+</pre>
+           </div>
+          </div>
+          <p>
+           Third, after all constructors are declared, we can
+           <em>
+            create
+           </em>
+           the datatype,
+finishing its declaration.
+          </p>
+          <div class="doctest highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntList</span> <span class="o">=</span> <span class="n">IntList</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+</pre>
+           </div>
+          </div>
+          <p>
+           Now, one has access to a number of tools for interacting with integer lists.
+          </p>
+          <ul class="simple">
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               IntList.nil
+              </span>
+             </code>
+             refers to the SMT term that is an empty list,
+and
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               IntList.cons
+              </span>
+             </code>
+             refers to the cons constructor.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               IntList.is_nil
+              </span>
+             </code>
+             and
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               IntList.is_cons
+              </span>
+             </code>
+             are testors (a.k.a.,
+recognizers) for those constructors.
+            </p>
+           </li>
+           <li>
+            <p>
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               IntList.val
+              </span>
+             </code>
+             and
+             <code class="docutils literal notranslate">
+              <span class="pre">
+               IntList.tail
+              </span>
+             </code>
+             are selectors (a.k.a. accessors)
+for the cons constructor.
+            </p>
+           </li>
+          </ul>
+          <p>
+           If constructor, accessor, or selector names are ambiguous (e.g., if different
+constructors have selectors of the same name), then see the methods on
+           <code class="xref py py-class docutils literal notranslate">
+            <span class="pre">
+             cvc5.pythonic.DatatypeSortRef
+            </span>
+           </code>
+           to unambiguously access a specific
+function.
+          </p>
+          <p>
+           To create mutually recursive datatypes, see
+           <code class="xref py py-func docutils literal notranslate">
+            <span class="pre">
+             cvc5.pythonic.CreateDatatypes()
+            </span>
+           </code>
+           .
+          </p>
+          <p>
+           To create a codataype (e.g., a possibly infinite stream of integers), pass the
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             isCoDatatype=True
+            </span>
+           </code>
+           argument to the
+           <code class="xref py py-class docutils literal notranslate">
+            <span class="pre">
+             cvc5.pythonic.Datatype
+            </span>
+           </code>
+           constructor.
+          </p>
+          <div class="doctest highlight-default notranslate">
+           <div class="highlight">
+            <pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntStream</span> <span class="o">=</span> <span class="n">Datatype</span><span class="p">(</span><span class="s1">'IntStream'</span><span class="p">,</span> <span class="n">isCoDatatype</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="declaration-utilities">
+          <h2>
+           Declaration Utilities
+           <a class="headerlink" href="#declaration-utilities" title="Permalink to this headline">
+            
+           </a>
+          </h2>
+         </section>
+         <section id="classes">
+          <h2>
+           Classes
+           <a class="headerlink" href="#classes" title="Permalink to this headline">
+            
+           </a>
+          </h2>
+         </section>
+        </section>
+       </div>
+      </div>
+      <footer>
+       <div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+        <a accesskey="p" class="btn btn-neutral float-left" href="bitvec.html" rel="prev" title="Bit-Vectors">
+         <span aria-hidden="true" class="fa fa-arrow-circle-left">
+         </span>
+         Previous
+        </a>
+        <a accesskey="n" class="btn btn-neutral float-right" href="fp.html" rel="next" title="Floating Point">
+         Next
+         <span aria-hidden="true" class="fa fa-arrow-circle-right">
+         </span>
+        </a>
+       </div>
+       <hr/>
+       <div role="contentinfo">
+        <p>
+         © Copyright 2022, the authors of cvc5.
+        </p>
+       </div>
+       Built with
+       <a href="https://www.sphinx-doc.org/">
+        Sphinx
+       </a>
+       using a
+       <a href="https://github.com/readthedocs/sphinx_rtd_theme">
+        theme
+       </a>
+       provided by
+       <a href="https://readthedocs.org">
+        Read the Docs
+       </a>
+       .
+      </footer>
+     </div>
+    </div>
+   </section>
+  </div>
+  <script>
+   jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ </body>
+</html>
