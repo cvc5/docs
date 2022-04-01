@@ -16,7 +16,7 @@ tpl_str = """
 {% for version in versions %}
             <dd>
     {%- if curversion == version %}<strong>{% endif -%}
-            <a href="%URLROOT%/docs-{{ version }}/">{{ version }}</a>
+            <a href="%URLROOT%/{{ version }}/">{{ version }}</a>
     {%- if curversion == version %}</strong>{% endif -%}
             </dd>
 {% endfor %}
