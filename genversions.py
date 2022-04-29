@@ -13,6 +13,11 @@ tpl_str = """
     </span>
     <div class="rst-other-versions">
         <dl>
+            <dd>
+{%- if not curversion %}<strong>{% endif -%}
+            <a href="https://cvc5.github.io/docs-ci/docs-main/">cvc5-main</a>
+{%- if not curversion %}</strong>{% endif -%}
+            </dd>
 {% for version in versions %}
             <dd>
     {%- if curversion == version %}<strong>{% endif -%}
