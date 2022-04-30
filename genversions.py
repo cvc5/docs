@@ -13,16 +13,12 @@ tpl_str = """
     </span>
     <div class="rst-other-versions">
         <dl>
-            <dd>
-{%- if not curversion %}<strong>{% endif -%}
-            <a href="https://cvc5.github.io/docs-ci/docs-main/">cvc5-main</a>
-{%- if not curversion %}</strong>{% endif -%}
-            </dd>
 {% for version in versions %}
             <dd>
-    {%- if curversion == version %}<strong>{% endif -%}
-            <a href="%URLROOT%/{{ version }}/">{{ version }}</a>
-    {%- if curversion == version %}</strong>{% endif -%}
+    {%- if version == curversion %}<strong>{% endif -%}
+    {%- if version != "cvc5-main" %}<a href="%URLROOT%/{{ version }}/">{{ version }}</a>{% endif -%}
+    {%- if version == "cvc5-main" %}<a href="https://cvc5.github.io/docs-ci/docs-main/">cvc5-main</a>{% endif -%}
+    {%- if version == curversion %}</strong>{% endif -%}
             </dd>
 {% endfor %}
         </dl>
@@ -76,7 +72,8 @@ def list_files(basepath):
     yield from glob.iglob(f'{basepath}/**/*.html', recursive=True)
 
 
-versions = collect_versions()
+release_versions = collect_versions()
+versions = ["cvc5-main"] + release_versions
 for version in versions:
     print(f"Process {version}...")
     newvers = tpl.render(curversion=version, versions=versions)
@@ -90,7 +87,7 @@ stat_versions = map(
     lambda v:
     (*map(int,
           re.match('cvc5-([0-9]+).([0-9]+).([0-9]+)', v).groups()), v),
-    versions)
+    release_versions)
 latest_version = sorted(stat_versions)[-1][-1]
 newindex = tpl_redirect.render(release=latest_version)
 open("index.html", 'w').write(newindex)
