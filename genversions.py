@@ -64,7 +64,7 @@ def put_versions_in_file(filename, newblock):
 
 def collect_versions():
     """Collect all paths / versions."""
-    return glob.glob('cvc5-*')
+    return glob.glob('cvc5-*.*.*')
 
 
 def list_files(basepath):
