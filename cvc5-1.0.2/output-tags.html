@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Output tags — cvc5  documentation
+  </title>
+  <link href="static/css/theme.css" rel="stylesheet" type="text/css"/>
+  <link href="static/pygments.css" rel="stylesheet" type="text/css"/>
+  <link href="static/pygments.css" rel="stylesheet" type="text/css"/>
+  <link href="static/css/theme.css" rel="stylesheet" type="text/css"/>
+  <link href="static/tabs.css" rel="stylesheet" type="text/css"/>
+  <link href="static/custom.css" rel="stylesheet" type="text/css"/>
+  <!--[if lt IE 9]>
+    <script src="static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script data-url_root="./" id="documentation_options" src="static/documentation_options.js" type="text/javascript">
+  </script>
+  <script data-url_root="./" id="documentation_options" src="static/documentation_options.js">
+  </script>
+  <script src="static/jquery.js">
+  </script>
+  <script src="static/underscore.js">
+  </script>
+  <script src="static/_sphinx_javascript_frameworks_compat.js">
+  </script>
+  <script src="static/doctools.js">
+  </script>
+  <script src="static/js/theme.js" type="text/javascript">
+  </script>
+  <link href="genindex.html" rel="index" title="Index"/>
+  <link href="search.html" rel="search" title="Search"/>
+  <link href="proofs/proofs.html" rel="next" title="Proof production"/>
+  <link href="options.html" rel="prev" title="Options"/>
+ </head>
+ <body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+   <nav class="wy-nav-side" data-toggle="wy-nav-shift">
+    <div class="wy-side-scroll">
+     <div class="wy-side-nav-search">
+      <a class="icon icon-home" href="index.html">
+       cvc5
+      </a>
+      <div role="search">
+       <form action="search.html" class="wy-form" id="rtd-search-form" method="get">
+        <input name="q" placeholder="Search docs" type="text"/>
+        <input name="check_keywords" type="hidden" value="yes"/>
+        <input name="area" type="hidden" value="default"/>
+       </form>
+      </div>
+     </div>
+     <div aria-label="main navigation" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+      <ul class="current">
+       <li class="toctree-l1">
+        <a class="reference internal" href="installation/installation.html">
+         Installation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="binary/binary.html">
+         Binary Documentation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="api/api.html">
+         API Documentation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="options.html">
+         Options
+        </a>
+       </li>
+       <li class="toctree-l1 current">
+        <a class="current reference internal" href="#">
+         Output tags
+        </a>
+        <ul>
+         <li class="toctree-l2">
+          <a class="reference internal" href="#inst">
+           inst
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="#sygus">
+           sygus
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="#sygus-grammar">
+           sygus-grammar
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="#trigger">
+           trigger
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="#raw-benchmark">
+           raw-benchmark
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="#learned-lits">
+           learned-lits
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="#subs">
+           subs
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="#post-asserts">
+           post-asserts
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="#pre-asserts">
+           pre-asserts
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="#deep-restart">
+           deep-restart
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="#incomplete">
+           incomplete
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="proofs/proofs.html">
+         Proof production
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="resource-limits.html">
+         Resource limits
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="statistics.html">
+         Statistics
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="examples/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="theories/theories.html">
+         Theory References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="references.html">
+         References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="genindex.html">
+         Index
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div aria-label="versions" class="rst-versions shift-up" data-toggle="rst-versions" id="cvc5-versions" role="note">
+     <span class="rst-current-version" data-toggle="rst-current-version">
+      <i class="fas fa-tags">
+      </i>
+      Other versions
+     </span>
+     <div class="rst-other-versions">
+      <dl>
+       <dd>
+        <a href="./../cvc5-1.0.1/">
+         cvc5-1.0.1
+        </a>
+       </dd>
+       <dd>
+        <a href="./../cvc5-1.0.0/">
+         cvc5-1.0.0
+        </a>
+       </dd>
+       <dd>
+        <strong>
+         <a href="./../cvc5-1.0.2/">
+          cvc5-1.0.2
+         </a>
+        </strong>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </nav>
+   <section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+    <nav aria-label="top navigation" class="wy-nav-top">
+     <i class="fa fa-bars" data-toggle="wy-nav-top">
+     </i>
+     <a href="index.html">
+      cvc5
+     </a>
+    </nav>
+    <div class="wy-nav-content">
+     <div class="rst-content">
+      <div aria-label="breadcrumbs navigation" role="navigation">
+       <ul class="wy-breadcrumbs">
+        <li>
+         <a class="icon icon-home" href="index.html">
+         </a>
+         »
+        </li>
+        <li>
+         Output tags
+        </li>
+        <li class="wy-breadcrumbs-aside">
+        </li>
+       </ul>
+       <hr/>
+      </div>
+      <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+       <div itemprop="articleBody">
+        <section id="output-tags">
+         <h1>
+          Output tags
+          <a class="headerlink" href="#output-tags" title="Permalink to this heading">
+           ¶
+          </a>
+         </h1>
+         <p>
+          cvc5 supports printing information about certain aspects of the solving process
+that is intended for regular users. This feature can be enabled using the
+          <a class="reference internal" href="options.html#lbl-option-output">
+           <span class="std std-ref">
+            output
+           </span>
+          </a>
+          option.
+         </p>
+         <p>
+          The following output tags are currently supported:
+         </p>
+         <section id="inst">
+          <h2>
+           inst
+           <a class="headerlink" href="#inst" title="Permalink to this heading">
+            ¶
+           </a>
+          </h2>
+          <p>
+           With
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             -o
+            </span>
+            <span class="pre">
+             inst
+            </span>
+           </code>
+           , cvc5 prints information about quantifier instantions for individual quantifers.
+          </p>
+          <div class="highlight-text notranslate">
+           <div class="highlight">
+            <pre><span></span>$ bin/cvc5 -o inst ../test/regress/cli/regress1/quantifiers/qid-debug-inst.smt2
+(num-instantiations myQuant1 1)
+(num-instantiations myQuant2 1)
+unsat
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="sygus">
+          <h2>
+           sygus
+           <a class="headerlink" href="#sygus" title="Permalink to this heading">
+            ¶
+           </a>
+          </h2>
+          <p>
+           With
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             -o
+            </span>
+            <span class="pre">
+             sygus
+            </span>
+           </code>
+           , cvc5 prints information about the internal SyGuS solver including enumerated terms and generated candidates.
+          </p>
+          <div class="highlight-text notranslate">
+           <div class="highlight">
+            <pre><span></span>$ bin/cvc5 -o sygus ../test/regress/cli/regress0/sygus/print-debug.sy
+(sygus-enum 0)
+(sygus-candidate (f 0))
+(sygus-enum 1)
+(sygus-candidate (f 1))
+(
+(define-fun f () Int 1)
+)
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="sygus-grammar">
+          <h2>
+           sygus-grammar
+           <a class="headerlink" href="#sygus-grammar" title="Permalink to this heading">
+            ¶
+           </a>
+          </h2>
+          <p>
+           With
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             -o
+            </span>
+            <span class="pre">
+             sygus-grammar
+            </span>
+           </code>
+           , cvc5 prints the grammar it generates for a function-to-synthesize when no grammar was provided.
+          </p>
+          <div class="highlight-text notranslate">
+           <div class="highlight">
+            <pre><span></span>$ bin/cvc5 -o sygus-grammar ../test/regress/cli/regress0/sygus/print-grammar.sy
+(sygus-grammar f
+((f_Int Int) (f_Bool Bool) )
+((f_Int Int ((Constant Int) x y 0 1 (+ f_Int f_Int) (- f_Int f_Int) (ite f_Bool f_Int f_Int) ))
+(f_Bool Bool ((Constant Bool) true false (= f_Int f_Int) (&lt;= f_Int f_Int) (not f_Bool) (and f_Bool f_Bool) (or f_Bool f_Bool) ))
+))
+(
+(define-fun f ((x Int) (y Int)) Int 0)
+)
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="trigger">
+          <h2>
+           trigger
+           <a class="headerlink" href="#trigger" title="Permalink to this heading">
+            ¶
+           </a>
+          </h2>
+          <p>
+           With
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             -o
+            </span>
+            <span class="pre">
+             trigger
+            </span>
+           </code>
+           , cvc5 prints the selected triggers when solving a quantified formula.
+          </p>
+          <div class="highlight-text notranslate">
+           <div class="highlight">
+            <pre><span></span>$ bin/cvc5 -o trigger ../test/regress/cli/regress1/quantifiers/qid-debug-inst.smt2
+(trigger myQuant1 ((not (= (R x) false))))
+(trigger myQuant1 ((not (= (P x) true))))
+(trigger myQuant2 ((not (= (P x) false))))
+(trigger myQuant2 ((not (= (Q x) true))))
+unsat
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="raw-benchmark">
+          <h2>
+           raw-benchmark
+           <a class="headerlink" href="#raw-benchmark" title="Permalink to this heading">
+            ¶
+           </a>
+          </h2>
+          <p>
+           With
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             -o
+            </span>
+            <span class="pre">
+             raw-benchmark
+            </span>
+           </code>
+           , cvc5 prints the benchmark back just as it has been parsed.
+          </p>
+          <div class="highlight-text notranslate">
+           <div class="highlight">
+            <pre><span></span>$ bin/cvc5 -o raw-benchmark ../test/regress/cli/regress0/datatypes/datatype-dump.cvc.smt2
+(set-logic ALL)
+(declare-datatypes ((nat 0)) (((succ (pred nat)) (zero))))
+(declare-fun x () nat)
+(check-sat-assuming ( (not (and (not ((_ is succ) x)) (not ((_ is zero) x)))) ))
+sat
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="learned-lits">
+          <h2>
+           learned-lits
+           <a class="headerlink" href="#learned-lits" title="Permalink to this heading">
+            ¶
+           </a>
+          </h2>
+          <p>
+           With
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             -o
+            </span>
+            <span class="pre">
+             learned-lits
+            </span>
+           </code>
+           , cvc5 prints input literals that it has learned to hold globally.
+          </p>
+          <div class="highlight-text notranslate">
+           <div class="highlight">
+            <pre><span></span>$ bin/cvc5 -o learned-lits ../test/regress/cli/regress0/printer/learned-lit-output.smt2
+(learned-lit (&gt;= x 11) :preprocess)
+(learned-lit (&gt;= x 5))
+(learned-lit (&gt;= y 1))
+sat
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="subs">
+          <h2>
+           subs
+           <a class="headerlink" href="#subs" title="Permalink to this heading">
+            ¶
+           </a>
+          </h2>
+          <p>
+           With
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             -o
+            </span>
+            <span class="pre">
+             subs
+            </span>
+           </code>
+           , cvc5 prints top-level substitutions learned during preprocessing.
+          </p>
+          <div class="highlight-text notranslate">
+           <div class="highlight">
+            <pre><span></span>$ bin/cvc5 -o subs ../test/regress/cli/regress0/printer/print_subs.smt2
+(substitution (= a 3))
+sat
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="post-asserts">
+          <h2>
+           post-asserts
+           <a class="headerlink" href="#post-asserts" title="Permalink to this heading">
+            ¶
+           </a>
+          </h2>
+          <p>
+           With
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             -o
+            </span>
+            <span class="pre">
+             post-asserts
+            </span>
+           </code>
+           , cvc5 prints a benchmark corresponding to the assertions of the input problem after preprocessing.
+          </p>
+          <div class="highlight-text notranslate">
+           <div class="highlight">
+            <pre><span></span>$ bin/cvc5 -o post-asserts ../test/regress/cli/regress0/printer/post-asserts-output.smt2
+;; post-asserts start
+(set-logic ALL)
+(assert true)
+(assert true)
+(check-sat)
+;; post-asserts end
+sat
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="pre-asserts">
+          <h2>
+           pre-asserts
+           <a class="headerlink" href="#pre-asserts" title="Permalink to this heading">
+            ¶
+           </a>
+          </h2>
+          <p>
+           With
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             -o
+            </span>
+            <span class="pre">
+             pre-asserts
+            </span>
+           </code>
+           , cvc5 prints a benchmark corresponding to the assertions of the input problem before preprocessing.
+          </p>
+         </section>
+         <section id="deep-restart">
+          <h2>
+           deep-restart
+           <a class="headerlink" href="#deep-restart" title="Permalink to this heading">
+            ¶
+           </a>
+          </h2>
+          <p>
+           With
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             -o
+            </span>
+            <span class="pre">
+             deep-restart
+            </span>
+           </code>
+           , cvc5 prints when it performs a deep restart along with the literals it has learned.
+          </p>
+          <div class="highlight-text notranslate">
+           <div class="highlight">
+            <pre><span></span>$ bin/cvc5 -o deep-restart ../test/regress/cli/regress0/printer/deep-restart-output.smt2
+sat
+</pre>
+           </div>
+          </div>
+         </section>
+         <section id="incomplete">
+          <h2>
+           incomplete
+           <a class="headerlink" href="#incomplete" title="Permalink to this heading">
+            ¶
+           </a>
+          </h2>
+          <p>
+           With
+           <code class="docutils literal notranslate">
+            <span class="pre">
+             -o
+            </span>
+            <span class="pre">
+             incomplete
+            </span>
+           </code>
+           , cvc5 prints reason for why it answers unknown for any given check-sat query.
+          </p>
+          <div class="highlight-text notranslate">
+           <div class="highlight">
+            <pre><span></span>$ bin/cvc5 -o incomplete ../test/regress/cli/regress0/printer/incomplete.smt2
+(incomplete INCOMPLETE QUANTIFIERS)
+unknown
+</pre>
+           </div>
+          </div>
+         </section>
+        </section>
+       </div>
+      </div>
+      <footer>
+       <div aria-label="footer navigation" class="rst-footer-buttons" role="navigation">
+        <a accesskey="n" class="btn btn-neutral float-right" href="proofs/proofs.html" rel="next" title="Proof production">
+         Next
+         <span aria-hidden="true" class="fa fa-arrow-circle-right">
+         </span>
+        </a>
+        <a accesskey="p" class="btn btn-neutral float-left" href="options.html" rel="prev" title="Options">
+         <span aria-hidden="true" class="fa fa-arrow-circle-left">
+         </span>
+         Previous
+        </a>
+       </div>
+       <hr/>
+       <div role="contentinfo">
+        <p>
+         © Copyright 2022, the authors of cvc5.
+        </p>
+       </div>
+       Built with
+       <a href="https://www.sphinx-doc.org/">
+        Sphinx
+       </a>
+       using a
+       <a href="https://github.com/readthedocs/sphinx_rtd_theme">
+        theme
+       </a>
+       provided by
+       <a href="https://readthedocs.org">
+        Read the Docs
+       </a>
+       .
+      </footer>
+     </div>
+    </div>
+   </section>
+  </div>
+  <script type="text/javascript">
+   jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ </body>
+</html>
