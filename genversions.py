@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from bs4 import BeautifulSoup
+from distutils.version import StrictVersion
 import copy
 import glob
 import jinja2
@@ -15,9 +16,13 @@ tpl_str = """
         <dl>
 {% for version in versions %}
             <dd>
-    {%- if curversion == version %}<strong>{% endif -%}
-            <a href="%URLROOT%/{{ version }}/">{{ version }}</a>
-    {%- if curversion == version %}</strong>{% endif -%}
+    {%- if version == curversion %}<strong>{% endif -%}
+    {%- if version == "cvc5-main" %}
+        <a href="https://cvc5.github.io/docs-ci/docs-main/">cvc5-main</a>
+    {%- else -%}
+        <a href="%URLROOT%/{{ version }}/">{{ version }}</a>
+    {% endif -%}
+    {%- if version == curversion %}</strong>{% endif -%}
             </dd>
 {% endfor %}
         </dl>
@@ -63,7 +68,7 @@ def put_versions_in_file(filename, newblock):
 
 def collect_versions():
     """Collect all paths / versions."""
-    return glob.glob('cvc5-*')
+    return glob.glob('cvc5-*.*.*')
 
 
 def list_files(basepath):
@@ -71,7 +76,13 @@ def list_files(basepath):
     yield from glob.iglob(f'{basepath}/**/*.html', recursive=True)
 
 
-versions = collect_versions()
+release_versions = collect_versions()
+# map "cvc5-x.y.z" to [x, y, z]
+release_versions.sort(key=lambda v: list(
+    map(int,
+        re.match('cvc5-([0-9]+).([0-9]+).([0-9]+)', v).groups())),
+                      reverse=True)
+versions = ["cvc5-main"] + release_versions
 for version in versions:
     print(f"Process {version}...")
     newvers = tpl.render(curversion=version, versions=versions)
@@ -80,12 +91,6 @@ for version in versions:
     for file in list_files(version):
         put_versions_in_file(file, copy.copy(newvers))
 
-# map "cvc5-x.y.z" to (x, y, z, "cvc5-x.y.z")
-stat_versions = map(
-    lambda v:
-    (*map(int,
-          re.match('cvc5-([0-9]+).([0-9]+).([0-9]+)', v).groups()), v),
-    versions)
-latest_version = sorted(stat_versions)[-1][-1]
+latest_version = release_versions[0]
 newindex = tpl_redirect.render(release=latest_version)
 open("index.html", 'w').write(newindex)
