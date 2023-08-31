@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Modes — cvc5  documentation
+  </title>
+  <link href="../../static/pygments.css" rel="stylesheet" type="text/css"/>
+  <link href="../../static/css/theme.css" rel="stylesheet" type="text/css"/>
+  <link href="../../static/tabs.css" rel="stylesheet" type="text/css"/>
+  <link href="../../static/custom.css" rel="stylesheet" type="text/css"/>
+  <!--[if lt IE 9]>
+    <script src="../../static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script src="../../static/jquery.js?v=5d32c60e">
+  </script>
+  <script src="../../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c">
+  </script>
+  <script data-url_root="../../" id="documentation_options" src="../../static/documentation_options.js?v=b3ba4146">
+  </script>
+  <script src="../../static/doctools.js?v=888ff710">
+  </script>
+  <script src="../../static/sphinx_highlight.js?v=4825356b">
+  </script>
+  <script src="../../static/js/theme.js">
+  </script>
+  <link href="../../genindex.html" rel="index" title="Index"/>
+  <link href="../../search.html" rel="search" title="Search"/>
+  <link href="op.html" rel="next" title="Op"/>
+  <link href="kind.html" rel="prev" title="Kind"/>
+ </head>
+ <body class="wy-body-for-nav">
+  <div class="wy-grid-for-nav">
+   <nav class="wy-nav-side" data-toggle="wy-nav-shift">
+    <div class="wy-side-scroll">
+     <div class="wy-side-nav-search">
+      <a class="icon icon-home" href="../../index.html">
+       cvc5
+      </a>
+      <div role="search">
+       <form action="../../search.html" class="wy-form" id="rtd-search-form" method="get">
+        <input aria-label="Search docs" name="q" placeholder="Search docs" type="text"/>
+        <input name="check_keywords" type="hidden" value="yes"/>
+        <input name="area" type="hidden" value="default"/>
+       </form>
+      </div>
+     </div>
+     <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+      <ul class="current">
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../installation/installation.html">
+         Installation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../binary/binary.html">
+         Binary Documentation
+        </a>
+       </li>
+       <li class="toctree-l1 current">
+        <a class="reference internal" href="../api.html">
+         API Documentation
+        </a>
+        <ul class="current">
+         <li class="toctree-l2 current">
+          <a class="reference internal" href="cpp.html">
+           C++ API
+          </a>
+          <ul class="current">
+           <li class="toctree-l3">
+            <a class="reference internal" href="quickstart.html">
+             Quickstart Guide
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="exceptions.html">
+             Exceptions
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatype.html">
+             Datatype
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatypeconstructor.html">
+             DatatypeConstructor
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatypeconstructordecl.html">
+             DatatypeConstructorDecl
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatypedecl.html">
+             DatatypeDecl
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="datatypeselector.html">
+             DatatypeSelector
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="driveroptions.html">
+             DriverOptions
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="grammar.html">
+             Grammar
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="kind.html">
+             Kind
+            </a>
+           </li>
+           <li class="toctree-l3 current">
+            <a class="current reference internal" href="#">
+             Modes
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="op.html">
+             Op
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="optioninfo.html">
+             OptionInfo
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="result.html">
+             Result
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="roundingmode.html">
+             RoundingMode
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="solver.html">
+             Solver
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="sort.html">
+             Sort
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="statistics.html">
+             Statistics
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="synthresult.html">
+             SynthResult
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="term.html">
+             Term
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="unknownexplanation.html">
+             UnknownExplanation
+            </a>
+           </li>
+           <li class="toctree-l3">
+            <a class="reference internal" href="cpp.html#class-hierarchy">
+             Class hierarchy
+            </a>
+           </li>
+          </ul>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../java/java.html">
+           Java API
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="../python/python.html">
+           Python API
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../options.html">
+         Options
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../output-tags.html">
+         Output tags
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../proofs/proofs.html">
+         Proof production
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../resource-limits.html">
+         Resource limits
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../statistics.html">
+         Statistics
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../examples/examples.html">
+         Examples
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../theories/theories.html">
+         Theory References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../references.html">
+         References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../../genindex.html">
+         Index
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div aria-label="versions" class="rst-versions shift-up" data-toggle="rst-versions" id="cvc5-versions" role="note">
+     <span class="rst-current-version" data-toggle="rst-current-version">
+      <i class="fas fa-tags">
+      </i>
+      Other versions
+     </span>
+     <div class="rst-other-versions">
+      <dl>
+       <dd>
+        <a href="https://cvc5.github.io/docs-ci/docs-main/">
+         cvc5-main
+        </a>
+       </dd>
+       <dd>
+        <strong>
+         <a href="../../../cvc5-1.0.8/">
+          cvc5-1.0.8
+         </a>
+        </strong>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.7/">
+         cvc5-1.0.7
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.2/">
+         cvc5-1.0.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.1/">
+         cvc5-1.0.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../../cvc5-1.0.0/">
+         cvc5-1.0.0
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </nav>
+   <section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+    <nav aria-label="Mobile navigation menu" class="wy-nav-top">
+     <i class="fa fa-bars" data-toggle="wy-nav-top">
+     </i>
+     <a href="../../index.html">
+      cvc5
+     </a>
+    </nav>
+    <div class="wy-nav-content">
+     <div class="rst-content">
+      <div aria-label="Page navigation" role="navigation">
+       <ul class="wy-breadcrumbs">
+        <li>
+         <a aria-label="Home" class="icon icon-home" href="../../index.html">
+         </a>
+        </li>
+        <li class="breadcrumb-item">
+         <a href="../api.html">
+          API Documentation
+         </a>
+        </li>
+        <li class="breadcrumb-item">
+         <a href="cpp.html">
+          C++ API
+         </a>
+        </li>
+        <li class="breadcrumb-item active">
+         Modes
+        </li>
+        <li class="wy-breadcrumbs-aside">
+        </li>
+       </ul>
+       <hr/>
+      </div>
+      <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+       <div itemprop="articleBody">
+        <section id="modes">
+         <h1>
+          Modes
+          <a class="headerlink" href="#modes" title="Permalink to this heading">
+           
+          </a>
+         </h1>
+         <dl class="cpp type">
+          <dt class="sig sig-object cpp" id="_CPPv4N4cvc55modesE">
+           <span id="_CPPv3N4cvc55modesE">
+           </span>
+           <span id="_CPPv2N4cvc55modesE">
+           </span>
+           <span id="cvc5::modes">
+           </span>
+           <span class="target" id="namespacecvc5_1_1modes">
+           </span>
+           <span class="k">
+            <span class="pre">
+             namespace
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              modes
+             </span>
+            </span>
+           </span>
+           <a class="headerlink" href="#_CPPv4N4cvc55modesE" title="Permalink to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <div class="breathe-sectiondef docutils container">
+            <p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">
+             Functions
+            </p>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp">
+              <span class="target" id="namespacecvc5_1_1modes_1a81b6f596205535a81c7d35f9a2dd3857">
+              </span>
+              <span class="sig-name descname">
+               <span class="pre">
+                enum
+               </span>
+               <span class="pre">
+                ENUM
+               </span>
+               <span class="pre">
+                (BlockModelsMode)
+               </span>
+              </span>
+             </dt>
+             <dd>
+              <p>
+               Mode for blocking models.
+              </p>
+              <p>
+               Specifies how models are blocked in
+               <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1adfb443fdba6a495fa6734ea4ac574291">
+                <span class="std std-ref">
+                 Solver::blockModel
+                </span>
+               </a>
+               and
+               <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1a6aed1dbd0b856db5fb2ec713f4c68826">
+                <span class="std std-ref">
+                 Solver::blockModelValues
+                </span>
+               </a>
+               .
+              </p>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4N4cvc55modeslsERNSt7ostreamE15BlockModelsMode">
+              <span id="_CPPv3N4cvc55modeslsERNSt7ostreamE15BlockModelsMode">
+              </span>
+              <span id="_CPPv2N4cvc55modeslsERNSt7ostreamE15BlockModelsMode">
+              </span>
+              <span id="cvc5::modes::lshift-operator__osR.BlockModelsMode">
+              </span>
+              <span class="target" id="namespacecvc5_1_1modes_1a748e176a095078085dbb75cd8aea3767">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                ostream
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                &amp;
+               </span>
+              </span>
+              <span class="sig-name descname">
+               <span class="k">
+                <span class="pre">
+                 operator
+                </span>
+               </span>
+               <span class="o">
+                <span class="pre">
+                 &lt;&lt;
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                ostream
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                &amp;
+               </span>
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                out
+               </span>
+              </span>
+              ,
+              <span class="n">
+               <span class="pre">
+                BlockModelsMode
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                mode
+               </span>
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#_CPPv4N4cvc55modeslsERNSt7ostreamE15BlockModelsMode" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Serialize a BlockModelsMode to given stream.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Parameters
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <ul class="simple">
+                 <li>
+                  <p>
+                   <strong>
+                    out
+                   </strong>
+                   – The output stream
+                  </p>
+                 </li>
+                 <li>
+                  <p>
+                   <strong>
+                    mode
+                   </strong>
+                   – The mode.
+                  </p>
+                 </li>
+                </ul>
+               </dd>
+               <dt class="field-even">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-even">
+                <p>
+                 The output stream
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp">
+              <span class="target" id="namespacecvc5_1_1modes_1ad2f55fd184ab42ca0eee0408aca61a9a">
+              </span>
+              <span class="sig-name descname">
+               <span class="pre">
+                enum
+               </span>
+               <span class="pre">
+                ENUM
+               </span>
+               <span class="pre">
+                (LearnedLitType)
+               </span>
+              </span>
+             </dt>
+             <dd>
+              <p>
+               Types of learned literals.
+              </p>
+              <p>
+               Specifies categories of literals learned for the method
+               <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1a425024aba8981fb63d836cbc95d3d886">
+                <span class="std std-ref">
+                 Solver::getLearnedLiterals
+                </span>
+               </a>
+               .
+              </p>
+              <p>
+               Note that a literal may conceptually belong to multiple categories. We classify literals based on the first criteria in this list that they meet.
+              </p>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4N4cvc55modeslsERNSt7ostreamE14LearnedLitType">
+              <span id="_CPPv3N4cvc55modeslsERNSt7ostreamE14LearnedLitType">
+              </span>
+              <span id="_CPPv2N4cvc55modeslsERNSt7ostreamE14LearnedLitType">
+              </span>
+              <span id="cvc5::modes::lshift-operator__osR.LearnedLitType">
+              </span>
+              <span class="target" id="namespacecvc5_1_1modes_1a2e816bf03d37837d48019997b4b90f70">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                ostream
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                &amp;
+               </span>
+              </span>
+              <span class="sig-name descname">
+               <span class="k">
+                <span class="pre">
+                 operator
+                </span>
+               </span>
+               <span class="o">
+                <span class="pre">
+                 &lt;&lt;
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                ostream
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                &amp;
+               </span>
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                out
+               </span>
+              </span>
+              ,
+              <span class="n">
+               <span class="pre">
+                LearnedLitType
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                type
+               </span>
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#_CPPv4N4cvc55modeslsERNSt7ostreamE14LearnedLitType" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Serialize a LearnedLitType to given stream.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Parameters
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <ul class="simple">
+                 <li>
+                  <p>
+                   <strong>
+                    out
+                   </strong>
+                   – The output stream
+                  </p>
+                 </li>
+                 <li>
+                  <p>
+                   <strong>
+                    type
+                   </strong>
+                   – The learned literal type.
+                  </p>
+                 </li>
+                </ul>
+               </dd>
+               <dt class="field-even">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-even">
+                <p>
+                 The output stream
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp">
+              <span class="target" id="namespacecvc5_1_1modes_1aad7c2ce731b259636a4e90d1aac78dd0">
+              </span>
+              <span class="sig-name descname">
+               <span class="pre">
+                enum
+               </span>
+               <span class="pre">
+                ENUM
+               </span>
+               <span class="pre">
+                (ProofComponent)
+               </span>
+              </span>
+             </dt>
+             <dd>
+              <p>
+               Components to include in a proof.
+              </p>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4N4cvc55modeslsERNSt7ostreamE14ProofComponent">
+              <span id="_CPPv3N4cvc55modeslsERNSt7ostreamE14ProofComponent">
+              </span>
+              <span id="_CPPv2N4cvc55modeslsERNSt7ostreamE14ProofComponent">
+              </span>
+              <span id="cvc5::modes::lshift-operator__osR.ProofComponent">
+              </span>
+              <span class="target" id="namespacecvc5_1_1modes_1a94692edae6848dd19483004ffc7a66e7">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                ostream
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                &amp;
+               </span>
+              </span>
+              <span class="sig-name descname">
+               <span class="k">
+                <span class="pre">
+                 operator
+                </span>
+               </span>
+               <span class="o">
+                <span class="pre">
+                 &lt;&lt;
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                ostream
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                &amp;
+               </span>
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                out
+               </span>
+              </span>
+              ,
+              <span class="n">
+               <span class="pre">
+                ProofComponent
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                pc
+               </span>
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#_CPPv4N4cvc55modeslsERNSt7ostreamE14ProofComponent" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Serialize a ProofComponent to given stream.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Parameters
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <ul class="simple">
+                 <li>
+                  <p>
+                   <strong>
+                    out
+                   </strong>
+                   – The output stream
+                  </p>
+                 </li>
+                 <li>
+                  <p>
+                   <strong>
+                    pc
+                   </strong>
+                   – The proof component.
+                  </p>
+                 </li>
+                </ul>
+               </dd>
+               <dt class="field-even">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-even">
+                <p>
+                 The output stream
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp">
+              <span class="target" id="namespacecvc5_1_1modes_1ade2456e5af0e32397a6a1ddcbdd7882e">
+              </span>
+              <span class="sig-name descname">
+               <span class="pre">
+                enum
+               </span>
+               <span class="pre">
+                ENUM
+               </span>
+               <span class="pre">
+                (FindSynthTarget)
+               </span>
+              </span>
+             </dt>
+             <dd>
+              <p>
+               Find synthesis targets, used as an argument to
+               <a class="reference internal" href="solver.html#classcvc5_1_1Solver_1ab0622b43b65b272beccc653147c65c52">
+                <span class="std std-ref">
+                 Solver::findSynth
+                </span>
+               </a>
+               . These specify various kinds of terms that can be found by this method.
+              </p>
+             </dd>
+            </dl>
+            <dl class="cpp function">
+             <dt class="sig sig-object cpp" id="_CPPv4N4cvc55modeslsERNSt7ostreamE15FindSynthTarget">
+              <span id="_CPPv3N4cvc55modeslsERNSt7ostreamE15FindSynthTarget">
+              </span>
+              <span id="_CPPv2N4cvc55modeslsERNSt7ostreamE15FindSynthTarget">
+              </span>
+              <span id="cvc5::modes::lshift-operator__osR.FindSynthTarget">
+              </span>
+              <span class="target" id="namespacecvc5_1_1modes_1a1781ef3042bddbd762b21e50aca61bc6">
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                ostream
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                &amp;
+               </span>
+              </span>
+              <span class="sig-name descname">
+               <span class="k">
+                <span class="pre">
+                 operator
+                </span>
+               </span>
+               <span class="o">
+                <span class="pre">
+                 &lt;&lt;
+                </span>
+               </span>
+              </span>
+              <span class="sig-paren">
+               (
+              </span>
+              <span class="n">
+               <span class="pre">
+                std
+               </span>
+              </span>
+              <span class="p">
+               <span class="pre">
+                ::
+               </span>
+              </span>
+              <span class="n">
+               <span class="pre">
+                ostream
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="p">
+               <span class="pre">
+                &amp;
+               </span>
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                out
+               </span>
+              </span>
+              ,
+              <span class="n">
+               <span class="pre">
+                FindSynthTarget
+               </span>
+              </span>
+              <span class="w">
+              </span>
+              <span class="n sig-param">
+               <span class="pre">
+                target
+               </span>
+              </span>
+              <span class="sig-paren">
+               )
+              </span>
+              <a class="headerlink" href="#_CPPv4N4cvc55modeslsERNSt7ostreamE15FindSynthTarget" title="Permalink to this definition">
+               
+              </a>
+              <br/>
+             </dt>
+             <dd>
+              <p>
+               Serialize a FindSynthTarget to given stream.
+              </p>
+              <dl class="field-list simple">
+               <dt class="field-odd">
+                Parameters
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-odd">
+                <ul class="simple">
+                 <li>
+                  <p>
+                   <strong>
+                    out
+                   </strong>
+                   – The output stream
+                  </p>
+                 </li>
+                 <li>
+                  <p>
+                   <strong>
+                    targetThe
+                   </strong>
+                   – synthesis find target.
+                  </p>
+                 </li>
+                </ul>
+               </dd>
+               <dt class="field-even">
+                Returns
+                <span class="colon">
+                 :
+                </span>
+               </dt>
+               <dd class="field-even">
+                <p>
+                 The output stream
+                </p>
+               </dd>
+              </dl>
+             </dd>
+            </dl>
+           </div>
+          </dd>
+         </dl>
+        </section>
+       </div>
+      </div>
+      <footer>
+       <div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+        <a accesskey="p" class="btn btn-neutral float-left" href="kind.html" rel="prev" title="Kind">
+         <span aria-hidden="true" class="fa fa-arrow-circle-left">
+         </span>
+         Previous
+        </a>
+        <a accesskey="n" class="btn btn-neutral float-right" href="op.html" rel="next" title="Op">
+         Next
+         <span aria-hidden="true" class="fa fa-arrow-circle-right">
+         </span>
+        </a>
+       </div>
+       <hr/>
+       <div role="contentinfo">
+        <p>
+         © Copyright 2023, the authors of cvc5.
+        </p>
+       </div>
+       Built with
+       <a href="https://www.sphinx-doc.org/">
+        Sphinx
+       </a>
+       using a
+       <a href="https://github.com/readthedocs/sphinx_rtd_theme">
+        theme
+       </a>
+       provided by
+       <a href="https://readthedocs.org">
+        Read the Docs
+       </a>
+       .
+      </footer>
+     </div>
+    </div>
+   </section>
+  </div>
+  <script>
+   jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+ </body>
+</html>
