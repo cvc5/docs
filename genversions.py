@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from bs4 import BeautifulSoup
-from distutils.version import StrictVersion
 import copy
 import glob
 import jinja2
