@@ -559,14 +559,185 @@
           </dd>
          </dl>
          <hr class="docutils"/>
-         <div class="admonition warning">
-          <p class="admonition-title">
-           Warning
-          </p>
-          <p>
-           doxygengroup: Cannot find group “c_cvc5inputparser” in doxygen xml output for project “cvc5_c” from directory: /home/runner/work/cvc5/cvc5/build-shared/docs/api/c/doxygen/xml
-          </p>
-         </div>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415cvc5_parser_newP4Cvc5P17Cvc5SymbolManager">
+<span id="_CPPv315cvc5_parser_newP4Cvc5P17Cvc5SymbolManager"></span><span id="_CPPv215cvc5_parser_newP4Cvc5P17Cvc5SymbolManager"></span><span id="cvc5_parser_new__Cvc5P.Cvc5SymbolManagerP"></span><span class="target" id="group__c__cvc5inputparser_1ga5d4f59c08115fc02453e2b4af0eb9116"></span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_new</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="cvc5.html#_CPPv44Cvc5" title="Cvc5"><span class="n"><span class="pre">Cvc5</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">cvc5</span></span>, <a class="reference internal" href="cvc5symbolmanager.html#_CPPv417Cvc5SymbolManager" title="Cvc5SymbolManager"><span class="n"><span class="pre">Cvc5SymbolManager</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">sm</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415cvc5_parser_newP4Cvc5P17Cvc5SymbolManager" title="Link to this definition"></a><br /></dt>
+<dd><p>Construct a new instance of a cvc5 input parser. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cvc5</strong> – The associated solver instance. </p></li>
+<li><p><strong>sm</strong> – The associated symbol manager instance, contains a symbol table that maps symbols to terms and sorts. Must have a logic that is compatible with the solver. May be NULL to start with and initially empty symbol manager. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The cvc5 symbol manager instance. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv418cvc5_parser_deleteP15Cvc5InputParser">
+<span id="_CPPv318cvc5_parser_deleteP15Cvc5InputParser"></span><span id="_CPPv218cvc5_parser_deleteP15Cvc5InputParser"></span><span id="cvc5_parser_delete__Cvc5InputParserP"></span><span class="target" id="group__c__cvc5inputparser_1ga83ed429025d2a79b0ebe56b5cff93436"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_delete</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418cvc5_parser_deleteP15Cvc5InputParser" title="Link to this definition"></a><br /></dt>
+<dd><p>Delete a cvc5 input parser instance. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parser</strong> – The input parser instance. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419cvc5_parser_releaseP15Cvc5InputParser">
+<span id="_CPPv319cvc5_parser_releaseP15Cvc5InputParser"></span><span id="_CPPv219cvc5_parser_releaseP15Cvc5InputParser"></span><span id="cvc5_parser_release__Cvc5InputParserP"></span><span class="target" id="group__c__cvc5inputparser_1ga8109cccbf570019f68cf5cda0b35ad7e"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_release</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419cvc5_parser_releaseP15Cvc5InputParser" title="Link to this definition"></a><br /></dt>
+<dd><p>Release all objects managed by the parser.</p>
+<p>This will free all memory used by any managed objects allocated by the parser.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This invalidates all managed objects created by the parser.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parser</strong> – The parser instance. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv422cvc5_parser_get_solverP15Cvc5InputParser">
+<span id="_CPPv322cvc5_parser_get_solverP15Cvc5InputParser"></span><span id="_CPPv222cvc5_parser_get_solverP15Cvc5InputParser"></span><span id="cvc5_parser_get_solver__Cvc5InputParserP"></span><span class="target" id="group__c__cvc5inputparser_1ga949d06ed7d7bfddd6759bf492b612fc1"></span><a class="reference internal" href="cvc5.html#_CPPv44Cvc5" title="Cvc5"><span class="n"><span class="pre">Cvc5</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_get_solver</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422cvc5_parser_get_solverP15Cvc5InputParser" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the associated solver instance of a given parser. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parser</strong> – The parser instance. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The solver. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv418cvc5_parser_get_smP15Cvc5InputParser">
+<span id="_CPPv318cvc5_parser_get_smP15Cvc5InputParser"></span><span id="_CPPv218cvc5_parser_get_smP15Cvc5InputParser"></span><span id="cvc5_parser_get_sm__Cvc5InputParserP"></span><span class="target" id="group__c__cvc5inputparser_1ga6e79023419004ce860ced4f8e015f3e2"></span><a class="reference internal" href="cvc5symbolmanager.html#_CPPv417Cvc5SymbolManager" title="Cvc5SymbolManager"><span class="n"><span class="pre">Cvc5SymbolManager</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_get_sm</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418cvc5_parser_get_smP15Cvc5InputParser" title="Link to this definition"></a><br /></dt>
+<dd><p>Get the associated symbol manager of a given parser. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parser</strong> – The parser instance. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The symbol manager. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv426cvc5_parser_set_file_inputP15Cvc5InputParser17Cvc5InputLanguagePKc">
+<span id="_CPPv326cvc5_parser_set_file_inputP15Cvc5InputParser17Cvc5InputLanguagePKc"></span><span id="_CPPv226cvc5_parser_set_file_inputP15Cvc5InputParser17Cvc5InputLanguagePKc"></span><span id="cvc5_parser_set_file_input__Cvc5InputParserP.Cvc5InputLanguage.cCP"></span><span class="target" id="group__c__cvc5inputparser_1gab173fdd3194af4d5d6b5bb7203e65718"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_set_file_input</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span>, <span class="n"><span class="pre">Cvc5InputLanguage</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lang</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426cvc5_parser_set_file_inputP15Cvc5InputParser17Cvc5InputLanguagePKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Configure given file as input to a given input parser. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parser</strong> – The input parser instance. </p></li>
+<li><p><strong>lang</strong> – the input language (e.g., CVC5_INPUT_LANGUAGE_SMT_LIB_2_6) </p></li>
+<li><p><strong>filename</strong> – The name of the file to configure. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv425cvc5_parser_set_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKcPKc">
+<span id="_CPPv325cvc5_parser_set_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKcPKc"></span><span id="_CPPv225cvc5_parser_set_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKcPKc"></span><span id="cvc5_parser_set_str_input__Cvc5InputParserP.Cvc5InputLanguage.cCP.cCP"></span><span class="target" id="group__c__cvc5inputparser_1gabddf953f8c6b5b2f4a2c09192097df18"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_set_str_input</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span>, <span class="n"><span class="pre">Cvc5InputLanguage</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lang</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">input</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425cvc5_parser_set_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKcPKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Configure a given concrete input string as the input to a given input parser. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parser</strong> – The input parser instance. </p></li>
+<li><p><strong>lang</strong> – The input language of the input string. </p></li>
+<li><p><strong>input</strong> – The input string. </p></li>
+<li><p><strong>name</strong> – The name to use as input stream name for error messages. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv429cvc5_parser_set_inc_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKc">
+<span id="_CPPv329cvc5_parser_set_inc_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKc"></span><span id="_CPPv229cvc5_parser_set_inc_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKc"></span><span id="cvc5_parser_set_inc_str_input__Cvc5InputParserP.Cvc5InputLanguage.cCP"></span><span class="target" id="group__c__cvc5inputparser_1gac31e20058bfcf85a0dd559b8a78ae8d2"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_set_inc_str_input</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span>, <span class="n"><span class="pre">Cvc5InputLanguage</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lang</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429cvc5_parser_set_inc_str_inputP15Cvc5InputParser17Cvc5InputLanguagePKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Configure that we will be feeding strings to a given input parser via <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5inputparser_1ga0910aaa8583192c859a46f0e7efe9d87"><span class="std std-ref"><span class="pre">cvc5_parser_append_inc_str_input()</span></span></a></code> below. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parser</strong> – The input parser instance. </p></li>
+<li><p><strong>lang</strong> – The input language of the input string. </p></li>
+<li><p><strong>name</strong> – The name to use as input stream name for error messages. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv432cvc5_parser_append_inc_str_inputP15Cvc5InputParserPKc">
+<span id="_CPPv332cvc5_parser_append_inc_str_inputP15Cvc5InputParserPKc"></span><span id="_CPPv232cvc5_parser_append_inc_str_inputP15Cvc5InputParserPKc"></span><span id="cvc5_parser_append_inc_str_input__Cvc5InputParserP.cCP"></span><span class="target" id="group__c__cvc5inputparser_1ga0910aaa8583192c859a46f0e7efe9d87"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_append_inc_str_input</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">input</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv432cvc5_parser_append_inc_str_inputP15Cvc5InputParserPKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Append string to the input being parsed by this parser. Should be called after calling <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5inputparser_1gac31e20058bfcf85a0dd559b8a78ae8d2"><span class="std std-ref"><span class="pre">cvc5_parser_set_inc_str_input()</span></span></a></code>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parser</strong> – The input parser instance. </p></li>
+<li><p><strong>input</strong> – The input string. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv424cvc5_parser_next_commandP15Cvc5InputParserPPKc">
+<span id="_CPPv324cvc5_parser_next_commandP15Cvc5InputParserPPKc"></span><span id="_CPPv224cvc5_parser_next_commandP15Cvc5InputParserPPKc"></span><span id="cvc5_parser_next_command__Cvc5InputParserP.cCPP"></span><span class="target" id="group__c__cvc5inputparser_1ga15675eaa41361f27d0285bdb6083ca47"></span><a class="reference internal" href="cvc5command.html#_CPPv411Cvc5Command" title="Cvc5Command"><span class="n"><span class="pre">Cvc5Command</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_next_command</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">error_msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424cvc5_parser_next_commandP15Cvc5InputParserPPKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Parse and return the next command. Will initialize the logic to “ALL” or the forced logic if no logic is set prior to this point and a command is read that requires initializing the logic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parser</strong> – The input parser instance. </p></li>
+<li><p><strong>error_msg</strong> – Output parameter for the error message in case of a parse error, NULL if no error occurred. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The parsed command. NULL if no command was read. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv421cvc5_parser_next_termP15Cvc5InputParserPPKc">
+<span id="_CPPv321cvc5_parser_next_termP15Cvc5InputParserPPKc"></span><span id="_CPPv221cvc5_parser_next_termP15Cvc5InputParserPPKc"></span><span id="cvc5_parser_next_term__Cvc5InputParserP.cCPP"></span><span class="target" id="group__c__cvc5inputparser_1ga4e397aa09ea0e103b8b4689682a7ba3c"></span><a class="reference internal" href="cvc5term.html#_CPPv48Cvc5Term" title="Cvc5Term"><span class="n"><span class="pre">Cvc5Term</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_next_term</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">error_msg</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421cvc5_parser_next_termP15Cvc5InputParserPPKc" title="Link to this definition"></a><br /></dt>
+<dd><p>Parse and return the next term. Requires setting the logic prior to this point. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parser</strong> – The input parser instance. </p></li>
+<li><p><strong>error_msg</strong> – Output parameter for the error message in case of a parse error, NULL if no error occurred. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The parsed term. NULL if no term was read. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv416cvc5_parser_doneP15Cvc5InputParser">
+<span id="_CPPv316cvc5_parser_doneP15Cvc5InputParser"></span><span id="_CPPv216cvc5_parser_doneP15Cvc5InputParser"></span><span id="cvc5_parser_done__Cvc5InputParserP"></span><span class="target" id="group__c__cvc5inputparser_1ga6daa57081be408adf5ce115e496f429e"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_parser_done</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5InputParser" title="Cvc5InputParser"><span class="n"><span class="pre">Cvc5InputParser</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">parser</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416cvc5_parser_doneP15Cvc5InputParser" title="Link to this definition"></a><br /></dt>
+<dd><p>Is this parser done reading input? </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parser</strong> – The input parser instance. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if parser is done reading input. </p>
+</dd>
+</dl>
+</dd></dl>
         </section>
        </div>
       </div>
