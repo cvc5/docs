@@ -312,6 +312,11 @@
         </a>
        </dd>
        <dd>
+        <a href="../../../../cvc5-1.3.0/">
+         cvc5-1.3.0
+        </a>
+       </dd>
+       <dd>
         <strong>
          <a href="../../../../cvc5-1.2.1/">
           cvc5-1.2.1
@@ -512,160 +517,982 @@
           </dd>
          </dl>
          <hr class="docutils"/>
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv425cvc5_synth_result_is_nullK15Cvc5SynthResult">
-<span id="_CPPv325cvc5_synth_result_is_nullK15Cvc5SynthResult"></span><span id="_CPPv225cvc5_synth_result_is_nullK15Cvc5SynthResult"></span><span id="cvc5_synth_result_is_null__Cvc5SynthResultC"></span><span class="target" id="group__c__cvc5synthresult_1ga812d4802d2ad7f5922db4c679e46a391"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_synth_result_is_null</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult"><span class="n"><span class="pre">Cvc5SynthResult</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">result</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425cvc5_synth_result_is_nullK15Cvc5SynthResult" title="Link to this definition"></a><br /></dt>
-<dd><p>Determine if a given synthesis result is empty (a nullary result) and not an actual result returned from a synthesis query. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>result</strong> – The result. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if the given result is a nullary result. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv430cvc5_synth_result_has_solutionK15Cvc5SynthResult">
-<span id="_CPPv330cvc5_synth_result_has_solutionK15Cvc5SynthResult"></span><span id="_CPPv230cvc5_synth_result_has_solutionK15Cvc5SynthResult"></span><span id="cvc5_synth_result_has_solution__Cvc5SynthResultC"></span><span class="target" id="group__c__cvc5synthresult_1ga8947d3964a497a7c09f764294a88850b"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_synth_result_has_solution</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult"><span class="n"><span class="pre">Cvc5SynthResult</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">result</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430cvc5_synth_result_has_solutionK15Cvc5SynthResult" title="Link to this definition"></a><br /></dt>
-<dd><p>Determine if the given result is from a synthesis query that has a solution. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>result</strong> – The result. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if the synthesis query has a solution. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv433cvc5_synth_result_has_no_solutionK15Cvc5SynthResult">
-<span id="_CPPv333cvc5_synth_result_has_no_solutionK15Cvc5SynthResult"></span><span id="_CPPv233cvc5_synth_result_has_no_solutionK15Cvc5SynthResult"></span><span id="cvc5_synth_result_has_no_solution__Cvc5SynthResultC"></span><span class="target" id="group__c__cvc5synthresult_1ga896969ba865dc388813790a175d72ee2"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_synth_result_has_no_solution</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult"><span class="n"><span class="pre">Cvc5SynthResult</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">result</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv433cvc5_synth_result_has_no_solutionK15Cvc5SynthResult" title="Link to this definition"></a><br /></dt>
-<dd><p>Determine if the given result is from a synthesis query that has no solution. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>result</strong> – The result. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if the synthesis query has no solution. In this case, it was determined that there was no solution. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv428cvc5_synth_result_is_unknownK15Cvc5SynthResult">
-<span id="_CPPv328cvc5_synth_result_is_unknownK15Cvc5SynthResult"></span><span id="_CPPv228cvc5_synth_result_is_unknownK15Cvc5SynthResult"></span><span id="cvc5_synth_result_is_unknown__Cvc5SynthResultC"></span><span class="target" id="group__c__cvc5synthresult_1gaea4d73cb05eecb8091e0351e7d3c3447"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_synth_result_is_unknown</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult"><span class="n"><span class="pre">Cvc5SynthResult</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">result</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428cvc5_synth_result_is_unknownK15Cvc5SynthResult" title="Link to this definition"></a><br /></dt>
-<dd><p>Determine if the given result is from a synthesis query where its result could not be determined. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>result</strong> – The result. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if the result of the synthesis query could not be determined. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv426cvc5_synth_result_is_equalK15Cvc5SynthResultK15Cvc5SynthResult">
-<span id="_CPPv326cvc5_synth_result_is_equalK15Cvc5SynthResultK15Cvc5SynthResult"></span><span id="_CPPv226cvc5_synth_result_is_equalK15Cvc5SynthResultK15Cvc5SynthResult"></span><span id="cvc5_synth_result_is_equal__Cvc5SynthResultC.Cvc5SynthResultC"></span><span class="target" id="group__c__cvc5synthresult_1ga2713de317c3c3442c80013560bca1d57"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_synth_result_is_equal</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult"><span class="n"><span class="pre">Cvc5SynthResult</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult"><span class="n"><span class="pre">Cvc5SynthResult</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426cvc5_synth_result_is_equalK15Cvc5SynthResultK15Cvc5SynthResult" title="Link to this definition"></a><br /></dt>
-<dd><p>Determine equality of two synthesis results. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>a</strong> – The first synthesis result to compare to for equality. </p></li>
-<li><p><strong>b</strong> – The second synthesis result to compare to for equality. </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if the synthesis results are equal. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv429cvc5_synth_result_is_disequalK15Cvc5SynthResultK15Cvc5SynthResult">
-<span id="_CPPv329cvc5_synth_result_is_disequalK15Cvc5SynthResultK15Cvc5SynthResult"></span><span id="_CPPv229cvc5_synth_result_is_disequalK15Cvc5SynthResultK15Cvc5SynthResult"></span><span id="cvc5_synth_result_is_disequal__Cvc5SynthResultC.Cvc5SynthResultC"></span><span class="target" id="group__c__cvc5synthresult_1gaa45c644e0724262298f1f6c4614823f4"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_synth_result_is_disequal</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult"><span class="n"><span class="pre">Cvc5SynthResult</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">a</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult"><span class="n"><span class="pre">Cvc5SynthResult</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429cvc5_synth_result_is_disequalK15Cvc5SynthResultK15Cvc5SynthResult" title="Link to this definition"></a><br /></dt>
-<dd><p>Operator overloading for disequality of two synthesis results. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>a</strong> – The first synthesis result to compare to for disequality. </p></li>
-<li><p><strong>b</strong> – The second synthesis result to compare to for disequality. </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if the synthesis results are disequal. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv427cvc5_synth_result_to_stringK15Cvc5SynthResult">
-<span id="_CPPv327cvc5_synth_result_to_stringK15Cvc5SynthResult"></span><span id="_CPPv227cvc5_synth_result_to_stringK15Cvc5SynthResult"></span><span id="cvc5_synth_result_to_string__Cvc5SynthResultC"></span><span class="target" id="group__c__cvc5synthresult_1ga8905b4101712e3d52c79c508bac81572"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_synth_result_to_string</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult"><span class="n"><span class="pre">Cvc5SynthResult</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">result</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv427cvc5_synth_result_to_stringK15Cvc5SynthResult" title="Link to this definition"></a><br /></dt>
-<dd><p>Get the string representation of a given result. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The returned char* pointer is only valid until the next call to this function. </p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>result</strong> – The result. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A string representation of the given synthesis result. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv422cvc5_synth_result_hash15Cvc5SynthResult">
-<span id="_CPPv322cvc5_synth_result_hash15Cvc5SynthResult"></span><span id="_CPPv222cvc5_synth_result_hash15Cvc5SynthResult"></span><span id="cvc5_synth_result_hash__Cvc5SynthResult"></span><span class="target" id="group__c__cvc5synthresult_1ga4fe3939764538ea88fd1d29c532a6ebf"></span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_synth_result_hash</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult"><span class="n"><span class="pre">Cvc5SynthResult</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">result</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422cvc5_synth_result_hash15Cvc5SynthResult" title="Link to this definition"></a><br /></dt>
-<dd><p>Compute the hash value of a synthesis result. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>result</strong> – The synthesis result. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The hash value of the synthesis result. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv422cvc5_synth_result_copy15Cvc5SynthResult">
-<span id="_CPPv322cvc5_synth_result_copy15Cvc5SynthResult"></span><span id="_CPPv222cvc5_synth_result_copy15Cvc5SynthResult"></span><span id="cvc5_synth_result_copy__Cvc5SynthResult"></span><span class="target" id="group__c__cvc5synthresult_1ga407f9f7707c2b6ffc3385825a9bdd0d0"></span><a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult"><span class="n"><span class="pre">Cvc5SynthResult</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_synth_result_copy</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult"><span class="n"><span class="pre">Cvc5SynthResult</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">result</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422cvc5_synth_result_copy15Cvc5SynthResult" title="Link to this definition"></a><br /></dt>
-<dd><p>Make copy of synthesis result, increases reference counter of <code class="docutils literal notranslate"><span class="pre">result</span></code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This step is optional and allows users to manage resources in a more fine-grained manner. </p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>result</strong> – The synthesis result to copy. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The same result with its reference count increased by one.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv425cvc5_synth_result_release15Cvc5SynthResult">
-<span id="_CPPv325cvc5_synth_result_release15Cvc5SynthResult"></span><span id="_CPPv225cvc5_synth_result_release15Cvc5SynthResult"></span><span id="cvc5_synth_result_release__Cvc5SynthResult"></span><span class="target" id="group__c__cvc5synthresult_1ga9adee7e49acfcfebf5ff46958de3b766"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_synth_result_release</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult"><span class="n"><span class="pre">Cvc5SynthResult</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">result</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425cvc5_synth_result_release15Cvc5SynthResult" title="Link to this definition"></a><br /></dt>
-<dd><p>Release copy of synthesis result, decrements reference counter of <code class="docutils literal notranslate"><span class="pre">result</span></code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This step is optional and allows users to release resources in a more fine-grained manner. Further, any API function that returns a copy that is owned by the callee of the function and thus, can be released. </p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>result</strong> – The result to release.</p>
-</dd>
-</dl>
-</dd></dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv425cvc5_synth_result_is_nullK15Cvc5SynthResult">
+           <span id="_CPPv325cvc5_synth_result_is_nullK15Cvc5SynthResult">
+           </span>
+           <span id="_CPPv225cvc5_synth_result_is_nullK15Cvc5SynthResult">
+           </span>
+           <span id="cvc5_synth_result_is_null__Cvc5SynthResultC">
+           </span>
+           <span class="target" id="group__c__cvc5synthresult_1ga812d4802d2ad7f5922db4c679e46a391">
+           </span>
+           <span class="kt">
+            <span class="pre">
+             bool
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_synth_result_is_null
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult">
+            <span class="n">
+             <span class="pre">
+              Cvc5SynthResult
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             result
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv425cvc5_synth_result_is_nullK15Cvc5SynthResult" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Determine if a given synthesis result is empty (a nullary result) and not an actual result returned from a synthesis query.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               result
+              </strong>
+              – The result.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              True if the given result is a nullary result.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv430cvc5_synth_result_has_solutionK15Cvc5SynthResult">
+           <span id="_CPPv330cvc5_synth_result_has_solutionK15Cvc5SynthResult">
+           </span>
+           <span id="_CPPv230cvc5_synth_result_has_solutionK15Cvc5SynthResult">
+           </span>
+           <span id="cvc5_synth_result_has_solution__Cvc5SynthResultC">
+           </span>
+           <span class="target" id="group__c__cvc5synthresult_1ga8947d3964a497a7c09f764294a88850b">
+           </span>
+           <span class="kt">
+            <span class="pre">
+             bool
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_synth_result_has_solution
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult">
+            <span class="n">
+             <span class="pre">
+              Cvc5SynthResult
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             result
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv430cvc5_synth_result_has_solutionK15Cvc5SynthResult" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Determine if the given result is from a synthesis query that has a solution.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               result
+              </strong>
+              – The result.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              True if the synthesis query has a solution.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv433cvc5_synth_result_has_no_solutionK15Cvc5SynthResult">
+           <span id="_CPPv333cvc5_synth_result_has_no_solutionK15Cvc5SynthResult">
+           </span>
+           <span id="_CPPv233cvc5_synth_result_has_no_solutionK15Cvc5SynthResult">
+           </span>
+           <span id="cvc5_synth_result_has_no_solution__Cvc5SynthResultC">
+           </span>
+           <span class="target" id="group__c__cvc5synthresult_1ga896969ba865dc388813790a175d72ee2">
+           </span>
+           <span class="kt">
+            <span class="pre">
+             bool
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_synth_result_has_no_solution
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult">
+            <span class="n">
+             <span class="pre">
+              Cvc5SynthResult
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             result
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv433cvc5_synth_result_has_no_solutionK15Cvc5SynthResult" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Determine if the given result is from a synthesis query that has no solution.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               result
+              </strong>
+              – The result.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              True if the synthesis query has no solution. In this case, it was determined that there was no solution.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv428cvc5_synth_result_is_unknownK15Cvc5SynthResult">
+           <span id="_CPPv328cvc5_synth_result_is_unknownK15Cvc5SynthResult">
+           </span>
+           <span id="_CPPv228cvc5_synth_result_is_unknownK15Cvc5SynthResult">
+           </span>
+           <span id="cvc5_synth_result_is_unknown__Cvc5SynthResultC">
+           </span>
+           <span class="target" id="group__c__cvc5synthresult_1gaea4d73cb05eecb8091e0351e7d3c3447">
+           </span>
+           <span class="kt">
+            <span class="pre">
+             bool
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_synth_result_is_unknown
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult">
+            <span class="n">
+             <span class="pre">
+              Cvc5SynthResult
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             result
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv428cvc5_synth_result_is_unknownK15Cvc5SynthResult" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Determine if the given result is from a synthesis query where its result could not be determined.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               result
+              </strong>
+              – The result.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              True if the result of the synthesis query could not be determined.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv426cvc5_synth_result_is_equalK15Cvc5SynthResultK15Cvc5SynthResult">
+           <span id="_CPPv326cvc5_synth_result_is_equalK15Cvc5SynthResultK15Cvc5SynthResult">
+           </span>
+           <span id="_CPPv226cvc5_synth_result_is_equalK15Cvc5SynthResultK15Cvc5SynthResult">
+           </span>
+           <span id="cvc5_synth_result_is_equal__Cvc5SynthResultC.Cvc5SynthResultC">
+           </span>
+           <span class="target" id="group__c__cvc5synthresult_1ga2713de317c3c3442c80013560bca1d57">
+           </span>
+           <span class="kt">
+            <span class="pre">
+             bool
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_synth_result_is_equal
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult">
+            <span class="n">
+             <span class="pre">
+              Cvc5SynthResult
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             a
+            </span>
+           </span>
+           ,
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult">
+            <span class="n">
+             <span class="pre">
+              Cvc5SynthResult
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             b
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv426cvc5_synth_result_is_equalK15Cvc5SynthResultK15Cvc5SynthResult" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Determine equality of two synthesis results.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 a
+                </strong>
+                – The first synthesis result to compare to for equality.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 b
+                </strong>
+                – The second synthesis result to compare to for equality.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              True if the synthesis results are equal.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv429cvc5_synth_result_is_disequalK15Cvc5SynthResultK15Cvc5SynthResult">
+           <span id="_CPPv329cvc5_synth_result_is_disequalK15Cvc5SynthResultK15Cvc5SynthResult">
+           </span>
+           <span id="_CPPv229cvc5_synth_result_is_disequalK15Cvc5SynthResultK15Cvc5SynthResult">
+           </span>
+           <span id="cvc5_synth_result_is_disequal__Cvc5SynthResultC.Cvc5SynthResultC">
+           </span>
+           <span class="target" id="group__c__cvc5synthresult_1gaa45c644e0724262298f1f6c4614823f4">
+           </span>
+           <span class="kt">
+            <span class="pre">
+             bool
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_synth_result_is_disequal
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult">
+            <span class="n">
+             <span class="pre">
+              Cvc5SynthResult
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             a
+            </span>
+           </span>
+           ,
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult">
+            <span class="n">
+             <span class="pre">
+              Cvc5SynthResult
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             b
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv429cvc5_synth_result_is_disequalK15Cvc5SynthResultK15Cvc5SynthResult" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Operator overloading for disequality of two synthesis results.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 a
+                </strong>
+                – The first synthesis result to compare to for disequality.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 b
+                </strong>
+                – The second synthesis result to compare to for disequality.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              True if the synthesis results are disequal.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv427cvc5_synth_result_to_stringK15Cvc5SynthResult">
+           <span id="_CPPv327cvc5_synth_result_to_stringK15Cvc5SynthResult">
+           </span>
+           <span id="_CPPv227cvc5_synth_result_to_stringK15Cvc5SynthResult">
+           </span>
+           <span id="cvc5_synth_result_to_string__Cvc5SynthResultC">
+           </span>
+           <span class="target" id="group__c__cvc5synthresult_1ga8905b4101712e3d52c79c508bac81572">
+           </span>
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="kt">
+            <span class="pre">
+             char
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_synth_result_to_string
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult">
+            <span class="n">
+             <span class="pre">
+              Cvc5SynthResult
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             result
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv427cvc5_synth_result_to_stringK15Cvc5SynthResult" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Get the string representation of a given result.
+           </p>
+           <div class="admonition note">
+            <p class="admonition-title">
+             Note
+            </p>
+            <p>
+             The returned char* pointer is only valid until the next call to this function.
+            </p>
+           </div>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               result
+              </strong>
+              – The result.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              A string representation of the given synthesis result.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv422cvc5_synth_result_hash15Cvc5SynthResult">
+           <span id="_CPPv322cvc5_synth_result_hash15Cvc5SynthResult">
+           </span>
+           <span id="_CPPv222cvc5_synth_result_hash15Cvc5SynthResult">
+           </span>
+           <span id="cvc5_synth_result_hash__Cvc5SynthResult">
+           </span>
+           <span class="target" id="group__c__cvc5synthresult_1ga4fe3939764538ea88fd1d29c532a6ebf">
+           </span>
+           <span class="n">
+            <span class="pre">
+             size_t
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_synth_result_hash
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult">
+            <span class="n">
+             <span class="pre">
+              Cvc5SynthResult
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             result
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv422cvc5_synth_result_hash15Cvc5SynthResult" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Compute the hash value of a synthesis result.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               result
+              </strong>
+              – The synthesis result.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              The hash value of the synthesis result.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv422cvc5_synth_result_copy15Cvc5SynthResult">
+           <span id="_CPPv322cvc5_synth_result_copy15Cvc5SynthResult">
+           </span>
+           <span id="_CPPv222cvc5_synth_result_copy15Cvc5SynthResult">
+           </span>
+           <span id="cvc5_synth_result_copy__Cvc5SynthResult">
+           </span>
+           <span class="target" id="group__c__cvc5synthresult_1ga407f9f7707c2b6ffc3385825a9bdd0d0">
+           </span>
+           <a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult">
+            <span class="n">
+             <span class="pre">
+              Cvc5SynthResult
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_synth_result_copy
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult">
+            <span class="n">
+             <span class="pre">
+              Cvc5SynthResult
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             result
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv422cvc5_synth_result_copy15Cvc5SynthResult" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Make copy of synthesis result, increases reference counter of
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              result
+             </span>
+            </code>
+            .
+           </p>
+           <div class="admonition note">
+            <p class="admonition-title">
+             Note
+            </p>
+            <p>
+             This step is optional and allows users to manage resources in a more fine-grained manner.
+            </p>
+           </div>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               result
+              </strong>
+              – The synthesis result to copy.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              The same result with its reference count increased by one.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv425cvc5_synth_result_release15Cvc5SynthResult">
+           <span id="_CPPv325cvc5_synth_result_release15Cvc5SynthResult">
+           </span>
+           <span id="_CPPv225cvc5_synth_result_release15Cvc5SynthResult">
+           </span>
+           <span id="cvc5_synth_result_release__Cvc5SynthResult">
+           </span>
+           <span class="target" id="group__c__cvc5synthresult_1ga9adee7e49acfcfebf5ff46958de3b766">
+           </span>
+           <span class="kt">
+            <span class="pre">
+             void
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_synth_result_release
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <a class="reference internal" href="#_CPPv415Cvc5SynthResult" title="Cvc5SynthResult">
+            <span class="n">
+             <span class="pre">
+              Cvc5SynthResult
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             result
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv425cvc5_synth_result_release15Cvc5SynthResult" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Release copy of synthesis result, decrements reference counter of
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              result
+             </span>
+            </code>
+            .
+           </p>
+           <div class="admonition note">
+            <p class="admonition-title">
+             Note
+            </p>
+            <p>
+             This step is optional and allows users to release resources in a more fine-grained manner. Further, any API function that returns a copy that is owned by the callee of the function and thus, can be released.
+            </p>
+           </div>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               result
+              </strong>
+              – The result to release.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
         </section>
        </div>
       </div>

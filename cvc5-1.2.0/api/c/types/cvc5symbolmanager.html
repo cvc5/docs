@@ -316,6 +316,11 @@
         </a>
        </dd>
        <dd>
+        <a href="../../../../cvc5-1.3.0/">
+         cvc5-1.3.0
+        </a>
+       </dd>
+       <dd>
         <a href="../../../../cvc5-1.2.1/">
          cvc5-1.2.1
         </a>
@@ -499,100 +504,680 @@ SMT-LIB v2 inputs (e.g., named assertions, declared functions, etc.).
           </dd>
          </dl>
          <hr class="docutils"/>
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv423cvc5_symbol_manager_newP15Cvc5TermManager">
-<span id="_CPPv323cvc5_symbol_manager_newP15Cvc5TermManager"></span><span id="_CPPv223cvc5_symbol_manager_newP15Cvc5TermManager"></span><span id="cvc5_symbol_manager_new__Cvc5TermManagerP"></span><span class="target" id="group__c__cvc5symbolmanager_1ga55287c8b4a370aa7d97501553a5287be"></span><a class="reference internal" href="#_CPPv417Cvc5SymbolManager" title="Cvc5SymbolManager"><span class="n"><span class="pre">Cvc5SymbolManager</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_symbol_manager_new</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="cvc5termmanager.html#_CPPv415Cvc5TermManager" title="Cvc5TermManager"><span class="n"><span class="pre">Cvc5TermManager</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">tm</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423cvc5_symbol_manager_newP15Cvc5TermManager" title="Link to this definition"></a><br /></dt>
-<dd><p>Construct a new instance of a cvc5 symbol manager. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>tm</strong> – The associated term manager instance. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The cvc5 symbol manager instance. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv426cvc5_symbol_manager_deleteP17Cvc5SymbolManager">
-<span id="_CPPv326cvc5_symbol_manager_deleteP17Cvc5SymbolManager"></span><span id="_CPPv226cvc5_symbol_manager_deleteP17Cvc5SymbolManager"></span><span id="cvc5_symbol_manager_delete__Cvc5SymbolManagerP"></span><span class="target" id="group__c__cvc5symbolmanager_1ga65366abfe002ad8c30879c76dcc94f40"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_symbol_manager_delete</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv417Cvc5SymbolManager" title="Cvc5SymbolManager"><span class="n"><span class="pre">Cvc5SymbolManager</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">sm</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426cvc5_symbol_manager_deleteP17Cvc5SymbolManager" title="Link to this definition"></a><br /></dt>
-<dd><p>Delete a cvc5 symbol manager instance. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>sm</strong> – The symbol manager instance. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv420cvc5_sm_is_logic_setP17Cvc5SymbolManager">
-<span id="_CPPv320cvc5_sm_is_logic_setP17Cvc5SymbolManager"></span><span id="_CPPv220cvc5_sm_is_logic_setP17Cvc5SymbolManager"></span><span id="cvc5_sm_is_logic_set__Cvc5SymbolManagerP"></span><span class="target" id="group__c__cvc5symbolmanager_1gab41322ea6081b606cdf78e2013c914aa"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_sm_is_logic_set</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv417Cvc5SymbolManager" title="Cvc5SymbolManager"><span class="n"><span class="pre">Cvc5SymbolManager</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">sm</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cvc5_sm_is_logic_setP17Cvc5SymbolManager" title="Link to this definition"></a><br /></dt>
-<dd><p>Determine if the logic of a given symbol manager has been set. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>sm</strong> – The symbol manager instance. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if the logic has been set. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv417cvc5_sm_get_logicP17Cvc5SymbolManager">
-<span id="_CPPv317cvc5_sm_get_logicP17Cvc5SymbolManager"></span><span id="_CPPv217cvc5_sm_get_logicP17Cvc5SymbolManager"></span><span id="cvc5_sm_get_logic__Cvc5SymbolManagerP"></span><span class="target" id="group__c__cvc5symbolmanager_1ga979406375c4aec862b8630b9da9b92f4"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_sm_get_logic</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv417Cvc5SymbolManager" title="Cvc5SymbolManager"><span class="n"><span class="pre">Cvc5SymbolManager</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">sm</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417cvc5_sm_get_logicP17Cvc5SymbolManager" title="Link to this definition"></a><br /></dt>
-<dd><p>Get the logic configured for a given symbol manager. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Asserts <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5symbolmanager_1gab41322ea6081b606cdf78e2013c914aa"><span class="std std-ref"><span class="pre">cvc5_sm_is_logic_set()</span></span></a></code>. </p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The returned char* pointer is only valid until the next call to this function. </p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>sm</strong> – The symbol manager instance. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The configured logic. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv426cvc5_sm_get_declared_sortsP17Cvc5SymbolManagerP6size_t">
-<span id="_CPPv326cvc5_sm_get_declared_sortsP17Cvc5SymbolManagerP6size_t"></span><span id="_CPPv226cvc5_sm_get_declared_sortsP17Cvc5SymbolManagerP6size_t"></span><span id="cvc5_sm_get_declared_sorts__Cvc5SymbolManagerP.sP"></span><span class="target" id="group__c__cvc5symbolmanager_1ga1ac72c38424a17ac50e3fe6a8d925293"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="cvc5sort.html#_CPPv48Cvc5Sort" title="Cvc5Sort"><span class="n"><span class="pre">Cvc5Sort</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_sm_get_declared_sorts</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv417Cvc5SymbolManager" title="Cvc5SymbolManager"><span class="n"><span class="pre">Cvc5SymbolManager</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">sm</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426cvc5_sm_get_declared_sortsP17Cvc5SymbolManagerP6size_t" title="Link to this definition"></a><br /></dt>
-<dd><p>Get the list of sorts that have been declared via <code class="docutils literal notranslate"><span class="pre">declare-sort</span></code> commands. These are the sorts that are printed as part of a response to a <code class="docutils literal notranslate"><span class="pre">get-model</span></code> command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sm</strong> – The symbol manager instance. </p></li>
-<li><p><strong>size</strong> – The size of the resulting sorts array. </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The declared sorts. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv426cvc5_sm_get_declared_termsP17Cvc5SymbolManagerP6size_t">
-<span id="_CPPv326cvc5_sm_get_declared_termsP17Cvc5SymbolManagerP6size_t"></span><span id="_CPPv226cvc5_sm_get_declared_termsP17Cvc5SymbolManagerP6size_t"></span><span id="cvc5_sm_get_declared_terms__Cvc5SymbolManagerP.sP"></span><span class="target" id="group__c__cvc5symbolmanager_1ga6a225e47dbdbbc6405db82471891da4b"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="cvc5term.html#_CPPv48Cvc5Term" title="Cvc5Term"><span class="n"><span class="pre">Cvc5Term</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_sm_get_declared_terms</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv417Cvc5SymbolManager" title="Cvc5SymbolManager"><span class="n"><span class="pre">Cvc5SymbolManager</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">sm</span></span>, <span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">size</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426cvc5_sm_get_declared_termsP17Cvc5SymbolManagerP6size_t" title="Link to this definition"></a><br /></dt>
-<dd><p>Get the list of terms that have been declared via <code class="docutils literal notranslate"><span class="pre">declare-fun</span></code> and <code class="docutils literal notranslate"><span class="pre">declare-const</span></code>. These are the terms that are printed in response to a <code class="docutils literal notranslate"><span class="pre">get-model</span></code> command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>sm</strong> – The symbol manager instance. </p></li>
-<li><p><strong>size</strong> – The size of the resulting sorts array. </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The declared terms.terms </p>
-</dd>
-</dl>
-</dd></dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv423cvc5_symbol_manager_newP15Cvc5TermManager">
+           <span id="_CPPv323cvc5_symbol_manager_newP15Cvc5TermManager">
+           </span>
+           <span id="_CPPv223cvc5_symbol_manager_newP15Cvc5TermManager">
+           </span>
+           <span id="cvc5_symbol_manager_new__Cvc5TermManagerP">
+           </span>
+           <span class="target" id="group__c__cvc5symbolmanager_1ga55287c8b4a370aa7d97501553a5287be">
+           </span>
+           <a class="reference internal" href="#_CPPv417Cvc5SymbolManager" title="Cvc5SymbolManager">
+            <span class="n">
+             <span class="pre">
+              Cvc5SymbolManager
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_symbol_manager_new
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <a class="reference internal" href="cvc5termmanager.html#_CPPv415Cvc5TermManager" title="Cvc5TermManager">
+            <span class="n">
+             <span class="pre">
+              Cvc5TermManager
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             tm
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv423cvc5_symbol_manager_newP15Cvc5TermManager" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Construct a new instance of a cvc5 symbol manager.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               tm
+              </strong>
+              – The associated term manager instance.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              The cvc5 symbol manager instance.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv426cvc5_symbol_manager_deleteP17Cvc5SymbolManager">
+           <span id="_CPPv326cvc5_symbol_manager_deleteP17Cvc5SymbolManager">
+           </span>
+           <span id="_CPPv226cvc5_symbol_manager_deleteP17Cvc5SymbolManager">
+           </span>
+           <span id="cvc5_symbol_manager_delete__Cvc5SymbolManagerP">
+           </span>
+           <span class="target" id="group__c__cvc5symbolmanager_1ga65366abfe002ad8c30879c76dcc94f40">
+           </span>
+           <span class="kt">
+            <span class="pre">
+             void
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_symbol_manager_delete
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <a class="reference internal" href="#_CPPv417Cvc5SymbolManager" title="Cvc5SymbolManager">
+            <span class="n">
+             <span class="pre">
+              Cvc5SymbolManager
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             sm
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv426cvc5_symbol_manager_deleteP17Cvc5SymbolManager" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Delete a cvc5 symbol manager instance.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               sm
+              </strong>
+              – The symbol manager instance.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv420cvc5_sm_is_logic_setP17Cvc5SymbolManager">
+           <span id="_CPPv320cvc5_sm_is_logic_setP17Cvc5SymbolManager">
+           </span>
+           <span id="_CPPv220cvc5_sm_is_logic_setP17Cvc5SymbolManager">
+           </span>
+           <span id="cvc5_sm_is_logic_set__Cvc5SymbolManagerP">
+           </span>
+           <span class="target" id="group__c__cvc5symbolmanager_1gab41322ea6081b606cdf78e2013c914aa">
+           </span>
+           <span class="kt">
+            <span class="pre">
+             bool
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_sm_is_logic_set
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <a class="reference internal" href="#_CPPv417Cvc5SymbolManager" title="Cvc5SymbolManager">
+            <span class="n">
+             <span class="pre">
+              Cvc5SymbolManager
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             sm
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv420cvc5_sm_is_logic_setP17Cvc5SymbolManager" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Determine if the logic of a given symbol manager has been set.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               sm
+              </strong>
+              – The symbol manager instance.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              True if the logic has been set.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv417cvc5_sm_get_logicP17Cvc5SymbolManager">
+           <span id="_CPPv317cvc5_sm_get_logicP17Cvc5SymbolManager">
+           </span>
+           <span id="_CPPv217cvc5_sm_get_logicP17Cvc5SymbolManager">
+           </span>
+           <span id="cvc5_sm_get_logic__Cvc5SymbolManagerP">
+           </span>
+           <span class="target" id="group__c__cvc5symbolmanager_1ga979406375c4aec862b8630b9da9b92f4">
+           </span>
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="kt">
+            <span class="pre">
+             char
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_sm_get_logic
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <a class="reference internal" href="#_CPPv417Cvc5SymbolManager" title="Cvc5SymbolManager">
+            <span class="n">
+             <span class="pre">
+              Cvc5SymbolManager
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             sm
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv417cvc5_sm_get_logicP17Cvc5SymbolManager" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Get the logic configured for a given symbol manager.
+           </p>
+           <div class="admonition note">
+            <p class="admonition-title">
+             Note
+            </p>
+            <p>
+             Asserts
+             <code class="docutils literal notranslate">
+              <a class="reference internal" href="#group__c__cvc5symbolmanager_1gab41322ea6081b606cdf78e2013c914aa">
+               <span class="std std-ref">
+                <span class="pre">
+                 cvc5_sm_is_logic_set()
+                </span>
+               </span>
+              </a>
+             </code>
+             .
+            </p>
+           </div>
+           <div class="admonition note">
+            <p class="admonition-title">
+             Note
+            </p>
+            <p>
+             The returned char* pointer is only valid until the next call to this function.
+            </p>
+           </div>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               sm
+              </strong>
+              – The symbol manager instance.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              The configured logic.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv426cvc5_sm_get_declared_sortsP17Cvc5SymbolManagerP6size_t">
+           <span id="_CPPv326cvc5_sm_get_declared_sortsP17Cvc5SymbolManagerP6size_t">
+           </span>
+           <span id="_CPPv226cvc5_sm_get_declared_sortsP17Cvc5SymbolManagerP6size_t">
+           </span>
+           <span id="cvc5_sm_get_declared_sorts__Cvc5SymbolManagerP.sP">
+           </span>
+           <span class="target" id="group__c__cvc5symbolmanager_1ga1ac72c38424a17ac50e3fe6a8d925293">
+           </span>
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <a class="reference internal" href="cvc5sort.html#_CPPv48Cvc5Sort" title="Cvc5Sort">
+            <span class="n">
+             <span class="pre">
+              Cvc5Sort
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_sm_get_declared_sorts
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <a class="reference internal" href="#_CPPv417Cvc5SymbolManager" title="Cvc5SymbolManager">
+            <span class="n">
+             <span class="pre">
+              Cvc5SymbolManager
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             sm
+            </span>
+           </span>
+           ,
+           <span class="n">
+            <span class="pre">
+             size_t
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             size
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv426cvc5_sm_get_declared_sortsP17Cvc5SymbolManagerP6size_t" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Get the list of sorts that have been declared via
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              declare-sort
+             </span>
+            </code>
+            commands. These are the sorts that are printed as part of a response to a
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              get-model
+             </span>
+            </code>
+            command.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 sm
+                </strong>
+                – The symbol manager instance.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 size
+                </strong>
+                – The size of the resulting sorts array.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              The declared sorts.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv426cvc5_sm_get_declared_termsP17Cvc5SymbolManagerP6size_t">
+           <span id="_CPPv326cvc5_sm_get_declared_termsP17Cvc5SymbolManagerP6size_t">
+           </span>
+           <span id="_CPPv226cvc5_sm_get_declared_termsP17Cvc5SymbolManagerP6size_t">
+           </span>
+           <span id="cvc5_sm_get_declared_terms__Cvc5SymbolManagerP.sP">
+           </span>
+           <span class="target" id="group__c__cvc5symbolmanager_1ga6a225e47dbdbbc6405db82471891da4b">
+           </span>
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <a class="reference internal" href="cvc5term.html#_CPPv48Cvc5Term" title="Cvc5Term">
+            <span class="n">
+             <span class="pre">
+              Cvc5Term
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_sm_get_declared_terms
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <a class="reference internal" href="#_CPPv417Cvc5SymbolManager" title="Cvc5SymbolManager">
+            <span class="n">
+             <span class="pre">
+              Cvc5SymbolManager
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             sm
+            </span>
+           </span>
+           ,
+           <span class="n">
+            <span class="pre">
+             size_t
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             size
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv426cvc5_sm_get_declared_termsP17Cvc5SymbolManagerP6size_t" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Get the list of terms that have been declared via
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              declare-fun
+             </span>
+            </code>
+            and
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              declare-const
+             </span>
+            </code>
+            . These are the terms that are printed in response to a
+            <code class="docutils literal notranslate">
+             <span class="pre">
+              get-model
+             </span>
+            </code>
+            command.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 sm
+                </strong>
+                – The symbol manager instance.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 size
+                </strong>
+                – The size of the resulting sorts array.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              The declared terms.terms
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
         </section>
        </div>
       </div>

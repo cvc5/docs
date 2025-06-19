@@ -316,6 +316,11 @@
         </a>
        </dd>
        <dd>
+        <a href="../../../../cvc5-1.3.0/">
+         cvc5-1.3.0
+        </a>
+       </dd>
+       <dd>
         <a href="../../../../cvc5-1.2.1/">
          cvc5-1.2.1
         </a>
@@ -1694,102 +1699,616 @@ entries. Iteration over statistics entries is then provided via functions
           </dd>
          </dl>
          <hr class="docutils"/>
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv420cvc5_stats_iter_init14Cvc5Statisticsbb">
-<span id="_CPPv320cvc5_stats_iter_init14Cvc5Statisticsbb"></span><span id="_CPPv220cvc5_stats_iter_init14Cvc5Statisticsbb"></span><span id="cvc5_stats_iter_init__Cvc5Statistics.b.b"></span><span class="target" id="group__c__cvc5statistics_1ga532a5a89fc38366d263e03546fba5ac5"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stats_iter_init</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414Cvc5Statistics" title="Cvc5Statistics"><span class="n"><span class="pre">Cvc5Statistics</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">internal</span></span>, <span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">dflt</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cvc5_stats_iter_init14Cvc5Statisticsbb" title="Link to this definition"></a><br /></dt>
-<dd><p>Initialize iteration over the statistics values. By default, only entries that are public and have been set are visible while the others are skipped. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>stat</strong> – The statistics. </p></li>
-<li><p><strong>internal</strong> – If set to true, internal statistics are shown as well. </p></li>
-<li><p><strong>dflt</strong> – If set to true, defaulted statistics are shown as well. </p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv424cvc5_stats_iter_has_next14Cvc5Statistics">
-<span id="_CPPv324cvc5_stats_iter_has_next14Cvc5Statistics"></span><span id="_CPPv224cvc5_stats_iter_has_next14Cvc5Statistics"></span><span id="cvc5_stats_iter_has_next__Cvc5Statistics"></span><span class="target" id="group__c__cvc5statistics_1ga32f5f4ebf88587fe03f881665e865664"></span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stats_iter_has_next</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414Cvc5Statistics" title="Cvc5Statistics"><span class="n"><span class="pre">Cvc5Statistics</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424cvc5_stats_iter_has_next14Cvc5Statistics" title="Link to this definition"></a><br /></dt>
-<dd><p>Determine if statistics iterator has more statitics to query. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Requires that iterator was initialized with <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5statistics_1ga532a5a89fc38366d263e03546fba5ac5"><span class="std std-ref"><span class="pre">cvc5_stats_iter_init()</span></span></a></code>. </p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>stat</strong> – The statistics. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>True if the iterator has more statistics to query. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv420cvc5_stats_iter_next14Cvc5StatisticsPPKc">
-<span id="_CPPv320cvc5_stats_iter_next14Cvc5StatisticsPPKc"></span><span id="_CPPv220cvc5_stats_iter_next14Cvc5StatisticsPPKc"></span><span id="cvc5_stats_iter_next__Cvc5Statistics.cCPP"></span><span class="target" id="group__c__cvc5statistics_1gada3f397367e6c8b98ce46baedf8f9a21"></span><a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><span class="n"><span class="pre">Cvc5Stat</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stats_iter_next</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414Cvc5Statistics" title="Cvc5Statistics"><span class="n"><span class="pre">Cvc5Statistics</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cvc5_stats_iter_next14Cvc5StatisticsPPKc" title="Link to this definition"></a><br /></dt>
-<dd><p>Get next statistic and increment iterator. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Requires that iterator was initialized with <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5statistics_1ga532a5a89fc38366d263e03546fba5ac5"><span class="std std-ref"><span class="pre">cvc5_stats_iter_init()</span></span></a></code> and that <code class="docutils literal notranslate"><a class="reference internal" href="#group__c__cvc5statistics_1ga32f5f4ebf88587fe03f881665e865664"><span class="std std-ref"><span class="pre">cvc5_stats_iter_has_next()</span></span></a></code>. </p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The returned char* pointer are only valid until the next call to this function. </p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>stat</strong> – The statistics. </p></li>
-<li><p><strong>name</strong> – The output parameter for the name of the returned statistic. May be NULL to ignore. </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The next statistic. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv414cvc5_stats_get14Cvc5StatisticsPKc">
-<span id="_CPPv314cvc5_stats_get14Cvc5StatisticsPKc"></span><span id="_CPPv214cvc5_stats_get14Cvc5StatisticsPKc"></span><span id="cvc5_stats_get__Cvc5Statistics.cCP"></span><span class="target" id="group__c__cvc5statistics_1gaa4725b290d2f23cea1b7de3c623239f1"></span><a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat"><span class="n"><span class="pre">Cvc5Stat</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stats_get</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414Cvc5Statistics" title="Cvc5Statistics"><span class="n"><span class="pre">Cvc5Statistics</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414cvc5_stats_get14Cvc5StatisticsPKc" title="Link to this definition"></a><br /></dt>
-<dd><p>Retrieve the statistic with the given name. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Requires that a statistic with the given name actually exists. </p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>stat</strong> – The statistics. </p></li>
-<li><p><strong>name</strong> – The name of the statistic. </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The statistic with the given name. </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv420cvc5_stats_to_string14Cvc5Statistics">
-<span id="_CPPv320cvc5_stats_to_string14Cvc5Statistics"></span><span id="_CPPv220cvc5_stats_to_string14Cvc5Statistics"></span><span id="cvc5_stats_to_string__Cvc5Statistics"></span><span class="target" id="group__c__cvc5statistics_1ga5c5ce4e043f5302b774bd15189b08cf9"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">cvc5_stats_to_string</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv414Cvc5Statistics" title="Cvc5Statistics"><span class="n"><span class="pre">Cvc5Statistics</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">stat</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420cvc5_stats_to_string14Cvc5Statistics" title="Link to this definition"></a><br /></dt>
-<dd><p>Get a string representation of a given statistics object. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The returned char* pointer is only valid until the next call to this function. </p>
-</div>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>stat</strong> – The statistics. </p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The string representation. </p>
-</dd>
-</dl>
-</dd></dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv420cvc5_stats_iter_init14Cvc5Statisticsbb">
+           <span id="_CPPv320cvc5_stats_iter_init14Cvc5Statisticsbb">
+           </span>
+           <span id="_CPPv220cvc5_stats_iter_init14Cvc5Statisticsbb">
+           </span>
+           <span id="cvc5_stats_iter_init__Cvc5Statistics.b.b">
+           </span>
+           <span class="target" id="group__c__cvc5statistics_1ga532a5a89fc38366d263e03546fba5ac5">
+           </span>
+           <span class="kt">
+            <span class="pre">
+             void
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_stats_iter_init
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <a class="reference internal" href="#_CPPv414Cvc5Statistics" title="Cvc5Statistics">
+            <span class="n">
+             <span class="pre">
+              Cvc5Statistics
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             stat
+            </span>
+           </span>
+           ,
+           <span class="kt">
+            <span class="pre">
+             bool
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             internal
+            </span>
+           </span>
+           ,
+           <span class="kt">
+            <span class="pre">
+             bool
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             dflt
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv420cvc5_stats_iter_init14Cvc5Statisticsbb" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Initialize iteration over the statistics values. By default, only entries that are public and have been set are visible while the others are skipped.
+           </p>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 stat
+                </strong>
+                – The statistics.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 internal
+                </strong>
+                – If set to true, internal statistics are shown as well.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 dflt
+                </strong>
+                – If set to true, defaulted statistics are shown as well.
+               </p>
+              </li>
+             </ul>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv424cvc5_stats_iter_has_next14Cvc5Statistics">
+           <span id="_CPPv324cvc5_stats_iter_has_next14Cvc5Statistics">
+           </span>
+           <span id="_CPPv224cvc5_stats_iter_has_next14Cvc5Statistics">
+           </span>
+           <span id="cvc5_stats_iter_has_next__Cvc5Statistics">
+           </span>
+           <span class="target" id="group__c__cvc5statistics_1ga32f5f4ebf88587fe03f881665e865664">
+           </span>
+           <span class="kt">
+            <span class="pre">
+             bool
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_stats_iter_has_next
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <a class="reference internal" href="#_CPPv414Cvc5Statistics" title="Cvc5Statistics">
+            <span class="n">
+             <span class="pre">
+              Cvc5Statistics
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             stat
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv424cvc5_stats_iter_has_next14Cvc5Statistics" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Determine if statistics iterator has more statitics to query.
+           </p>
+           <div class="admonition note">
+            <p class="admonition-title">
+             Note
+            </p>
+            <p>
+             Requires that iterator was initialized with
+             <code class="docutils literal notranslate">
+              <a class="reference internal" href="#group__c__cvc5statistics_1ga532a5a89fc38366d263e03546fba5ac5">
+               <span class="std std-ref">
+                <span class="pre">
+                 cvc5_stats_iter_init()
+                </span>
+               </span>
+              </a>
+             </code>
+             .
+            </p>
+           </div>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               stat
+              </strong>
+              – The statistics.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              True if the iterator has more statistics to query.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv420cvc5_stats_iter_next14Cvc5StatisticsPPKc">
+           <span id="_CPPv320cvc5_stats_iter_next14Cvc5StatisticsPPKc">
+           </span>
+           <span id="_CPPv220cvc5_stats_iter_next14Cvc5StatisticsPPKc">
+           </span>
+           <span id="cvc5_stats_iter_next__Cvc5Statistics.cCPP">
+           </span>
+           <span class="target" id="group__c__cvc5statistics_1gada3f397367e6c8b98ce46baedf8f9a21">
+           </span>
+           <a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat">
+            <span class="n">
+             <span class="pre">
+              Cvc5Stat
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_stats_iter_next
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <a class="reference internal" href="#_CPPv414Cvc5Statistics" title="Cvc5Statistics">
+            <span class="n">
+             <span class="pre">
+              Cvc5Statistics
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             stat
+            </span>
+           </span>
+           ,
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="kt">
+            <span class="pre">
+             char
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             name
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv420cvc5_stats_iter_next14Cvc5StatisticsPPKc" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Get next statistic and increment iterator.
+           </p>
+           <div class="admonition note">
+            <p class="admonition-title">
+             Note
+            </p>
+            <p>
+             Requires that iterator was initialized with
+             <code class="docutils literal notranslate">
+              <a class="reference internal" href="#group__c__cvc5statistics_1ga532a5a89fc38366d263e03546fba5ac5">
+               <span class="std std-ref">
+                <span class="pre">
+                 cvc5_stats_iter_init()
+                </span>
+               </span>
+              </a>
+             </code>
+             and that
+             <code class="docutils literal notranslate">
+              <a class="reference internal" href="#group__c__cvc5statistics_1ga32f5f4ebf88587fe03f881665e865664">
+               <span class="std std-ref">
+                <span class="pre">
+                 cvc5_stats_iter_has_next()
+                </span>
+               </span>
+              </a>
+             </code>
+             .
+            </p>
+           </div>
+           <div class="admonition note">
+            <p class="admonition-title">
+             Note
+            </p>
+            <p>
+             The returned char* pointer are only valid until the next call to this function.
+            </p>
+           </div>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 stat
+                </strong>
+                – The statistics.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 name
+                </strong>
+                – The output parameter for the name of the returned statistic. May be NULL to ignore.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              The next statistic.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv414cvc5_stats_get14Cvc5StatisticsPKc">
+           <span id="_CPPv314cvc5_stats_get14Cvc5StatisticsPKc">
+           </span>
+           <span id="_CPPv214cvc5_stats_get14Cvc5StatisticsPKc">
+           </span>
+           <span id="cvc5_stats_get__Cvc5Statistics.cCP">
+           </span>
+           <span class="target" id="group__c__cvc5statistics_1gaa4725b290d2f23cea1b7de3c623239f1">
+           </span>
+           <a class="reference internal" href="#_CPPv48Cvc5Stat" title="Cvc5Stat">
+            <span class="n">
+             <span class="pre">
+              Cvc5Stat
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_stats_get
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <a class="reference internal" href="#_CPPv414Cvc5Statistics" title="Cvc5Statistics">
+            <span class="n">
+             <span class="pre">
+              Cvc5Statistics
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             stat
+            </span>
+           </span>
+           ,
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="kt">
+            <span class="pre">
+             char
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             name
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv414cvc5_stats_get14Cvc5StatisticsPKc" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Retrieve the statistic with the given name.
+           </p>
+           <div class="admonition note">
+            <p class="admonition-title">
+             Note
+            </p>
+            <p>
+             Requires that a statistic with the given name actually exists.
+            </p>
+           </div>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <ul class="simple">
+              <li>
+               <p>
+                <strong>
+                 stat
+                </strong>
+                – The statistics.
+               </p>
+              </li>
+              <li>
+               <p>
+                <strong>
+                 name
+                </strong>
+                – The name of the statistic.
+               </p>
+              </li>
+             </ul>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              The statistic with the given name.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
+         <dl class="cpp function">
+          <dt class="sig sig-object cpp" id="_CPPv420cvc5_stats_to_string14Cvc5Statistics">
+           <span id="_CPPv320cvc5_stats_to_string14Cvc5Statistics">
+           </span>
+           <span id="_CPPv220cvc5_stats_to_string14Cvc5Statistics">
+           </span>
+           <span id="cvc5_stats_to_string__Cvc5Statistics">
+           </span>
+           <span class="target" id="group__c__cvc5statistics_1ga5c5ce4e043f5302b774bd15189b08cf9">
+           </span>
+           <span class="k">
+            <span class="pre">
+             const
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="kt">
+            <span class="pre">
+             char
+            </span>
+           </span>
+           <span class="w">
+           </span>
+           <span class="p">
+            <span class="pre">
+             *
+            </span>
+           </span>
+           <span class="sig-name descname">
+            <span class="n">
+             <span class="pre">
+              cvc5_stats_to_string
+             </span>
+            </span>
+           </span>
+           <span class="sig-paren">
+            (
+           </span>
+           <a class="reference internal" href="#_CPPv414Cvc5Statistics" title="Cvc5Statistics">
+            <span class="n">
+             <span class="pre">
+              Cvc5Statistics
+             </span>
+            </span>
+           </a>
+           <span class="w">
+           </span>
+           <span class="n sig-param">
+            <span class="pre">
+             stat
+            </span>
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#_CPPv420cvc5_stats_to_string14Cvc5Statistics" title="Link to this definition">
+            
+           </a>
+           <br/>
+          </dt>
+          <dd>
+           <p>
+            Get a string representation of a given statistics object.
+           </p>
+           <div class="admonition note">
+            <p class="admonition-title">
+             Note
+            </p>
+            <p>
+             The returned char* pointer is only valid until the next call to this function.
+            </p>
+           </div>
+           <dl class="field-list simple">
+            <dt class="field-odd">
+             Parameters
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-odd">
+             <p>
+              <strong>
+               stat
+              </strong>
+              – The statistics.
+             </p>
+            </dd>
+            <dt class="field-even">
+             Returns
+             <span class="colon">
+              :
+             </span>
+            </dt>
+            <dd class="field-even">
+             <p>
+              The string representation.
+             </p>
+            </dd>
+           </dl>
+          </dd>
+         </dl>
         </section>
        </div>
       </div>
