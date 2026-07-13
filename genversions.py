@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import copy
 import glob
 import jinja2
+import os
 import re
 
 tpl_str = """
@@ -49,11 +50,13 @@ def put_versions_in_file(filename, newblock):
     if not nav:
         return
 
-    # find relative path to root dir
-    urlroot = doc.find('script', id='documentation_options')
-    if not urlroot:
-        return
-    urlroot = f'{urlroot["data-url_root"]}..'
+    # Relative path from this file back to the directory that contains all the
+    # `cvc5-*` version folders (the working directory this script runs in).
+    # Computing it from the file location rather than reading it out of the
+    # generated HTML keeps this working across Sphinx/theme versions: Sphinx
+    # 7.2 dropped the `<script id="documentation_options" data-url_root=...>`
+    # tag we used to rely on, which silently disabled version links.
+    urlroot = os.path.relpath('.', os.path.dirname(filename))
     for a in newblock.find_all('a'):
         a['href'] = a['href'].replace('%URLROOT%', urlroot)
 
