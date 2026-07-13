@@ -1,152 +1,557 @@
-
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="../">
-<head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+<html class="writer-html5" data-content_root="../" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- Google tag (gtag.js) -->
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ML12X2V35B">
+  </script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-ML12X2V35B');
-    </script>
-    
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Theory of Relations &mdash; cvc5  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../static/tabs.css?v=a5c4661c" />
-      <link rel="stylesheet" type="text/css" href="../static/custom.css?v=b9602cbe" />
-
-  
-      <script src="../static/jquery.js?v=5d32c60e"></script>
-      <script src="../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../static/documentation_options.js?v=5929fcd5"></script>
-      <script src="../static/doctools.js?v=fd6eb6e6"></script>
-      <script src="../static/sphinx_highlight.js?v=6ffebe34"></script>
-      <script>window.MathJax = {"loader": {"load": ["[tex]/ams", "[tex]/bussproofs"]}, "tex": {"packages": {"[+]": ["ams", "bussproofs"]}, "macros": {"xor": "\\mathbin{xor}", "ite": ["#1 \\mathbin{?} #2 \\mathbin{:} #3", 3], "inferrule": ["\\begin{prooftree}\\AxiomC{$#1$}\\UnaryInfC{$#2$}\\end{prooftree}", 2], "inferruleSC": ["\\begin{prooftree}\\AxiomC{$#1$}\\RightLabel{ #3}\\UnaryInfC{$#2$}\\end{prooftree}", 3]}}}</script>
-      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      <script src="../static/tabs.js?v=3030b3cb"></script>
-    <script src="../static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Theory of Sequences" href="sequences.html" />
-    <link rel="prev" title="Quickstart Example" href="quickstart.html" /> 
-</head>
-
-<body class="wy-body-for-nav"> 
+  </script>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Theory of Relations — cvc5  documentation
+  </title>
+  <link href="../static/pygments.css?v=b86133f3" rel="stylesheet" type="text/css"/>
+  <link href="../static/css/theme.css?v=9edc463e" rel="stylesheet" type="text/css"/>
+  <link href="../static/tabs.css?v=a5c4661c" rel="stylesheet" type="text/css"/>
+  <link href="../static/custom.css?v=b9602cbe" rel="stylesheet" type="text/css"/>
+  <script src="../static/jquery.js?v=5d32c60e">
+  </script>
+  <script src="../static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c">
+  </script>
+  <script src="../static/documentation_options.js?v=5929fcd5">
+  </script>
+  <script src="../static/doctools.js?v=fd6eb6e6">
+  </script>
+  <script src="../static/sphinx_highlight.js?v=6ffebe34">
+  </script>
+  <script>
+   window.MathJax = {"loader": {"load": ["[tex]/ams", "[tex]/bussproofs"]}, "tex": {"packages": {"[+]": ["ams", "bussproofs"]}, "macros": {"xor": "\\mathbin{xor}", "ite": ["#1 \\mathbin{?} #2 \\mathbin{:} #3", 3], "inferrule": ["\\begin{prooftree}\\AxiomC{$#1$}\\UnaryInfC{$#2$}\\end{prooftree}", 2], "inferruleSC": ["\\begin{prooftree}\\AxiomC{$#1$}\\RightLabel{ #3}\\UnaryInfC{$#2$}\\end{prooftree}", 3]}}}
+  </script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script src="../static/tabs.js?v=3030b3cb">
+  </script>
+  <script src="../static/js/theme.js">
+  </script>
+  <link href="../genindex.html" rel="index" title="Index"/>
+  <link href="../search.html" rel="search" title="Search"/>
+  <link href="sequences.html" rel="next" title="Theory of Sequences"/>
+  <link href="quickstart.html" rel="prev" title="Quickstart Example"/>
+ </head>
+ <body class="wy-body-for-nav">
   <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-
-          
-          
-          <a href="../index.html" class="icon icon-home">
-            cvc5
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../installation/installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../binary/binary.html">Binary Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/api.html">API Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../options.html">Options</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../output-tags.html">Output tags</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../proofs/proofs.html">Proof Production</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../resource-limits.html">Resource limits</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../skolem-ids.html">Skolem Identifiers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../statistics.html">Statistics</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="examples.html">Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="helloworld.html">Hello World</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exceptions.html">Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bags.html">Theory of Bags</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitvectors.html">Theory of Bit-Vectors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bitvectors_and_arrays.html">Theory of Bit-Vectors and Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="extract.html">Theory of Bit-Vectors: <code class="code docutils literal notranslate"><span class="pre">extract</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="datatypes.html">Theory of Datatypes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="finite_field.html">Theory of Finite Fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="floatingpoint.html">Theory of Floating-Points</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lineararith.html">Theory of Linear Arithmetic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="quickstart.html">Quickstart Example</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Theory of Relations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sequences.html">Theory of Sequences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sets.html">Theory of Sets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="strings.html">Theory of Strings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="combination.html">Theory Combination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sygus-fun.html">SyGuS: Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sygus-inv.html">SyGuS: Invariants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="parser.html">Parser</a></li>
-<li class="toctree-l2"><a class="reference internal" href="parser_sym_manager.html">Parser with Shared Symbol Manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="uf.html">Theory of Uninterpreted Functions</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../theories/theories.html">Theory References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
-</ul>
-
-        </div>
+   <nav class="wy-nav-side" data-toggle="wy-nav-shift">
+    <div class="wy-side-scroll">
+     <div class="wy-side-nav-search">
+      <a class="icon icon-home" href="../index.html">
+       cvc5
+      </a>
+      <div role="search">
+       <form action="../search.html" class="wy-form" id="rtd-search-form" method="get">
+        <input aria-label="Search docs" name="q" placeholder="Search docs" type="text"/>
+        <input name="check_keywords" type="hidden" value="yes"/>
+        <input name="area" type="hidden" value="default"/>
+       </form>
       </div>
+     </div>
+     <div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+      <ul class="current">
+       <li class="toctree-l1">
+        <a class="reference internal" href="../installation/installation.html">
+         Installation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../binary/binary.html">
+         Binary Documentation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../api/api.html">
+         API Documentation
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../options.html">
+         Options
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../output-tags.html">
+         Output tags
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../proofs/proofs.html">
+         Proof Production
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../resource-limits.html">
+         Resource limits
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../skolem-ids.html">
+         Skolem Identifiers
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../statistics.html">
+         Statistics
+        </a>
+       </li>
+       <li class="toctree-l1 current">
+        <a class="reference internal" href="examples.html">
+         Examples
+        </a>
+        <ul class="current">
+         <li class="toctree-l2">
+          <a class="reference internal" href="helloworld.html">
+           Hello World
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="exceptions.html">
+           Exception Handling
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="bags.html">
+           Theory of Bags
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="bitvectors.html">
+           Theory of Bit-Vectors
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="bitvectors_and_arrays.html">
+           Theory of Bit-Vectors and Arrays
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="extract.html">
+           Theory of Bit-Vectors:
+           <code class="code docutils literal notranslate">
+            <span class="pre">
+             extract
+            </span>
+           </code>
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="datatypes.html">
+           Theory of Datatypes
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="finite_field.html">
+           Theory of Finite Fields
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="floatingpoint.html">
+           Theory of Floating-Points
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="lineararith.html">
+           Theory of Linear Arithmetic
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="quickstart.html">
+           Quickstart Example
+          </a>
+         </li>
+         <li class="toctree-l2 current">
+          <a class="current reference internal" href="#">
+           Theory of Relations
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="sequences.html">
+           Theory of Sequences
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="sets.html">
+           Theory of Sets
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="strings.html">
+           Theory of Strings
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="combination.html">
+           Theory Combination
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="sygus-fun.html">
+           SyGuS: Functions
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="sygus-inv.html">
+           SyGuS: Invariants
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="parser.html">
+           Parser
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="parser_sym_manager.html">
+           Parser with Shared Symbol Manager
+          </a>
+         </li>
+         <li class="toctree-l2">
+          <a class="reference internal" href="uf.html">
+           Theory of Uninterpreted Functions
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../theories/theories.html">
+         Theory References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../references.html">
+         References
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="../genindex.html">
+         Index
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div aria-label="versions" class="rst-versions shift-up" data-toggle="rst-versions" id="cvc5-versions" role="note">
+     <span class="rst-current-version" data-toggle="rst-current-version">
+      <i class="fas fa-tags">
+      </i>
+      Other versions
+     </span>
+     <div class="rst-other-versions">
+      <dl>
+       <dd>
+        <a href="https://cvc5.github.io/docs-ci/docs-main/">
+         cvc5-main
+        </a>
+       </dd>
+       <dd>
+        <strong>
+         <a href="../../cvc5-1.3.4/">
+          cvc5-1.3.4
+         </a>
+        </strong>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.3.3/">
+         cvc5-1.3.3
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.3.2/">
+         cvc5-1.3.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.3.1/">
+         cvc5-1.3.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.3.0/">
+         cvc5-1.3.0
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.2.1/">
+         cvc5-1.2.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.2.0/">
+         cvc5-1.2.0
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.1.2/">
+         cvc5-1.1.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.1.1/">
+         cvc5-1.1.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.1.0/">
+         cvc5-1.1.0
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.0.9/">
+         cvc5-1.0.9
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.0.8/">
+         cvc5-1.0.8
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.0.7/">
+         cvc5-1.0.7
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.0.2/">
+         cvc5-1.0.2
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.0.1/">
+         cvc5-1.0.1
+        </a>
+       </dd>
+       <dd>
+        <a href="../../cvc5-1.0.0/">
+         cvc5-1.0.0
+        </a>
+       </dd>
+      </dl>
+     </div>
+    </div>
+   </nav>
+   <section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+    <nav aria-label="Mobile navigation menu" class="wy-nav-top">
+     <i class="fa fa-bars" data-toggle="wy-nav-top">
+     </i>
+     <a href="../index.html">
+      cvc5
+     </a>
     </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">cvc5</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="examples.html">Examples</a></li>
-      <li class="breadcrumb-item active">Theory of Relations</li>
-      <li class="wy-breadcrumbs-aside">
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  <section id="theory-of-relations">
-<h1>Theory of Relations<a class="headerlink" href="#theory-of-relations" title="Link to this heading"></a></h1>
-<p>This simple example demonstrates the combined
-<a class="reference external" href="../theories/sets-and-relations.html">theory of finite sets and finite relations</a> using a family tree.
-Relations are defined as sets of tuples with arity <span class="math notranslate nohighlight">\(\geq 1\)</span>.
-The example includes the unary relations <span class="math notranslate nohighlight">\(people, males,\)</span> and  <span class="math notranslate nohighlight">\(females\)</span>
-and the binary relations <span class="math notranslate nohighlight">\(father, mother, parent, ancestor\)</span>, and <span class="math notranslate nohighlight">\(descendant\)</span>.</p>
-<p>We have the following list of constraints:</p>
-<ul class="simple">
-<li><p>All relations are nonempty.</p></li>
-<li><p>People is the universe set.</p></li>
-<li><p>Males and females are disjoint sets (i.e., <span class="math notranslate nohighlight">\(males \cap females = \phi\)</span>).</p></li>
-<li><p>Fathers are males (i.e., <span class="math notranslate nohighlight">\(father \bowtie people \subseteq males\)</span>) <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>*<span class="fn-bracket">]</span></a>.</p></li>
-<li><p>Mothers are females (i.e., <span class="math notranslate nohighlight">\(mother \bowtie people \subseteq females\)</span>).</p></li>
-<li><p>A parent is a father or a mother (i.e., <span class="math notranslate nohighlight">\(parent = father \cup mother\)</span>).</p></li>
-<li><p>Ancestor relation is the transitive closure of parent (i.e., <span class="math notranslate nohighlight">\(ancestor = parent^{+}\)</span>).</p></li>
-<li><p>Descendant relation is the transpose of ancestor (i.e., <span class="math notranslate nohighlight">\(descendant = ancestor^{-1}\)</span>).</p></li>
-<li><p>No self ancestor (i.e., <span class="math notranslate nohighlight">\(\forall x: Person. \langle x, x \rangle \not\in ancestor\)</span>).</p></li>
-</ul>
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id2" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">*</a><span class="fn-bracket">]</span></span>
-<p><span class="math notranslate nohighlight">\(\bowtie\)</span> denotes the relational join operator as defined in <span class="bibtex-citation" id="id3">[<a class="reference internal" href="../references.html#id5" title="Baoluo Meng, Andrew Reynolds, Cesare Tinelli, and Clark W. Barrett. Relational constraint solving in SMT. In Leonardo de Moura, editor, Automated Deduction - CADE 26 - 26th International Conference on Automated Deduction, Gothenburg, Sweden, August 6-11, 2017, Proceedings, volume 10395 of Lecture Notes in Computer Science, 148–165. Springer, 2017. doi:10.1007/978-3-319-63046-5_10.">MRTB17</a>]</span>.</p>
-</aside>
-</aside>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">C++</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">C</button><button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">Java</button><button aria-controls="panel-0-0-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-3" name="0-3" role="tab" tabindex="-1">Python (base)</button><button aria-controls="panel-0-0-4" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-4" name="0-4" role="tab" tabindex="-1">SMT-LIBv2</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p class="fa fa-download icon-margin"><a class="reference external" href="https://github.com/cvc5/cvc5/tree/main/examples/api/cpp/relations.cpp">examples/api/cpp/relations.cpp</a></p>
-<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="cm">/******************************************************************************</span>
+    <div class="wy-nav-content">
+     <div class="rst-content">
+      <div aria-label="Page navigation" role="navigation">
+       <ul class="wy-breadcrumbs">
+        <li>
+         <a aria-label="Home" class="icon icon-home" href="../index.html">
+         </a>
+        </li>
+        <li class="breadcrumb-item">
+         <a href="examples.html">
+          Examples
+         </a>
+        </li>
+        <li class="breadcrumb-item active">
+         Theory of Relations
+        </li>
+        <li class="wy-breadcrumbs-aside">
+        </li>
+       </ul>
+       <hr/>
+      </div>
+      <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+       <div itemprop="articleBody">
+        <section id="theory-of-relations">
+         <h1>
+          Theory of Relations
+          <a class="headerlink" href="#theory-of-relations" title="Link to this heading">
+           
+          </a>
+         </h1>
+         <p>
+          This simple example demonstrates the combined
+          <a class="reference external" href="../theories/sets-and-relations.html">
+           theory of finite sets and finite relations
+          </a>
+          using a family tree.
+Relations are defined as sets of tuples with arity
+          <span class="math notranslate nohighlight">
+           \(\geq 1\)
+          </span>
+          .
+The example includes the unary relations
+          <span class="math notranslate nohighlight">
+           \(people, males,\)
+          </span>
+          and
+          <span class="math notranslate nohighlight">
+           \(females\)
+          </span>
+          and the binary relations
+          <span class="math notranslate nohighlight">
+           \(father, mother, parent, ancestor\)
+          </span>
+          , and
+          <span class="math notranslate nohighlight">
+           \(descendant\)
+          </span>
+          .
+         </p>
+         <p>
+          We have the following list of constraints:
+         </p>
+         <ul class="simple">
+          <li>
+           <p>
+            All relations are nonempty.
+           </p>
+          </li>
+          <li>
+           <p>
+            People is the universe set.
+           </p>
+          </li>
+          <li>
+           <p>
+            Males and females are disjoint sets (i.e.,
+            <span class="math notranslate nohighlight">
+             \(males \cap females = \phi\)
+            </span>
+            ).
+           </p>
+          </li>
+          <li>
+           <p>
+            Fathers are males (i.e.,
+            <span class="math notranslate nohighlight">
+             \(father \bowtie people \subseteq males\)
+            </span>
+            )
+            <a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref">
+             <span class="fn-bracket">
+              [
+             </span>
+             *
+             <span class="fn-bracket">
+              ]
+             </span>
+            </a>
+            .
+           </p>
+          </li>
+          <li>
+           <p>
+            Mothers are females (i.e.,
+            <span class="math notranslate nohighlight">
+             \(mother \bowtie people \subseteq females\)
+            </span>
+            ).
+           </p>
+          </li>
+          <li>
+           <p>
+            A parent is a father or a mother (i.e.,
+            <span class="math notranslate nohighlight">
+             \(parent = father \cup mother\)
+            </span>
+            ).
+           </p>
+          </li>
+          <li>
+           <p>
+            Ancestor relation is the transitive closure of parent (i.e.,
+            <span class="math notranslate nohighlight">
+             \(ancestor = parent^{+}\)
+            </span>
+            ).
+           </p>
+          </li>
+          <li>
+           <p>
+            Descendant relation is the transpose of ancestor (i.e.,
+            <span class="math notranslate nohighlight">
+             \(descendant = ancestor^{-1}\)
+            </span>
+            ).
+           </p>
+          </li>
+          <li>
+           <p>
+            No self ancestor (i.e.,
+            <span class="math notranslate nohighlight">
+             \(\forall x: Person. \langle x, x \rangle \not\in ancestor\)
+            </span>
+            ).
+           </p>
+          </li>
+         </ul>
+         <aside class="footnote-list brackets">
+          <aside class="footnote brackets" id="id2" role="doc-footnote">
+           <span class="label">
+            <span class="fn-bracket">
+             [
+            </span>
+            <a href="#id1" role="doc-backlink">
+             *
+            </a>
+            <span class="fn-bracket">
+             ]
+            </span>
+           </span>
+           <p>
+            <span class="math notranslate nohighlight">
+             \(\bowtie\)
+            </span>
+            denotes the relational join operator as defined in
+            <span class="bibtex-citation" id="id3">
+             [
+             <a class="reference internal" href="../references.html#id5" title="Baoluo Meng, Andrew Reynolds, Cesare Tinelli, and Clark W. Barrett. Relational constraint solving in SMT. In Leonardo de Moura, editor, Automated Deduction - CADE 26 - 26th International Conference on Automated Deduction, Gothenburg, Sweden, August 6-11, 2017, Proceedings, volume 10395 of Lecture Notes in Computer Science, 148–165. Springer, 2017. doi:10.1007/978-3-319-63046-5_10.">
+              MRTB17
+             </a>
+             ]
+            </span>
+            .
+           </p>
+          </aside>
+         </aside>
+         <div class="sphinx-tabs docutils container">
+          <div aria-label="Tabbed content" class="closeable" role="tablist">
+           <button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">
+            C++
+           </button>
+           <button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">
+            C
+           </button>
+           <button aria-controls="panel-0-0-2" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-2" name="0-2" role="tab" tabindex="-1">
+            Java
+           </button>
+           <button aria-controls="panel-0-0-3" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-3" name="0-3" role="tab" tabindex="-1">
+            Python (base)
+           </button>
+           <button aria-controls="panel-0-0-4" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-4" name="0-4" role="tab" tabindex="-1">
+            SMT-LIBv2
+           </button>
+          </div>
+          <div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0">
+           <p class="fa fa-download icon-margin">
+            <a class="reference external" href="https://github.com/cvc5/cvc5/tree/main/examples/api/cpp/relations.cpp">
+             examples/api/cpp/relations.cpp
+            </a>
+           </p>
+           <div class="highlight-c++ notranslate">
+            <div class="highlight">
+             <pre><span></span><span class="linenos">  1</span><span class="cm">/******************************************************************************</span>
 <span class="linenos">  2</span><span class="cm"> * This file is part of the cvc5 project.</span>
 <span class="linenos">  3</span><span class="cm"> *</span>
 <span class="linenos">  4</span><span class="cm"> * Copyright (c) 2009-2026 by the authors listed in the file AUTHORS</span>
@@ -170,18 +575,18 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos"> 22</span><span class="w">  </span><span class="n">Solver</span><span class="w"> </span><span class="n">solver</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
 <span class="linenos"> 23</span>
 <span class="linenos"> 24</span><span class="w">  </span><span class="c1">// Set the logic</span>
-<span class="linenos"> 25</span><span class="w">  </span><span class="n">solver</span><span class="p">.</span><span class="n">setLogic</span><span class="p">(</span><span class="s">&quot;ALL&quot;</span><span class="p">);</span>
+<span class="linenos"> 25</span><span class="w">  </span><span class="n">solver</span><span class="p">.</span><span class="n">setLogic</span><span class="p">(</span><span class="s">"ALL"</span><span class="p">);</span>
 <span class="linenos"> 26</span>
 <span class="linenos"> 27</span><span class="w">  </span><span class="c1">// options</span>
-<span class="linenos"> 28</span><span class="w">  </span><span class="n">solver</span><span class="p">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;produce-models&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="linenos"> 28</span><span class="w">  </span><span class="n">solver</span><span class="p">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">"produce-models"</span><span class="p">,</span><span class="w"> </span><span class="s">"true"</span><span class="p">);</span>
 <span class="linenos"> 29</span><span class="w">  </span><span class="c1">// we need finite model finding to answer sat problems with universal</span>
 <span class="linenos"> 30</span><span class="w">  </span><span class="c1">// quantified formulas</span>
-<span class="linenos"> 31</span><span class="w">  </span><span class="n">solver</span><span class="p">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;finite-model-find&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="linenos"> 31</span><span class="w">  </span><span class="n">solver</span><span class="p">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">"finite-model-find"</span><span class="p">,</span><span class="w"> </span><span class="s">"true"</span><span class="p">);</span>
 <span class="linenos"> 32</span><span class="w">  </span><span class="c1">// we need sets extension to support set.universe operator</span>
-<span class="linenos"> 33</span><span class="w">  </span><span class="n">solver</span><span class="p">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;sets-exp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="linenos"> 33</span><span class="w">  </span><span class="n">solver</span><span class="p">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">"sets-exp"</span><span class="p">,</span><span class="w"> </span><span class="s">"true"</span><span class="p">);</span>
 <span class="linenos"> 34</span>
 <span class="linenos"> 35</span><span class="w">  </span><span class="c1">// (declare-sort Person 0)</span>
-<span class="linenos"> 36</span><span class="w">  </span><span class="n">Sort</span><span class="w"> </span><span class="n">personSort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkUninterpretedSort</span><span class="p">(</span><span class="s">&quot;Person&quot;</span><span class="p">);</span>
+<span class="linenos"> 36</span><span class="w">  </span><span class="n">Sort</span><span class="w"> </span><span class="n">personSort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkUninterpretedSort</span><span class="p">(</span><span class="s">"Person"</span><span class="p">);</span>
 <span class="linenos"> 37</span>
 <span class="linenos"> 38</span><span class="w">  </span><span class="c1">// (Tuple Person)</span>
 <span class="linenos"> 39</span><span class="w">  </span><span class="n">Sort</span><span class="w"> </span><span class="n">tupleArity1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTupleSort</span><span class="p">({</span><span class="n">personSort</span><span class="p">});</span>
@@ -203,14 +608,14 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos"> 55</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">universeSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkUniverseSet</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">);</span>
 <span class="linenos"> 56</span>
 <span class="linenos"> 57</span><span class="w">  </span><span class="c1">// variables</span>
-<span class="linenos"> 58</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;people&quot;</span><span class="p">);</span>
-<span class="linenos"> 59</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">males</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;males&quot;</span><span class="p">);</span>
-<span class="linenos"> 60</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">females</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;females&quot;</span><span class="p">);</span>
-<span class="linenos"> 61</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">father</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;father&quot;</span><span class="p">);</span>
-<span class="linenos"> 62</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">mother</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mother&quot;</span><span class="p">);</span>
-<span class="linenos"> 63</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;parent&quot;</span><span class="p">);</span>
-<span class="linenos"> 64</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">ancestor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ancestor&quot;</span><span class="p">);</span>
-<span class="linenos"> 65</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">descendant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;descendant&quot;</span><span class="p">);</span>
+<span class="linenos"> 58</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span><span class="w"> </span><span class="s">"people"</span><span class="p">);</span>
+<span class="linenos"> 59</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">males</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span><span class="w"> </span><span class="s">"males"</span><span class="p">);</span>
+<span class="linenos"> 60</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">females</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span><span class="w"> </span><span class="s">"females"</span><span class="p">);</span>
+<span class="linenos"> 61</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">father</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">"father"</span><span class="p">);</span>
+<span class="linenos"> 62</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">mother</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">"mother"</span><span class="p">);</span>
+<span class="linenos"> 63</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">"parent"</span><span class="p">);</span>
+<span class="linenos"> 64</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">ancestor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">"ancestor"</span><span class="p">);</span>
+<span class="linenos"> 65</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">descendant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">"descendant"</span><span class="p">);</span>
 <span class="linenos"> 66</span>
 <span class="linenos"> 67</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">isEmpty1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">EQUAL</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">males</span><span class="p">,</span><span class="w"> </span><span class="n">emptySetTerm</span><span class="p">});</span>
 <span class="linenos"> 68</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">isEmpty2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">EQUAL</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">females</span><span class="p">,</span><span class="w"> </span><span class="n">emptySetTerm</span><span class="p">});</span>
@@ -259,7 +664,7 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos">111</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">descendantFormula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">EQUAL</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">descendant</span><span class="p">,</span><span class="w"> </span><span class="n">transpose</span><span class="p">});</span>
 <span class="linenos">112</span>
 <span class="linenos">113</span><span class="w">  </span><span class="c1">// (assert (forall ((x Person)) (not (set.member (tuple x x) ancestor))))</span>
-<span class="linenos">114</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkVar</span><span class="p">(</span><span class="n">personSort</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">);</span>
+<span class="linenos">114</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkVar</span><span class="p">(</span><span class="n">personSort</span><span class="p">,</span><span class="w"> </span><span class="s">"x"</span><span class="p">);</span>
 <span class="linenos">115</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">xxTuple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTuple</span><span class="p">({</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">});</span>
 <span class="linenos">116</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">member</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">SET_MEMBER</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">xxTuple</span><span class="p">,</span><span class="w"> </span><span class="n">ancestor</span><span class="p">});</span>
 <span class="linenos">117</span><span class="w">  </span><span class="n">Term</span><span class="w"> </span><span class="n">notMember</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">::</span><span class="n">NOT</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">member</span><span class="p">});</span>
@@ -286,20 +691,29 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos">138</span><span class="w">  </span><span class="n">Result</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">checkSat</span><span class="p">();</span>
 <span class="linenos">139</span>
 <span class="linenos">140</span><span class="w">  </span><span class="c1">// output</span>
-<span class="linenos">141</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Result     = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="linenos">142</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;people     = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">people</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="linenos">143</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;males      = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">males</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="linenos">144</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;females    = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">females</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="linenos">145</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;father     = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">father</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="linenos">146</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;mother     = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">mother</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="linenos">147</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;parent     = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="linenos">148</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;descendant = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">descendant</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-<span class="linenos">149</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;ancestor   = &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">ancestor</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">141</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Result     = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">142</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"people     = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">people</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">143</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"males      = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">males</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">144</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"females    = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">females</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">145</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"father     = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">father</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">146</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"mother     = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">mother</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">147</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"parent     = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">148</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"descendant = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">descendant</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">149</span><span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"ancestor   = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">ancestor</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="linenos">150</span><span class="p">}</span>
-</pre></div>
-</div>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p class="fa fa-download icon-margin"><a class="reference external" href="https://github.com/cvc5/cvc5/tree/main/examples/api/c/relations.c">examples/api/c/relations.c</a></p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="cm">/******************************************************************************</span>
+</pre>
+            </div>
+           </div>
+          </div>
+          <div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0">
+           <p class="fa fa-download icon-margin">
+            <a class="reference external" href="https://github.com/cvc5/cvc5/tree/main/examples/api/c/relations.c">
+             examples/api/c/relations.c
+            </a>
+           </p>
+           <div class="highlight-c notranslate">
+            <div class="highlight">
+             <pre><span></span><span class="linenos">  1</span><span class="cm">/******************************************************************************</span>
 <span class="linenos">  2</span><span class="cm"> * This file is part of the cvc5 project.</span>
 <span class="linenos">  3</span><span class="cm"> *</span>
 <span class="linenos">  4</span><span class="cm"> * Copyright (c) 2009-2026 by the authors listed in the file AUTHORS</span>
@@ -320,18 +734,18 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos"> 19</span><span class="w">  </span><span class="n">Cvc5</span><span class="o">*</span><span class="w"> </span><span class="n">slv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_new</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
 <span class="linenos"> 20</span>
 <span class="linenos"> 21</span><span class="w">  </span><span class="c1">// Set the logic</span>
-<span class="linenos"> 22</span><span class="w">  </span><span class="n">cvc5_set_logic</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ALL&quot;</span><span class="p">);</span>
+<span class="linenos"> 22</span><span class="w">  </span><span class="n">cvc5_set_logic</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="s">"ALL"</span><span class="p">);</span>
 <span class="linenos"> 23</span>
 <span class="linenos"> 24</span><span class="w">  </span><span class="c1">// options</span>
-<span class="linenos"> 25</span><span class="w">  </span><span class="n">cvc5_set_option</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;produce-models&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="linenos"> 25</span><span class="w">  </span><span class="n">cvc5_set_option</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="s">"produce-models"</span><span class="p">,</span><span class="w"> </span><span class="s">"true"</span><span class="p">);</span>
 <span class="linenos"> 26</span><span class="w">  </span><span class="c1">// we need finite model finding to answer sat problems with universal</span>
 <span class="linenos"> 27</span><span class="w">  </span><span class="c1">// quantified formulas</span>
-<span class="linenos"> 28</span><span class="w">  </span><span class="n">cvc5_set_option</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;finite-model-find&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="linenos"> 28</span><span class="w">  </span><span class="n">cvc5_set_option</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="s">"finite-model-find"</span><span class="p">,</span><span class="w"> </span><span class="s">"true"</span><span class="p">);</span>
 <span class="linenos"> 29</span><span class="w">  </span><span class="c1">// we need sets extension to support set.universe operator</span>
-<span class="linenos"> 30</span><span class="w">  </span><span class="n">cvc5_set_option</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sets-exp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="linenos"> 30</span><span class="w">  </span><span class="n">cvc5_set_option</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="s">"sets-exp"</span><span class="p">,</span><span class="w"> </span><span class="s">"true"</span><span class="p">);</span>
 <span class="linenos"> 31</span>
 <span class="linenos"> 32</span><span class="w">  </span><span class="c1">// (declare-sort Person 0)</span>
-<span class="linenos"> 33</span><span class="w">  </span><span class="n">Cvc5Sort</span><span class="w"> </span><span class="n">person_sort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_uninterpreted_sort</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Person&quot;</span><span class="p">);</span>
+<span class="linenos"> 33</span><span class="w">  </span><span class="n">Cvc5Sort</span><span class="w"> </span><span class="n">person_sort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_uninterpreted_sort</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="s">"Person"</span><span class="p">);</span>
 <span class="linenos"> 34</span>
 <span class="linenos"> 35</span><span class="w">  </span><span class="c1">// (Tuple Person)</span>
 <span class="linenos"> 36</span><span class="w">  </span><span class="n">Cvc5Sort</span><span class="w"> </span><span class="n">sorts1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">person_sort</span><span class="p">};</span>
@@ -355,14 +769,14 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos"> 54</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">universe_set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_universe_set</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity1</span><span class="p">);</span>
 <span class="linenos"> 55</span>
 <span class="linenos"> 56</span><span class="w">  </span><span class="c1">// variables</span>
-<span class="linenos"> 57</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;people&quot;</span><span class="p">);</span>
-<span class="linenos"> 58</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">males</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;males&quot;</span><span class="p">);</span>
-<span class="linenos"> 59</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">females</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;females&quot;</span><span class="p">);</span>
-<span class="linenos"> 60</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">father</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;father&quot;</span><span class="p">);</span>
-<span class="linenos"> 61</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">mother</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mother&quot;</span><span class="p">);</span>
-<span class="linenos"> 62</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;parent&quot;</span><span class="p">);</span>
-<span class="linenos"> 63</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">ancestor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ancestor&quot;</span><span class="p">);</span>
-<span class="linenos"> 64</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">descendant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;descendant&quot;</span><span class="p">);</span>
+<span class="linenos"> 57</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity1</span><span class="p">,</span><span class="w"> </span><span class="s">"people"</span><span class="p">);</span>
+<span class="linenos"> 58</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">males</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity1</span><span class="p">,</span><span class="w"> </span><span class="s">"males"</span><span class="p">);</span>
+<span class="linenos"> 59</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">females</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity1</span><span class="p">,</span><span class="w"> </span><span class="s">"females"</span><span class="p">);</span>
+<span class="linenos"> 60</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">father</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity2</span><span class="p">,</span><span class="w"> </span><span class="s">"father"</span><span class="p">);</span>
+<span class="linenos"> 61</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">mother</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity2</span><span class="p">,</span><span class="w"> </span><span class="s">"mother"</span><span class="p">);</span>
+<span class="linenos"> 62</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity2</span><span class="p">,</span><span class="w"> </span><span class="s">"parent"</span><span class="p">);</span>
+<span class="linenos"> 63</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">ancestor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity2</span><span class="p">,</span><span class="w"> </span><span class="s">"ancestor"</span><span class="p">);</span>
+<span class="linenos"> 64</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">descendant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_const</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">rel_arity2</span><span class="p">,</span><span class="w"> </span><span class="s">"descendant"</span><span class="p">);</span>
 <span class="linenos"> 65</span>
 <span class="linenos"> 66</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">args2</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">males</span><span class="p">,</span><span class="w"> </span><span class="n">empty_set</span><span class="p">};</span>
 <span class="linenos"> 67</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">is_empty1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_EQUAL</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args2</span><span class="p">);</span>
@@ -448,7 +862,7 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos">147</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">descendant_formula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_term</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">CVC5_KIND_EQUAL</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args2</span><span class="p">);</span>
 <span class="linenos">148</span>
 <span class="linenos">149</span><span class="w">  </span><span class="c1">// (assert (forall ((x Person)) (not (set.member (tuple x x) ancestor))))</span>
-<span class="linenos">150</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_var</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">person_sort</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">);</span>
+<span class="linenos">150</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_var</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="n">person_sort</span><span class="p">,</span><span class="w"> </span><span class="s">"x"</span><span class="p">);</span>
 <span class="linenos">151</span><span class="w">  </span><span class="n">args2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 <span class="linenos">152</span><span class="w">  </span><span class="n">args2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 <span class="linenos">153</span><span class="w">  </span><span class="n">Cvc5Term</span><span class="w"> </span><span class="n">xx_tuple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_mk_tuple</span><span class="p">(</span><span class="n">tm</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">args2</span><span class="p">);</span>
@@ -482,26 +896,35 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos">181</span><span class="w">  </span><span class="n">Cvc5Result</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cvc5_check_sat</span><span class="p">(</span><span class="n">slv</span><span class="p">);</span>
 <span class="linenos">182</span>
 <span class="linenos">183</span><span class="w">  </span><span class="c1">// output</span>
-<span class="linenos">184</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Result     = %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_result_to_string</span><span class="p">(</span><span class="n">result</span><span class="p">));</span>
-<span class="linenos">185</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;people     = %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">people</span><span class="p">)));</span>
-<span class="linenos">186</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;males      = %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">males</span><span class="p">)));</span>
-<span class="linenos">187</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;females    = %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="linenos">184</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">"Result     = %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_result_to_string</span><span class="p">(</span><span class="n">result</span><span class="p">));</span>
+<span class="linenos">185</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">"people     = %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">people</span><span class="p">)));</span>
+<span class="linenos">186</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">"males      = %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">males</span><span class="p">)));</span>
+<span class="linenos">187</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">"females    = %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
 <span class="linenos">188</span><span class="w">         </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">females</span><span class="p">)));</span>
-<span class="linenos">189</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;father     = %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">father</span><span class="p">)));</span>
-<span class="linenos">190</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;mother     = %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">mother</span><span class="p">)));</span>
-<span class="linenos">191</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;parent     = %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">parent</span><span class="p">)));</span>
-<span class="linenos">192</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;descendant = %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="linenos">189</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">"father     = %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">father</span><span class="p">)));</span>
+<span class="linenos">190</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">"mother     = %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">mother</span><span class="p">)));</span>
+<span class="linenos">191</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">"parent     = %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">parent</span><span class="p">)));</span>
+<span class="linenos">192</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">"descendant = %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
 <span class="linenos">193</span><span class="w">         </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">descendant</span><span class="p">)));</span>
-<span class="linenos">194</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;ancestor   = %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<span class="linenos">194</span><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">"ancestor   = %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span>
 <span class="linenos">195</span><span class="w">         </span><span class="n">cvc5_term_to_string</span><span class="p">(</span><span class="n">cvc5_get_value</span><span class="p">(</span><span class="n">slv</span><span class="p">,</span><span class="w"> </span><span class="n">ancestor</span><span class="p">)));</span>
 <span class="linenos">196</span>
 <span class="linenos">197</span><span class="w">  </span><span class="n">cvc5_delete</span><span class="p">(</span><span class="n">slv</span><span class="p">);</span>
 <span class="linenos">198</span><span class="w">  </span><span class="n">cvc5_term_manager_delete</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
 <span class="linenos">199</span><span class="p">}</span>
-</pre></div>
-</div>
-</div><div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0"><p class="fa fa-download icon-margin"><a class="reference external" href="https://github.com/cvc5/cvc5/tree/main/examples/api/java/Relations.java">examples/api/java/Relations.java</a></p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="cm">/******************************************************************************</span>
+</pre>
+            </div>
+           </div>
+          </div>
+          <div aria-labelledby="tab-0-0-2" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-2" name="0-2" role="tabpanel" tabindex="0">
+           <p class="fa fa-download icon-margin">
+            <a class="reference external" href="https://github.com/cvc5/cvc5/tree/main/examples/api/java/Relations.java">
+             examples/api/java/Relations.java
+            </a>
+           </p>
+           <div class="highlight-java notranslate">
+            <div class="highlight">
+             <pre><span></span><span class="linenos">  1</span><span class="cm">/******************************************************************************</span>
 <span class="linenos">  2</span><span class="cm"> * This file is part of the cvc5 project.</span>
 <span class="linenos">  3</span><span class="cm"> *</span>
 <span class="linenos">  4</span><span class="cm"> * Copyright (c) 2009-2026 by the authors listed in the file AUTHORS</span>
@@ -525,18 +948,18 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos"> 22</span><span class="w">    </span><span class="n">Solver</span><span class="w"> </span><span class="n">solver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Solver</span><span class="p">(</span><span class="n">tm</span><span class="p">);</span>
 <span class="linenos"> 23</span><span class="w">    </span><span class="p">{</span>
 <span class="linenos"> 24</span><span class="w">      </span><span class="c1">// Set the logic</span>
-<span class="linenos"> 25</span><span class="w">      </span><span class="n">solver</span><span class="p">.</span><span class="na">setLogic</span><span class="p">(</span><span class="s">&quot;ALL&quot;</span><span class="p">);</span>
+<span class="linenos"> 25</span><span class="w">      </span><span class="n">solver</span><span class="p">.</span><span class="na">setLogic</span><span class="p">(</span><span class="s">"ALL"</span><span class="p">);</span>
 <span class="linenos"> 26</span>
 <span class="linenos"> 27</span><span class="w">      </span><span class="c1">// options</span>
-<span class="linenos"> 28</span><span class="w">      </span><span class="n">solver</span><span class="p">.</span><span class="na">setOption</span><span class="p">(</span><span class="s">&quot;produce-models&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="linenos"> 28</span><span class="w">      </span><span class="n">solver</span><span class="p">.</span><span class="na">setOption</span><span class="p">(</span><span class="s">"produce-models"</span><span class="p">,</span><span class="w"> </span><span class="s">"true"</span><span class="p">);</span>
 <span class="linenos"> 29</span><span class="w">      </span><span class="c1">// we need finite model finding to answer sat problems with universal</span>
 <span class="linenos"> 30</span><span class="w">      </span><span class="c1">// quantified formulas</span>
-<span class="linenos"> 31</span><span class="w">      </span><span class="n">solver</span><span class="p">.</span><span class="na">setOption</span><span class="p">(</span><span class="s">&quot;finite-model-find&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="linenos"> 31</span><span class="w">      </span><span class="n">solver</span><span class="p">.</span><span class="na">setOption</span><span class="p">(</span><span class="s">"finite-model-find"</span><span class="p">,</span><span class="w"> </span><span class="s">"true"</span><span class="p">);</span>
 <span class="linenos"> 32</span><span class="w">      </span><span class="c1">// we need sets extension to support set.universe operator</span>
-<span class="linenos"> 33</span><span class="w">      </span><span class="n">solver</span><span class="p">.</span><span class="na">setOption</span><span class="p">(</span><span class="s">&quot;sets-exp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;true&quot;</span><span class="p">);</span>
+<span class="linenos"> 33</span><span class="w">      </span><span class="n">solver</span><span class="p">.</span><span class="na">setOption</span><span class="p">(</span><span class="s">"sets-exp"</span><span class="p">,</span><span class="w"> </span><span class="s">"true"</span><span class="p">);</span>
 <span class="linenos"> 34</span>
 <span class="linenos"> 35</span><span class="w">      </span><span class="c1">// (declare-sort Person 0)</span>
-<span class="linenos"> 36</span><span class="w">      </span><span class="n">Sort</span><span class="w"> </span><span class="n">personSort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkUninterpretedSort</span><span class="p">(</span><span class="s">&quot;Person&quot;</span><span class="p">);</span>
+<span class="linenos"> 36</span><span class="w">      </span><span class="n">Sort</span><span class="w"> </span><span class="n">personSort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkUninterpretedSort</span><span class="p">(</span><span class="s">"Person"</span><span class="p">);</span>
 <span class="linenos"> 37</span>
 <span class="linenos"> 38</span><span class="w">      </span><span class="c1">// (Tuple Person)</span>
 <span class="linenos"> 39</span><span class="w">      </span><span class="n">Sort</span><span class="w"> </span><span class="n">tupleArity1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTupleSort</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Sort</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">personSort</span><span class="p">});</span>
@@ -558,14 +981,14 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos"> 55</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">universeSet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkUniverseSet</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">);</span>
 <span class="linenos"> 56</span>
 <span class="linenos"> 57</span><span class="w">      </span><span class="c1">// variables</span>
-<span class="linenos"> 58</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;people&quot;</span><span class="p">);</span>
-<span class="linenos"> 59</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">males</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;males&quot;</span><span class="p">);</span>
-<span class="linenos"> 60</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">females</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;females&quot;</span><span class="p">);</span>
-<span class="linenos"> 61</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">father</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;father&quot;</span><span class="p">);</span>
-<span class="linenos"> 62</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">mother</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mother&quot;</span><span class="p">);</span>
-<span class="linenos"> 63</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;parent&quot;</span><span class="p">);</span>
-<span class="linenos"> 64</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">ancestor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ancestor&quot;</span><span class="p">);</span>
-<span class="linenos"> 65</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">descendant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;descendant&quot;</span><span class="p">);</span>
+<span class="linenos"> 58</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span><span class="w"> </span><span class="s">"people"</span><span class="p">);</span>
+<span class="linenos"> 59</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">males</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span><span class="w"> </span><span class="s">"males"</span><span class="p">);</span>
+<span class="linenos"> 60</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">females</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span><span class="w"> </span><span class="s">"females"</span><span class="p">);</span>
+<span class="linenos"> 61</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">father</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">"father"</span><span class="p">);</span>
+<span class="linenos"> 62</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">mother</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">"mother"</span><span class="p">);</span>
+<span class="linenos"> 63</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">"parent"</span><span class="p">);</span>
+<span class="linenos"> 64</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">ancestor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">"ancestor"</span><span class="p">);</span>
+<span class="linenos"> 65</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">descendant</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span><span class="w"> </span><span class="s">"descendant"</span><span class="p">);</span>
 <span class="linenos"> 66</span>
 <span class="linenos"> 67</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">isEmpty1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">EQUAL</span><span class="p">,</span><span class="w"> </span><span class="n">males</span><span class="p">,</span><span class="w"> </span><span class="n">emptySetTerm</span><span class="p">);</span>
 <span class="linenos"> 68</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">isEmpty2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">EQUAL</span><span class="p">,</span><span class="w"> </span><span class="n">females</span><span class="p">,</span><span class="w"> </span><span class="n">emptySetTerm</span><span class="p">);</span>
@@ -612,7 +1035,7 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos">109</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">descendantFormula</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">EQUAL</span><span class="p">,</span><span class="w"> </span><span class="n">descendant</span><span class="p">,</span><span class="w"> </span><span class="n">transpose</span><span class="p">);</span>
 <span class="linenos">110</span>
 <span class="linenos">111</span><span class="w">      </span><span class="c1">// (assert (forall ((x Person)) (not (set.member (tuple x x) ancestor))))</span>
-<span class="linenos">112</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkVar</span><span class="p">(</span><span class="n">personSort</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;x&quot;</span><span class="p">);</span>
+<span class="linenos">112</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkVar</span><span class="p">(</span><span class="n">personSort</span><span class="p">,</span><span class="w"> </span><span class="s">"x"</span><span class="p">);</span>
 <span class="linenos">113</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">xxTuple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTuple</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Term</span><span class="o">[]</span><span class="w"> </span><span class="p">{</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">});</span>
 <span class="linenos">114</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">member</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">SET_MEMBER</span><span class="p">,</span><span class="w"> </span><span class="n">xxTuple</span><span class="p">,</span><span class="w"> </span><span class="n">ancestor</span><span class="p">);</span>
 <span class="linenos">115</span><span class="w">      </span><span class="n">Term</span><span class="w"> </span><span class="n">notMember</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tm</span><span class="p">.</span><span class="na">mkTerm</span><span class="p">(</span><span class="n">NOT</span><span class="p">,</span><span class="w"> </span><span class="n">member</span><span class="p">);</span>
@@ -638,23 +1061,32 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos">135</span><span class="w">      </span><span class="n">Result</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">checkSat</span><span class="p">();</span>
 <span class="linenos">136</span>
 <span class="linenos">137</span><span class="w">      </span><span class="c1">// output</span>
-<span class="linenos">138</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Result     = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
-<span class="linenos">139</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;people     = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">people</span><span class="p">));</span>
-<span class="linenos">140</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;males      = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">males</span><span class="p">));</span>
-<span class="linenos">141</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;females    = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">females</span><span class="p">));</span>
-<span class="linenos">142</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;father     = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">father</span><span class="p">));</span>
-<span class="linenos">143</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;mother     = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">mother</span><span class="p">));</span>
-<span class="linenos">144</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;parent     = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">parent</span><span class="p">));</span>
-<span class="linenos">145</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;descendant = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">descendant</span><span class="p">));</span>
-<span class="linenos">146</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ancestor   = &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">ancestor</span><span class="p">));</span>
+<span class="linenos">138</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Result     = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">result</span><span class="p">);</span>
+<span class="linenos">139</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"people     = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">people</span><span class="p">));</span>
+<span class="linenos">140</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"males      = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">males</span><span class="p">));</span>
+<span class="linenos">141</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"females    = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">females</span><span class="p">));</span>
+<span class="linenos">142</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"father     = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">father</span><span class="p">));</span>
+<span class="linenos">143</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"mother     = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">mother</span><span class="p">));</span>
+<span class="linenos">144</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"parent     = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">parent</span><span class="p">));</span>
+<span class="linenos">145</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"descendant = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">descendant</span><span class="p">));</span>
+<span class="linenos">146</span><span class="w">      </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"ancestor   = "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">solver</span><span class="p">.</span><span class="na">getValue</span><span class="p">(</span><span class="n">ancestor</span><span class="p">));</span>
 <span class="linenos">147</span><span class="w">    </span><span class="p">}</span>
 <span class="linenos">148</span><span class="w">    </span><span class="n">Context</span><span class="p">.</span><span class="na">deletePointers</span><span class="p">();</span>
 <span class="linenos">149</span><span class="w">  </span><span class="p">}</span>
 <span class="linenos">150</span><span class="p">}</span>
-</pre></div>
-</div>
-</div><div aria-labelledby="tab-0-0-3" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-3" name="0-3" role="tabpanel" tabindex="0"><p class="fa fa-download icon-margin"><a class="reference external" href="https://github.com/cvc5/cvc5/tree/main/examples/api/python/relations.py">examples/api/python/relations.py</a></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="ch">#!/usr/bin/env python</span>
+</pre>
+            </div>
+           </div>
+          </div>
+          <div aria-labelledby="tab-0-0-3" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-3" name="0-3" role="tabpanel" tabindex="0">
+           <p class="fa fa-download icon-margin">
+            <a class="reference external" href="https://github.com/cvc5/cvc5/tree/main/examples/api/python/relations.py">
+             examples/api/python/relations.py
+            </a>
+           </p>
+           <div class="highlight-python notranslate">
+            <div class="highlight">
+             <pre><span></span><span class="linenos">  1</span><span class="ch">#!/usr/bin/env python</span>
 <span class="linenos">  2</span><span class="c1">###############################################################################</span>
 <span class="linenos">  3</span><span class="c1"># This file is part of the cvc5 project.</span>
 <span class="linenos">  4</span><span class="c1">#</span>
@@ -671,20 +1103,20 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos"> 15</span><span class="kn">import</span><span class="w"> </span><span class="nn">cvc5</span>
 <span class="linenos"> 16</span><span class="kn">from</span><span class="w"> </span><span class="nn">cvc5</span><span class="w"> </span><span class="kn">import</span> <span class="n">Kind</span>
 <span class="linenos"> 17</span>
-<span class="linenos"> 18</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos"> 18</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
 <span class="linenos"> 19</span>    <span class="n">tm</span> <span class="o">=</span> <span class="n">cvc5</span><span class="o">.</span><span class="n">TermManager</span><span class="p">()</span>
 <span class="linenos"> 20</span>    <span class="n">solver</span> <span class="o">=</span> <span class="n">cvc5</span><span class="o">.</span><span class="n">Solver</span><span class="p">(</span><span class="n">tm</span><span class="p">)</span>
 <span class="linenos"> 21</span>
 <span class="linenos"> 22</span>    <span class="c1"># Set the logic</span>
-<span class="linenos"> 23</span>    <span class="n">solver</span><span class="o">.</span><span class="n">setLogic</span><span class="p">(</span><span class="s2">&quot;ALL&quot;</span><span class="p">)</span>
+<span class="linenos"> 23</span>    <span class="n">solver</span><span class="o">.</span><span class="n">setLogic</span><span class="p">(</span><span class="s2">"ALL"</span><span class="p">)</span>
 <span class="linenos"> 24</span>
 <span class="linenos"> 25</span>    <span class="c1"># options</span>
-<span class="linenos"> 26</span>    <span class="n">solver</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s2">&quot;produce-models&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<span class="linenos"> 26</span>    <span class="n">solver</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s2">"produce-models"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">)</span>
 <span class="linenos"> 27</span>    <span class="c1"># we need finite model finding to answer sat problems with universal</span>
 <span class="linenos"> 28</span>    <span class="c1"># quantified formulas</span>
-<span class="linenos"> 29</span>    <span class="n">solver</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s2">&quot;finite-model-find&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<span class="linenos"> 29</span>    <span class="n">solver</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s2">"finite-model-find"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">)</span>
 <span class="linenos"> 30</span>    <span class="c1"># we need sets extension to support set.universe operator</span>
-<span class="linenos"> 31</span>    <span class="n">solver</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s2">&quot;sets-exp&quot;</span><span class="p">,</span> <span class="s2">&quot;true&quot;</span><span class="p">)</span>
+<span class="linenos"> 31</span>    <span class="n">solver</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s2">"sets-exp"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">)</span>
 <span class="linenos"> 32</span>
 <span class="linenos"> 33</span>    <span class="n">integer</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">getIntegerSort</span><span class="p">()</span>
 <span class="linenos"> 34</span>    <span class="n">set_</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkSetSort</span><span class="p">(</span><span class="n">integer</span><span class="p">)</span>
@@ -693,7 +1125,7 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos"> 37</span>    <span class="c1"># (A union B) intersection C = (A intersection C) union (B intersection C)</span>
 <span class="linenos"> 38</span>
 <span class="linenos"> 39</span>    <span class="c1"># (declare-sort Person 0)</span>
-<span class="linenos"> 40</span>    <span class="n">personSort</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkUninterpretedSort</span><span class="p">(</span><span class="s2">&quot;Person&quot;</span><span class="p">)</span>
+<span class="linenos"> 40</span>    <span class="n">personSort</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkUninterpretedSort</span><span class="p">(</span><span class="s2">"Person"</span><span class="p">)</span>
 <span class="linenos"> 41</span>
 <span class="linenos"> 42</span>    <span class="c1"># (Tuple Person)</span>
 <span class="linenos"> 43</span>    <span class="n">tupleArity1</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTupleSort</span><span class="p">(</span><span class="n">personSort</span><span class="p">)</span>
@@ -715,14 +1147,14 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos"> 59</span>    <span class="n">universeSet</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkUniverseSet</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">)</span>
 <span class="linenos"> 60</span>
 <span class="linenos"> 61</span>    <span class="c1"># variables</span>
-<span class="linenos"> 62</span>    <span class="n">people</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span> <span class="s2">&quot;people&quot;</span><span class="p">)</span>
-<span class="linenos"> 63</span>    <span class="n">males</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span> <span class="s2">&quot;males&quot;</span><span class="p">)</span>
-<span class="linenos"> 64</span>    <span class="n">females</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span> <span class="s2">&quot;females&quot;</span><span class="p">)</span>
-<span class="linenos"> 65</span>    <span class="n">father</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span> <span class="s2">&quot;father&quot;</span><span class="p">)</span>
-<span class="linenos"> 66</span>    <span class="n">mother</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span> <span class="s2">&quot;mother&quot;</span><span class="p">)</span>
-<span class="linenos"> 67</span>    <span class="n">parent</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span> <span class="s2">&quot;parent&quot;</span><span class="p">)</span>
-<span class="linenos"> 68</span>    <span class="n">ancestor</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span> <span class="s2">&quot;ancestor&quot;</span><span class="p">)</span>
-<span class="linenos"> 69</span>    <span class="n">descendant</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span> <span class="s2">&quot;descendant&quot;</span><span class="p">)</span>
+<span class="linenos"> 62</span>    <span class="n">people</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span> <span class="s2">"people"</span><span class="p">)</span>
+<span class="linenos"> 63</span>    <span class="n">males</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span> <span class="s2">"males"</span><span class="p">)</span>
+<span class="linenos"> 64</span>    <span class="n">females</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity1</span><span class="p">,</span> <span class="s2">"females"</span><span class="p">)</span>
+<span class="linenos"> 65</span>    <span class="n">father</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span> <span class="s2">"father"</span><span class="p">)</span>
+<span class="linenos"> 66</span>    <span class="n">mother</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span> <span class="s2">"mother"</span><span class="p">)</span>
+<span class="linenos"> 67</span>    <span class="n">parent</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span> <span class="s2">"parent"</span><span class="p">)</span>
+<span class="linenos"> 68</span>    <span class="n">ancestor</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span> <span class="s2">"ancestor"</span><span class="p">)</span>
+<span class="linenos"> 69</span>    <span class="n">descendant</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkConst</span><span class="p">(</span><span class="n">relationArity2</span><span class="p">,</span> <span class="s2">"descendant"</span><span class="p">)</span>
 <span class="linenos"> 70</span>
 <span class="linenos"> 71</span>    <span class="n">isEmpty1</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">EQUAL</span><span class="p">,</span> <span class="n">males</span><span class="p">,</span> <span class="n">emptySetTerm</span><span class="p">)</span>
 <span class="linenos"> 72</span>    <span class="n">isEmpty2</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">EQUAL</span><span class="p">,</span> <span class="n">females</span><span class="p">,</span> <span class="n">emptySetTerm</span><span class="p">)</span>
@@ -771,7 +1203,7 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos">115</span>    <span class="n">descendantFormula</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">EQUAL</span><span class="p">,</span> <span class="n">descendant</span><span class="p">,</span> <span class="n">transpose</span><span class="p">)</span>
 <span class="linenos">116</span>
 <span class="linenos">117</span>    <span class="c1"># (assert (forall ((x Person)) (not (set.member (tuple x x) ancestor))))</span>
-<span class="linenos">118</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkVar</span><span class="p">(</span><span class="n">personSort</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="linenos">118</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkVar</span><span class="p">(</span><span class="n">personSort</span><span class="p">,</span> <span class="s2">"x"</span><span class="p">)</span>
 <span class="linenos">119</span>    <span class="n">xxTuple</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTuple</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">])</span>
 <span class="linenos">120</span>    <span class="n">member</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">SET_MEMBER</span><span class="p">,</span> <span class="n">xxTuple</span><span class="p">,</span> <span class="n">ancestor</span><span class="p">)</span>
 <span class="linenos">121</span>    <span class="n">notMember</span> <span class="o">=</span> <span class="n">tm</span><span class="o">.</span><span class="n">mkTerm</span><span class="p">(</span><span class="n">Kind</span><span class="o">.</span><span class="n">NOT</span><span class="p">,</span> <span class="n">member</span><span class="p">)</span>
@@ -797,19 +1229,28 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos">141</span>    <span class="n">result</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">checkSat</span><span class="p">()</span>
 <span class="linenos">142</span>
 <span class="linenos">143</span>    <span class="c1"># output</span>
-<span class="linenos">144</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result     = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
-<span class="linenos">145</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;people     = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">people</span><span class="p">)))</span>
-<span class="linenos">146</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;males      = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">males</span><span class="p">)))</span>
-<span class="linenos">147</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;females    = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">females</span><span class="p">)))</span>
-<span class="linenos">148</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;father     = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">father</span><span class="p">)))</span>
-<span class="linenos">149</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;mother     = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">mother</span><span class="p">)))</span>
-<span class="linenos">150</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;parent     = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">parent</span><span class="p">)))</span>
-<span class="linenos">151</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;descendant = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">descendant</span><span class="p">)))</span>
-<span class="linenos">152</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ancestor   = </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">ancestor</span><span class="p">)))</span>
-</pre></div>
-</div>
-</div><div aria-labelledby="tab-0-0-4" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-4" name="0-4" role="tabpanel" tabindex="0"><p class="fa fa-download icon-margin"><a class="reference external" href="https://github.com/cvc5/cvc5/tree/main/examples/api/smtlib/relations.smt2">examples/api/smtlib/relations.smt2</a></p>
-<div class="highlight-smtlib notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>(<span class="k">set-logic</span> <span class="n">ALL</span>)
+<span class="linenos">144</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Result     = </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+<span class="linenos">145</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"people     = </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">people</span><span class="p">)))</span>
+<span class="linenos">146</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"males      = </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">males</span><span class="p">)))</span>
+<span class="linenos">147</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"females    = </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">females</span><span class="p">)))</span>
+<span class="linenos">148</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"father     = </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">father</span><span class="p">)))</span>
+<span class="linenos">149</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"mother     = </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">mother</span><span class="p">)))</span>
+<span class="linenos">150</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"parent     = </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">parent</span><span class="p">)))</span>
+<span class="linenos">151</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"descendant = </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">descendant</span><span class="p">)))</span>
+<span class="linenos">152</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">"ancestor   = </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">solver</span><span class="o">.</span><span class="n">getValue</span><span class="p">(</span><span class="n">ancestor</span><span class="p">)))</span>
+</pre>
+            </div>
+           </div>
+          </div>
+          <div aria-labelledby="tab-0-0-4" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-4" name="0-4" role="tabpanel" tabindex="0">
+           <p class="fa fa-download icon-margin">
+            <a class="reference external" href="https://github.com/cvc5/cvc5/tree/main/examples/api/smtlib/relations.smt2">
+             examples/api/smtlib/relations.smt2
+            </a>
+           </p>
+           <div class="highlight-smtlib notranslate">
+            <div class="highlight">
+             <pre><span></span><span class="linenos"> 1</span>(<span class="k">set-logic</span> <span class="n">ALL</span>)
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span>(<span class="k">set-option</span> <span class="na">:produce-models</span> <span class="o">true</span>)
 <span class="linenos"> 4</span><span class="c">; we need finite model finding to answer sat problems with universal</span>
@@ -853,40 +1294,55 @@ and the binary relations <span class="math notranslate nohighlight">\(father, mo
 <span class="linenos">42</span>
 <span class="linenos">43</span>(<span class="k">check-sat</span>)
 <span class="linenos">44</span>(<span class="k">get-model</span>)
-</pre></div>
-</div>
-</div></div>
-</section>
-
-
+</pre>
+            </div>
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="quickstart.html" class="btn btn-neutral float-left" title="Quickstart Example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="sequences.html" class="btn btn-neutral float-right" title="Theory of Sequences" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2026, the authors of cvc5.</p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
-        </div>
+         </div>
+        </section>
+       </div>
       </div>
-    </section>
+      <footer>
+       <div aria-label="Footer" class="rst-footer-buttons" role="navigation">
+        <a accesskey="p" class="btn btn-neutral float-left" href="quickstart.html" rel="prev" title="Quickstart Example">
+         <span aria-hidden="true" class="fa fa-arrow-circle-left">
+         </span>
+         Previous
+        </a>
+        <a accesskey="n" class="btn btn-neutral float-right" href="sequences.html" rel="next" title="Theory of Sequences">
+         Next
+         <span aria-hidden="true" class="fa fa-arrow-circle-right">
+         </span>
+        </a>
+       </div>
+       <hr/>
+       <div role="contentinfo">
+        <p>
+         © Copyright 2026, the authors of cvc5.
+        </p>
+       </div>
+       Built with
+       <a href="https://www.sphinx-doc.org/">
+        Sphinx
+       </a>
+       using a
+       <a href="https://github.com/readthedocs/sphinx_rtd_theme">
+        theme
+       </a>
+       provided by
+       <a href="https://readthedocs.org">
+        Read the Docs
+       </a>
+       .
+      </footer>
+     </div>
+    </div>
+   </section>
   </div>
   <script>
-      jQuery(function () {
+   jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
-
-</body>
+  </script>
+ </body>
 </html>
