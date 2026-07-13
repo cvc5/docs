@@ -19,6 +19,8 @@ tpl_str = """
     {%- if version == curversion %}<strong>{% endif -%}
     {%- if version == "cvc5-main" %}
         <a href="https://cvc5.github.io/docs-ci/docs-main/">cvc5-main</a>
+    {%- elif curversion == "cvc5-main" -%}
+        <a href="https://cvc5.github.io/docs/{{ version }}/">{{ version }}</a>
     {%- else -%}
         <a href="%URLROOT%/{{ version }}/">{{ version }}</a>
     {% endif -%}
